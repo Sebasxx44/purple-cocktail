@@ -1,16 +1,22 @@
 import {escape as h,icon} from './shared.mjs';
 
-export function reelGallery(reels) {
+export function reelGallery(reels,products) {
   if (!reels.length) return '';
   const tones=['#674264','#80503a','#664277','#7d5539','#503c79'];
   const slides=reels.map((reel,i)=>{
     const id='reel-'+reel.id, next=reels[i+1];
     const sequence=String(i+1).padStart(2,'0')+' / '+String(reels.length).padStart(2,'0');
+    const buttons=reel.products.map(link=>{
+      const product=products.find(p=>p.slug===link.slug);
+      if (!product) throw new Error('Producto de reel desconocido: '+link.slug);
+      return '<a class="reel-order" data-detail="'+h(product.id)+'" href="'+h(product.sourceUrl)+'">'+icon('bag')+'<span>Pedir '+h(link.label)+'</span></a>';
+    }).join('');
     return '<article id="'+h(id)+'" class="reel" aria-labelledby="'+h(id)+'-title" style="--reel-tone:'+tones[i%tones.length]+'">'+
       '<img class="reel-backdrop" src="'+h(reel.poster)+'" alt="" loading="lazy" decoding="async" fetchpriority="low">'+
-      '<div class="wrap reel-layout"><div class="reel-copy"><p class="reel-byline">'+icon('instagram')+'<a href="https://www.instagram.com/purpleburguer_/" target="_blank" rel="noopener noreferrer">@purpleburguer_</a></p>'+
+      '<div class="wrap reel-layout"><div class="reel-story"><div class="reel-copy"><p class="reel-byline">'+icon('instagram')+'<a href="https://www.instagram.com/purpleburguer_/" target="_blank" rel="noopener noreferrer">@purpleburguer_</a></p>'+
       '<h2 id="'+h(id)+'-title">'+h(reel.title)+'</h2>'+
       '<a class="reel-source" href="'+h(reel.url)+'" target="_blank" rel="noopener noreferrer">Ver en Instagram <span aria-hidden="true">↗</span></a></div>'+
+      '<div class="reel-shop" role="group" aria-label="Pedir productos de este reel">'+buttons+'</div></div>'+
       '<div class="reel-frame" data-video="'+h(reel.video)+'" data-title="'+h(reel.title)+'"><img class="reel-poster" src="'+h(reel.poster)+'" alt="" loading="lazy" decoding="async">'+
       '<button type="button" class="reel-play js-only" aria-label="Reproducir '+h(reel.title)+'">'+icon('play')+'</button></div>'+
       '<div class="reel-position"><span aria-label="Reel '+(i+1)+' de '+reels.length+'">'+sequence+'</span><a href="'+(next?'#reel-'+h(next.id):'#carta')+'">'+(next?'Siguiente reel '+icon('down'):'Volver a la carta '+icon('list'))+'</a></div>'+

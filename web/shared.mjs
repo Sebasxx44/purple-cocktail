@@ -15,6 +15,7 @@ export function productName(product) {
     .replace(/\b(purple|smirnoff|dorismash|infinive|coca cola|wendys|mistic|absolut|crispy|baylies)\b/gi, word => readable(word));
 }
 const paths = {
+  download:'<path d="M12 3v12m-4-4 4 4 4-4M4 15v5h16v-5"/>',
   bag:'<path d="M5 7.5h14l1 13H4l1-13Z"/><path d="M8.5 9V6a3.5 3.5 0 0 1 7 0v3"/>',
   plus:'<path d="M12 5v14M5 12h14"/>', minus:'<path d="M5 12h14"/>',
   left:'<path d="m14.5 5-7 7 7 7"/>',right:'<path d="m9.5 5 7 7-7 7"/>', down:'<path d="m6 9 6 6 6-6"/>',

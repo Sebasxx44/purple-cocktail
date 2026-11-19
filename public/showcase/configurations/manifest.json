@@ -1,0 +1,178 @@
+{
+  "fresa-vodka": {
+    "image": "/showcase/products/fresa-vodka.webp",
+    "imageSmall": "/showcase/products/fresa-vodka-sm.webp",
+    "model": "/showcase/products/fresa-vodka.glb",
+    "anchor": {
+      "x": 0.5,
+      "y": 0.227,
+      "width": 0.901
+    }
+  },
+  "granizado-con-licor-fresa-vodka-16-onz": {
+    "image": "/showcase/products/fresa-vodka.webp",
+    "imageSmall": "/showcase/products/fresa-vodka-sm.webp",
+    "model": "/showcase/products/fresa-vodka.glb",
+    "anchor": {
+      "x": 0.5,
+      "y": 0.227,
+      "width": 0.901
+    }
+  },
+  "granizado-sin-licor-16-onz": {
+    "image": "/showcase/products/fresa-vodka.webp",
+    "imageSmall": "/showcase/products/fresa-vodka-sm.webp",
+    "model": "/showcase/products/fresa-vodka.glb",
+    "anchor": {
+      "x": 0.5,
+      "y": 0.227,
+      "width": 0.901
+    }
+  },
+  "margarita-tequila": {
+    "image": "/showcase/products/margarita-tequila.webp",
+    "imageSmall": "/showcase/products/margarita-tequila-sm.webp",
+    "model": "/showcase/products/margarita-tequila.glb",
+    "anchor": {
+      "x": 0.5,
+      "y": 0.225,
+      "width": 0.896
+    }
+  },
+  "granizado-margarita-con-licor-16-onz": {
+    "image": "/showcase/products/margarita-tequila.webp",
+    "imageSmall": "/showcase/products/margarita-tequila-sm.webp",
+    "model": "/showcase/products/margarita-tequila.glb",
+    "anchor": {
+      "x": 0.5,
+      "y": 0.225,
+      "width": 0.896
+    }
+  },
+  "granizado-licor-frutos-silvestres-brandy-vodka-22-onz": {
+    "image": "/showcase/configurations/frutos-silvestres.webp",
+    "imageSmall": "/showcase/configurations/frutos-silvestres-sm.webp",
+    "model": "/showcase/configurations/frutos-silvestres.glb",
+    "anchor": {
+      "x": 0.5,
+      "y": 0.20422,
+      "width": 0.9204
+    }
+  },
+  "granizado-con-licor-frutos-silvestres-16-onz": {
+    "image": "/showcase/configurations/frutos-silvestres.webp",
+    "imageSmall": "/showcase/configurations/frutos-silvestres-sm.webp",
+    "model": "/showcase/configurations/frutos-silvestres.glb",
+    "anchor": {
+      "x": 0.5,
+      "y": 0.20422,
+      "width": 0.9204
+    }
+  },
+  "granizado-licor-smirnoff-vodka-22-onz": {
+    "image": "/showcase/configurations/smirnoff-vodka.webp",
+    "imageSmall": "/showcase/configurations/smirnoff-vodka-sm.webp",
+    "model": "/showcase/configurations/smirnoff-vodka.glb",
+    "anchor": {
+      "x": 0.49752,
+      "y": 0.20472,
+      "width": 0.91584
+    }
+  },
+  "granizado-smirnoff-vodka-con-licor-16-onz": {
+    "image": "/showcase/configurations/smirnoff-vodka.webp",
+    "imageSmall": "/showcase/configurations/smirnoff-vodka-sm.webp",
+    "model": "/showcase/configurations/smirnoff-vodka.glb",
+    "anchor": {
+      "x": 0.49752,
+      "y": 0.20472,
+      "width": 0.91584
+    }
+  },
+  "granizado-mora-azul-con-licor-16-onz": {
+    "image": "/showcase/configurations/mora-azul-tequila.webp",
+    "imageSmall": "/showcase/configurations/mora-azul-tequila-sm.webp",
+    "model": "/showcase/configurations/mora-azul-tequila.glb",
+    "anchor": {
+      "x": 0.5,
+      "y": 0.20341,
+      "width": 0.91584
+    }
+  },
+  "granizado-margarita-tradicional-con-licor-22onz": {
+    "image": "/showcase/configurations/margarita-tradicional.webp",
+    "imageSmall": "/showcase/configurations/margarita-tradicional-sm.webp",
+    "model": "/showcase/configurations/margarita-tradicional.glb",
+    "anchor": {
+      "x": 0.50415,
+      "y": 0.22704,
+      "width": 0.92739
+    }
+  },
+  "arandanos-perlas": {
+    "image": "/showcase/products/arandanos-perlas.webp",
+    "imageSmall": "/showcase/products/arandanos-perlas-sm.webp",
+    "model": "/showcase/products/arandanos-perlas.glb",
+    "anchor": {
+      "x": 0.494,
+      "y": 0.187,
+      "width": 0.91
+    },
+    "flavors": {
+      "fresa-vodka": {
+        "image": "/showcase/configurations/arandanos-perlas--fresa-vodka.webp",
+        "imageSmall": "/showcase/configurations/arandanos-perlas--fresa-vodka-sm.webp"
+      },
+      "mora-azul-tequila": {
+        "image": "/showcase/configurations/arandanos-perlas--mora-azul-tequila.webp",
+        "imageSmall": "/showcase/configurations/arandanos-perlas--mora-azul-tequila-sm.webp"
+      },
+      "frutos-silvestres": {
+        "image": "/showcase/configurations/arandanos-perlas--frutos-silvestres.webp",
+        "imageSmall": "/showcase/configurations/arandanos-perlas--frutos-silvestres-sm.webp"
+      },
+      "margarita-tequila": {
+        "image": "/showcase/configurations/arandanos-perlas--margarita-tequila.webp",
+        "imageSmall": "/showcase/configurations/arandanos-perlas--margarita-tequila-sm.webp"
+      },
+      "smirnoff-vodka": {
+        "image": "/showcase/configurations/arandanos-perlas--smirnoff-vodka.webp",
+        "imageSmall": "/showcase/configurations/arandanos-perlas--smirnoff-vodka-sm.webp"
+      }
+    }
+  },
+  "granizado-con-licor-todos-los-toping-22-onz": {
+    "image": "/showcase/configurations/todos-los-toppings.webp",
+    "imageSmall": "/showcase/configurations/todos-los-toppings-sm.webp",
+    "model": "/showcase/configurations/todos-los-toppings.glb",
+    "anchor": {
+      "x": 0.47545,
+      "y": 0.48242,
+      "width": 0.85013
+    },
+    "flavors": {
+      "fresa-vodka": {
+        "image": "/showcase/configurations/todos-los-toppings.webp",
+        "imageSmall": "/showcase/configurations/todos-los-toppings-sm.webp"
+      },
+      "frutos-silvestres": {
+        "image": "/showcase/configurations/todos-los-toppings--frutos-silvestres.webp",
+        "imageSmall": "/showcase/configurations/todos-los-toppings--frutos-silvestres-sm.webp"
+      },
+      "margarita-tequila": {
+        "image": "/showcase/configurations/todos-los-toppings--margarita-tequila.webp",
+        "imageSmall": "/showcase/configurations/todos-los-toppings--margarita-tequila-sm.webp"
+      }
+    }
+  },
+  "granizado-con-licor-margarita-22-onz": {
+    "image": "/showcase/configurations/margarita-con-jeringa.webp",
+    "imageSmall": "/showcase/configurations/margarita-con-jeringa-sm.webp",
+    "model": "/showcase/configurations/margarita-con-jeringa.glb",
+    "anchor": {
+      "x": 0.16614,
+      "y": 0.46973,
+      "width": 0.89342
+    }
+  }
+}

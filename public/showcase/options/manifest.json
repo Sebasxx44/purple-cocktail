@@ -1,0 +1,286 @@
+{
+  "fresa-vodka": {
+    "name": "Fresa vodka",
+    "kind": "flavor",
+    "catalogLabel": "FRESA VODKA",
+    "maxYaw": 24,
+    "maxPitch": 12,
+    "color": "#C0292C",
+    "palette": {
+      "shadow": "#AA0C0F",
+      "base": "#C0292C",
+      "highlight": "#D35052"
+    },
+    "image": "/showcase/options/fresa-vodka.webp",
+    "imageSmall": "/showcase/options/fresa-vodka-sm.webp",
+    "master": "/showcase/options/masters/fresa-vodka.png",
+    "model": "/showcase/options/fresa-vodka.glb",
+    "masterSize": [
+      3840,
+      2684
+    ],
+    "imageSize": [
+      1040,
+      727
+    ],
+    "smallSize": [
+      240,
+      168
+    ],
+    "sourceSize": [
+      1402,
+      1122
+    ]
+  },
+  "mora-azul-tequila": {
+    "name": "Mora azul tequila",
+    "kind": "flavor",
+    "catalogLabel": "MORA AZUL TEQUILA",
+    "maxYaw": 23,
+    "maxPitch": 10,
+    "color": "#2E91C2",
+    "palette": {
+      "shadow": "#076EA3",
+      "base": "#2E91C2",
+      "highlight": "#60AAD3"
+    },
+    "image": "/showcase/options/mora-azul-tequila.webp",
+    "imageSmall": "/showcase/options/mora-azul-tequila-sm.webp",
+    "master": "/showcase/options/masters/mora-azul-tequila.png",
+    "model": "/showcase/options/mora-azul-tequila.glb",
+    "masterSize": [
+      3840,
+      2676
+    ],
+    "imageSize": [
+      1040,
+      725
+    ],
+    "smallSize": [
+      240,
+      167
+    ],
+    "sourceSize": [
+      1402,
+      1122
+    ]
+  },
+  "frutos-silvestres": {
+    "name": "Frutos silvestres",
+    "kind": "flavor",
+    "catalogLabel": "FRUTOS SILVESTRES BRANDY VODKA",
+    "maxYaw": 24,
+    "maxPitch": 10,
+    "color": "#AD27C9",
+    "palette": {
+      "shadow": "#8307A3",
+      "base": "#AD27C9",
+      "highlight": "#C847DE"
+    },
+    "image": "/showcase/options/frutos-silvestres.webp",
+    "imageSmall": "/showcase/options/frutos-silvestres-sm.webp",
+    "master": "/showcase/options/masters/frutos-silvestres.png",
+    "model": "/showcase/options/frutos-silvestres.glb",
+    "masterSize": [
+      3840,
+      2901
+    ],
+    "imageSize": [
+      1040,
+      786
+    ],
+    "smallSize": [
+      240,
+      181
+    ],
+    "sourceSize": [
+      1402,
+      1122
+    ]
+  },
+  "margarita-tequila": {
+    "name": "Margarita tequila",
+    "kind": "flavor",
+    "catalogLabel": "MARGARITA TEQUILA",
+    "maxYaw": 20,
+    "maxPitch": 9,
+    "color": "#8EC50F",
+    "palette": {
+      "shadow": "#5DA104",
+      "base": "#8EC50F",
+      "highlight": "#B2DA3D"
+    },
+    "image": "/showcase/options/margarita-tequila.webp",
+    "imageSmall": "/showcase/options/margarita-tequila-sm.webp",
+    "master": "/showcase/options/masters/margarita-tequila.png",
+    "model": "/showcase/ingredients/margarita.glb",
+    "masterSize": [
+      3840,
+      3544
+    ],
+    "imageSize": [
+      1040,
+      960
+    ],
+    "smallSize": [
+      240,
+      221
+    ],
+    "sourceSize": [
+      1312,
+      1199
+    ]
+  },
+  "smirnoff-vodka": {
+    "name": "Smirnoff vodka",
+    "kind": "flavor",
+    "catalogLabel": "SMIRNOFF VODKA",
+    "maxYaw": 23,
+    "maxPitch": 12,
+    "color": "#DFDEDA",
+    "palette": {
+      "shadow": "#C7C5C0",
+      "base": "#DFDEDA",
+      "highlight": "#E9E8E6"
+    },
+    "image": "/showcase/options/smirnoff-vodka.webp",
+    "imageSmall": "/showcase/options/smirnoff-vodka-sm.webp",
+    "master": "/showcase/options/masters/smirnoff-vodka.png",
+    "model": "/showcase/options/smirnoff-vodka.glb",
+    "masterSize": [
+      3840,
+      2873
+    ],
+    "imageSize": [
+      1040,
+      778
+    ],
+    "smallSize": [
+      240,
+      180
+    ],
+    "sourceSize": [
+      1402,
+      1122
+    ]
+  },
+  "dulces": {
+    "name": "Dulces",
+    "kind": "topping",
+    "catalogLabel": "DULCES",
+    "maxYaw": 17,
+    "maxPitch": 8,
+    "color": "#DECB6C",
+    "palette": {
+      "shadow": "#D1BB52",
+      "base": "#DECB6C",
+      "highlight": "#E7D782",
+      "accents": [
+        "#39B6CA",
+        "#D9433B",
+        "#F4EDE0"
+      ]
+    },
+    "anchor": {
+      "x": 0.51,
+      "y": 0.93
+    },
+    "displayWidth": 0.68,
+    "image": "/showcase/options/dulces.webp",
+    "imageSmall": "/showcase/options/dulces-sm.webp",
+    "master": "/showcase/options/masters/dulces.png",
+    "model": "/showcase/options/dulces.glb",
+    "masterSize": [
+      3840,
+      3565
+    ],
+    "imageSize": [
+      1040,
+      965
+    ],
+    "smallSize": [
+      240,
+      223
+    ],
+    "sourceSize": [
+      1402,
+      1122
+    ]
+  },
+  "jeringa-licor": {
+    "name": "Jeringa de licor",
+    "kind": "topping",
+    "catalogLabel": "JERINGA MÁS LICOR",
+    "maxYaw": 14,
+    "maxPitch": 6,
+    "color": "#CC9D61",
+    "palette": {
+      "shadow": "#543413",
+      "base": "#CC9D61",
+      "highlight": "#E0B67F"
+    },
+    "anchor": {
+      "x": 0.128,
+      "y": 0.975
+    },
+    "displayWidth": 0.37,
+    "image": "/showcase/options/jeringa-licor.webp",
+    "imageSmall": "/showcase/options/jeringa-licor-sm.webp",
+    "master": "/showcase/options/masters/jeringa-licor.png",
+    "model": "/showcase/options/jeringa-licor.glb",
+    "masterSize": [
+      1431,
+      3840
+    ],
+    "imageSize": [
+      388,
+      1040
+    ],
+    "smallSize": [
+      89,
+      240
+    ],
+    "sourceSize": [
+      1024,
+      1536
+    ]
+  },
+  "perlas": {
+    "name": "Perlas",
+    "kind": "topping",
+    "catalogLabel": "PERLAS",
+    "maxYaw": 20,
+    "maxPitch": 9,
+    "color": "#990E18",
+    "palette": {
+      "shadow": "#580A13",
+      "base": "#990E18",
+      "highlight": "#CC4140"
+    },
+    "anchor": {
+      "x": 0.61,
+      "y": 0.93
+    },
+    "displayWidth": 0.32,
+    "image": "/showcase/options/perlas.webp",
+    "imageSmall": "/showcase/options/perlas-sm.webp",
+    "master": "/showcase/options/masters/perlas.png",
+    "model": "/showcase/ingredients/perlas.glb",
+    "masterSize": [
+      3840,
+      3535
+    ],
+    "imageSize": [
+      1040,
+      957
+    ],
+    "smallSize": [
+      240,
+      221
+    ],
+    "sourceSize": [
+      1254,
+      1254
+    ]
+  }
+}

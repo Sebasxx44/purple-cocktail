@@ -1,0 +1,473 @@
+{
+  "title": "Opciones de granizado de Purple",
+  "officialCatalog": "https://tienda.treinta.co/purpleweb",
+  "method": "Las cinco porciones de hielo y los tres toppings ilustran las opciones visibles en las fotografías de la carta. Los seis recortes nuevos proceden de ImageGen integrado. Los recortes de margarita y perlas ya se usaban en la vitrina. Todos los PNG de 3.840 px son ampliaciones Lanczos de los originales generados.",
+  "colorMeasurement": "En los cinco originales de 683 × 1024 se midieron tres rectángulos del hielo sin marca en coordenadas x0, y0, x1, y1: [217,435,462,468], [200,490,244,680], [404,490,442,739]. Se obtuvo la mediana por canal en bandas de ±4,5 percentiles de los niveles 12, 52 y 90 de luminancia sRGB para sombra, base y luz.",
+  "geometry": "Relieves cerrados a partir de la silueta y su distancia aproximada a los bordes, con textura frontal embebida y límite de giro por pieza. Las posiciones de montaje están normalizadas dentro del PNG. displayWidth es la anchura del recorte como fracción del ancho de la boca del vaso.",
+  "syringe": "Se consultaron ambos originales. La pieza conserva el líquido ámbar y el émbolo graduado de la foto individual y la presentación vertical dentro del granizado de la foto de todos los toppings. Para representar el accesorio servido sobre la bebida se representa con salida dosificadora corta de plástico.",
+  "options": {
+    "fresa-vodka": {
+      "name": "Fresa vodka",
+      "kind": "flavor",
+      "catalogLabel": "FRESA VODKA",
+      "color": "#C0292C",
+      "palette": {
+        "shadow": "#AA0C0F",
+        "base": "#C0292C",
+        "highlight": "#D35052"
+      },
+      "maxYaw": 24,
+      "maxPitch": 12,
+      "depth": 0.76,
+      "fold": 0.08,
+      "reference": [
+        {
+          "slug": "fresa-vodka",
+          "id": "0d248358-970f-5bbf-a904-15bfc820e9a8",
+          "product": "https://tienda.treinta.co/purpleweb/producto/0d248358-970f-5bbf-a904-15bfc820e9a8",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/3acd035a-8bc5-5c04-88ba-cd6fd912a01a.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        }
+      ],
+      "prompt": "Use reference 1 ONLY for the real PURPLE retail product's frozen base color and the fineness of its ice inside the tumbler. Reference 2 is a product photography style and physical size reference (the isolated green slush sample); ignore its green pigment. Photograph the colored granizado AS ONE LITTLE LOOSE MOUND of wet, finely crystalline rounded shaved ice OUTSIDE the cup. The ice portion fills 84 percent of a landscape 5:4 frame. Entire silhouette with small clear margins. Normal serving of soft snowlike slush, relaxed irregular three-quarter frontal mound about 1.5 times as wide as tall, directly visible brightness, micro-crystalline texture, soft concave ridges, very fine irregular glints at the front, subtle slightly deeper shaded right side. Mouthwatering realistic macro editorial food packshot on actual alpha transparency with feathered translucent edge crystals. Continuous natural mass, no floating detached chips, floor, cast shadows, containers, utensils, letters, hands, fruits, toppings, garnish or ice cubes. No sorbet ball or patterned repeated hemispheres. Not an illustration. Only the colored slush. Match the actual strawberry-red slush photograph with a vivid true vermilion-red core and sparkling lighter red ice at the top. A low wide profile with an asymmetrical windward shoulder and a softly ridged peak on the left of center. No strawberry, seeds or leaf.",
+      "referenceInputs": [
+        "work/research-catalog/photos/fresa-vodka.jpg",
+        "work/art-scratch/studio/margarita.png"
+      ],
+      "export": {
+        "sourceSize": [
+          1402,
+          1122
+        ],
+        "sourceSha256": "d569e03ab0d26f8908c56457006125a93f2da89630fbf27806d26ca19e4e5b8b",
+        "masterSize": [
+          3840,
+          2684
+        ],
+        "imageSize": [
+          1040,
+          727
+        ],
+        "smallSize": [
+          240,
+          168
+        ]
+      }
+    },
+    "mora-azul-tequila": {
+      "name": "Mora azul tequila",
+      "kind": "flavor",
+      "catalogLabel": "MORA AZUL TEQUILA",
+      "color": "#2E91C2",
+      "palette": {
+        "shadow": "#076EA3",
+        "base": "#2E91C2",
+        "highlight": "#60AAD3"
+      },
+      "maxYaw": 23,
+      "maxPitch": 10,
+      "depth": 0.78,
+      "fold": 0.07,
+      "reference": [
+        {
+          "slug": "granizado-mora-azul-con-licor-16-onz",
+          "id": "7d0e8608-2e96-51a5-bae9-bc158b3867df",
+          "product": "https://tienda.treinta.co/purpleweb/producto/7d0e8608-2e96-51a5-bae9-bc158b3867df",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/b538222e-8712-5c58-ae62-9ed7915bc407.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        }
+      ],
+      "prompt": "Use reference 1 ONLY for the real PURPLE retail product's frozen base color and the fineness of its ice inside the tumbler. Reference 2 is a product photography style and physical size reference (the isolated green slush sample); ignore its green pigment. Photograph the colored granizado AS ONE LITTLE LOOSE MOUND of wet, finely crystalline rounded shaved ice OUTSIDE the cup. The ice portion fills 84 percent of a landscape 5:4 frame. Entire silhouette with small clear margins. Normal serving of soft snowlike slush, relaxed irregular three-quarter frontal mound about 1.5 times as wide as tall, directly visible brightness, micro-crystalline texture, soft concave ridges, very fine irregular glints at the front, subtle slightly deeper shaded right side. Mouthwatering realistic macro editorial food packshot on actual alpha transparency with feathered translucent edge crystals. Continuous natural mass, no floating detached chips, floor, cast shadows, containers, utensils, letters, hands, fruits, toppings, garnish or ice cubes. No sorbet ball or patterned repeated hemispheres. Not an illustration. Only the colored slush. The exact blue ice is bright cyan-blue, like the contents of the reference tumbler: medium blue core, icy sky-blue tiny highlights. Make a naturally scooped little heaped mound with two unequal soft peaks and a slightly longer shallow slope on the left. No violet pigment and no blueberries or other fruit.",
+      "referenceInputs": [
+        "work/research-catalog/photos/granizado-mora-azul-con-licor-16-onz.jpg",
+        "work/art-scratch/studio/margarita.png"
+      ],
+      "export": {
+        "sourceSize": [
+          1402,
+          1122
+        ],
+        "sourceSha256": "2c256d9c46ab510336c27acc44a82189b548be117bf638e6db997e46f875dc11",
+        "masterSize": [
+          3840,
+          2676
+        ],
+        "imageSize": [
+          1040,
+          725
+        ],
+        "smallSize": [
+          240,
+          167
+        ]
+      }
+    },
+    "frutos-silvestres": {
+      "name": "Frutos silvestres",
+      "kind": "flavor",
+      "catalogLabel": "FRUTOS SILVESTRES BRANDY VODKA",
+      "color": "#AD27C9",
+      "palette": {
+        "shadow": "#8307A3",
+        "base": "#AD27C9",
+        "highlight": "#C847DE"
+      },
+      "maxYaw": 24,
+      "maxPitch": 10,
+      "depth": 0.78,
+      "fold": 0.07,
+      "reference": [
+        {
+          "slug": "granizado-licor-frutos-silvestres-brandy-vodka-22-onz",
+          "id": "4a43632b-dc54-5779-948a-d69d78db6e20",
+          "product": "https://tienda.treinta.co/purpleweb/producto/4a43632b-dc54-5779-948a-d69d78db6e20",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/531aa63e-c0fd-5ece-ad76-516df5c9087a.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        },
+        {
+          "slug": "granizado-con-licor-frutos-silvestres-16-onz",
+          "id": "310eb222-f87b-5d2f-a5b8-149ef51a5697",
+          "product": "https://tienda.treinta.co/purpleweb/producto/310eb222-f87b-5d2f-a5b8-149ef51a5697",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/84d55aa5-b84d-5ca4-b636-a71e17cefaeb.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        }
+      ],
+      "prompt": "Use reference 1 ONLY for the real PURPLE retail product's frozen base color and the fineness of its ice inside the tumbler. Reference 2 is a product photography style and physical size reference (the isolated green slush sample); ignore its green pigment. Photograph the colored granizado AS ONE LITTLE LOOSE MOUND of wet, finely crystalline rounded shaved ice OUTSIDE the cup. The ice portion fills 84 percent of a landscape 5:4 frame. Entire silhouette with small clear margins. Normal serving of soft snowlike slush, relaxed irregular three-quarter frontal mound about 1.5 times as wide as tall, directly visible brightness, micro-crystalline texture, soft concave ridges, very fine irregular glints at the front, subtle slightly deeper shaded right side. Mouthwatering realistic macro editorial food packshot on actual alpha transparency with feathered translucent edge crystals. Continuous natural mass, no floating detached chips, floor, cast shadows, containers, utensils, letters, hands, fruits, toppings, garnish or ice cubes. No sorbet ball or patterned repeated hemispheres. Not an illustration. Only the colored slush. Match the official vivid berry purple base: bright saturated violet-magenta ice with dark violet folds and lilac highlights. One heaped mound, slightly more conical and lopsided to the right with two subtle front grooves. No berries, pulp, seeds or flowers.",
+      "referenceInputs": [
+        "work/research-catalog/photos/granizado-licor-frutos-silvestres-brandy-vodka-22-onz.jpg",
+        "work/art-scratch/studio/margarita.png"
+      ],
+      "export": {
+        "sourceSize": [
+          1402,
+          1122
+        ],
+        "sourceSha256": "6bfdde01190845ceb39a843dc67af1adf5380e793c4fa1b7abf036a644dc4bb6",
+        "masterSize": [
+          3840,
+          2901
+        ],
+        "imageSize": [
+          1040,
+          786
+        ],
+        "smallSize": [
+          240,
+          181
+        ]
+      }
+    },
+    "margarita-tequila": {
+      "name": "Margarita tequila",
+      "kind": "flavor",
+      "catalogLabel": "MARGARITA TEQUILA",
+      "color": "#8EC50F",
+      "palette": {
+        "shadow": "#5DA104",
+        "base": "#8EC50F",
+        "highlight": "#B2DA3D"
+      },
+      "maxYaw": 20,
+      "maxPitch": 9,
+      "reuseIngredient": "margarita",
+      "reference": [
+        {
+          "slug": "margarita-tequila",
+          "id": "e3f2260c-3956-5b57-a82d-f7085f38409b",
+          "product": "https://tienda.treinta.co/purpleweb/producto/e3f2260c-3956-5b57-a82d-f7085f38409b",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/fe4f2a3c-25b8-5b04-aac9-97bc1a8df7ac.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        }
+      ],
+      "prompt": "Use case: product-mockup. A standalone ingredient photo, for a Colombian gourmet burger and granizado menu, to float on deep purple. A small sculptural mound of cold lime-green frozen margarita slush alone. Vivid electric yellow-green icy granules as in a Colombian slush cup. Show the granular texture, multiple soft peaks and translucent crushed crystal facets, gently wet at the bottom. No cup, spoon, real lime slices, garnish, leaves or other beverage ingredients. Photograph in close-up with realistic studio food texture, soft directional light from upper left and ambient side fill. Fully isolated on genuine transparent alpha, centered tightly with a narrow clear margin. Detailed professional macro photograph, high contrast at the edges. No surface, cast shadow, additional props or text.",
+      "referenceInputs": [
+        "pieza ya publicada de la vitrina: margarita"
+      ],
+      "export": {
+        "sourceSize": [
+          1312,
+          1199
+        ],
+        "sourceSha256": "dbefbefe22c5d17d44b6705dd268444088d65ef56741e2bf59d1fcddf14e17b5",
+        "masterSize": [
+          3840,
+          3544
+        ],
+        "imageSize": [
+          1040,
+          960
+        ],
+        "smallSize": [
+          240,
+          221
+        ]
+      }
+    },
+    "smirnoff-vodka": {
+      "name": "Smirnoff vodka",
+      "kind": "flavor",
+      "catalogLabel": "SMIRNOFF VODKA",
+      "color": "#DFDEDA",
+      "palette": {
+        "shadow": "#C7C5C0",
+        "base": "#DFDEDA",
+        "highlight": "#E9E8E6"
+      },
+      "maxYaw": 23,
+      "maxPitch": 12,
+      "depth": 0.76,
+      "fold": 0.08,
+      "reference": [
+        {
+          "slug": "granizado-licor-smirnoff-vodka-22-onz",
+          "id": "05ad162a-a6f2-52e6-821e-89ba3ce4ba5c",
+          "product": "https://tienda.treinta.co/purpleweb/producto/05ad162a-a6f2-52e6-821e-89ba3ce4ba5c",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/363a9385-b832-5e9a-8b5d-8bca0dd4adf7.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        },
+        {
+          "slug": "granizado-smirnoff-vodka-con-licor-16-onz",
+          "id": "a251c941-1bd5-54ac-a547-d98652fade5f",
+          "product": "https://tienda.treinta.co/purpleweb/producto/a251c941-1bd5-54ac-a547-d98652fade5f",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/66ef5e10-4ae3-5634-8b18-6565b9adae09.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        }
+      ],
+      "prompt": "Use reference 1 ONLY for the real PURPLE retail product's frozen base color and the fineness of its ice inside the tumbler. Reference 2 is a product photography style and physical size reference (the isolated green slush sample); ignore its green pigment. Photograph the colored granizado AS ONE LITTLE LOOSE MOUND of wet, finely crystalline rounded shaved ice OUTSIDE the cup. The ice portion fills 84 percent of a landscape 5:4 frame. Entire silhouette with small clear margins. Normal serving of soft snowlike slush, relaxed irregular three-quarter frontal mound about 1.5 times as wide as tall, directly visible brightness, micro-crystalline texture, soft concave ridges, very fine irregular glints at the front, subtle slightly deeper shaded right side. Mouthwatering realistic macro editorial food packshot on actual alpha transparency with feathered translucent edge crystals. Continuous natural mass, no floating detached chips, floor, cast shadows, containers, utensils, letters, hands, fruits, toppings, garnish or ice cubes. No sorbet ball or patterned repeated hemispheres. Not an illustration. Only the colored slush. Match the original uncolored Smirnoff granizado: neutral almost white and faint pearl silver, wet compact coarse milky-looking ice crystals with cool gray interstices but absolutely no colored pigment. Full scalar tonal detail in the white. One irregular snowlike portion with a curved asymmetrical crest sloping to the right, like fine compact ice from the source, not foam. No bottle, sugar cube, coconut, dairy, citrus or fruit.",
+      "referenceInputs": [
+        "work/research-catalog/photos/granizado-licor-smirnoff-vodka-22-onz.jpg",
+        "work/art-scratch/studio/margarita.png"
+      ],
+      "export": {
+        "sourceSize": [
+          1402,
+          1122
+        ],
+        "sourceSha256": "d304921cd0da987bb874733137feb7c3f95260c6a2decc35dbe4282b0924ba92",
+        "masterSize": [
+          3840,
+          2873
+        ],
+        "imageSize": [
+          1040,
+          778
+        ],
+        "smallSize": [
+          240,
+          180
+        ]
+      }
+    },
+    "dulces": {
+      "name": "Dulces",
+      "kind": "topping",
+      "catalogLabel": "DULCES",
+      "color": "#DECB6C",
+      "palette": {
+        "shadow": "#D1BB52",
+        "base": "#DECB6C",
+        "highlight": "#E7D782",
+        "accents": [
+          "#39B6CA",
+          "#D9433B",
+          "#F4EDE0"
+        ]
+      },
+      "maxYaw": 17,
+      "maxPitch": 8,
+      "depth": 0.71,
+      "fold": 0.05,
+      "anchor": {
+        "x": 0.51,
+        "y": 0.93
+      },
+      "displayWidth": 0.68,
+      "reference": [
+        {
+          "slug": "granizado-con-licor-todos-los-toping-22-onz",
+          "id": "87bf24c7-8af3-5be8-b595-e37f41af1a4d",
+          "product": "https://tienda.treinta.co/purpleweb/producto/87bf24c7-8af3-5be8-b595-e37f41af1a4d",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/a1b506b0-f72e-5775-901b-fdbb90bb1e44.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        }
+      ],
+      "prompt": "From the attached real Purple granizado topping photo, isolate ONLY its colorful DULCES into one small food garnish arrangement for overlay on an actual cup rim. Visual reference: the two short worm-like sugar-coated candy sticks on the left with banana-yellow upper tips, a red lower part on one and a cyan lower part on the other; one plump round flat candy at front with two-tone cyan and yellow sugar and an off-white bottom; a handful of tiny multicolor sugar-coated bead candies at the front. Reconstruct exactly those forms, colors and proportions seen. Set the two sticks upright, slightly fanned, on the left back, the small two-tone flat candy in the right foreground and the few little colorful candies clustered at lower left, touching into ONE compact horizontal group. Same front three-quarter angle as the original rim, naturally lit editorial food macro, crystalline sugar detail, no hand or stand. Do not include the identifiable larger translucent red popping pearls, lollipop, wooden skewer, syringe or any cup/drink. No new candy types, labels, text or surface. On true transparent alpha, all pieces visible, margins around silhouette, no cast shadows or reflections beneath. Output landscape 5:4, fill 85 percent width. Convincing real three-dimensional candies.",
+      "referenceInputs": [
+        "work/research-catalog/photos/granizado-con-licor-todos-los-toping-22-onz.jpg"
+      ],
+      "export": {
+        "sourceSize": [
+          1402,
+          1122
+        ],
+        "sourceSha256": "4d7398c660e4cf3b2cab3487d88d1fdc7f628ad365bb60a32e5710c8dc9f5455",
+        "masterSize": [
+          3840,
+          3565
+        ],
+        "imageSize": [
+          1040,
+          965
+        ],
+        "smallSize": [
+          240,
+          223
+        ]
+      }
+    },
+    "jeringa-licor": {
+      "name": "Jeringa de licor",
+      "kind": "topping",
+      "catalogLabel": "JERINGA MÁS LICOR",
+      "color": "#CC9D61",
+      "palette": {
+        "shadow": "#543413",
+        "base": "#CC9D61",
+        "highlight": "#E0B67F"
+      },
+      "maxYaw": 14,
+      "maxPitch": 6,
+      "depth": 0.8,
+      "fold": 0,
+      "anchor": {
+        "x": 0.128,
+        "y": 0.975
+      },
+      "displayWidth": 0.37,
+      "reference": [
+        {
+          "slug": "adicional-jeringa-licor",
+          "id": "517f2980-c694-5ee6-971c-aff4acbda01d",
+          "product": "https://tienda.treinta.co/purpleweb/producto/517f2980-c694-5ee6-971c-aff4acbda01d",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/3d2eba39-6a71-52b7-a844-69a963e40b47.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        },
+        {
+          "slug": "granizado-con-licor-todos-los-toping-22-onz",
+          "id": "87bf24c7-8af3-5be8-b595-e37f41af1a4d",
+          "product": "https://tienda.treinta.co/purpleweb/producto/87bf24c7-8af3-5be8-b595-e37f41af1a4d",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/a1b506b0-f72e-5775-901b-fdbb90bb1e44.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        }
+      ],
+      "prompt": "Create a realistic catalog cutout of ONE transparent Purple cocktail-flavor dispensing syringe, as the garnish that goes into the top of the slush in the second retailer photo. The first official reference provides the actual clear narrow cylindrical barrel containing pale amber-gold liquid, small black graduation ticks, dark rubber piston, translucent white plunger rod and oval thumb end and short finger flanges. Recreate the full barrel and plunger faithfully. For the bottom output end, show ONLY the small blunt clear plastic dispensing nozzle of the cocktail syringe as served with the drink in reference 2: it must be safe and food-service needle-free, with no metal needle, protective sleeve, green injection attachment or medical accessories. Use front-three-quarters faithful slight lean to the RIGHT at top, almost vertical about 18 degrees from vertical with nozzle at lower left and oval plunger top at upper right, like the drinks photograph. Put the finger flanges around the upper third of the composition, with a moderate length of clear white plunger extending from the cylinder. Show realistic translucent pale honey-gold liquid, crisp black small graduated lines in correct direction, neutral white reflections, high-detail studio packshot. No invented words, no branding, no medicine labels, watermarks, cup, hand, tabletop, shadows outside the silhouette or garnish. Entire individual object framed on real fully transparent RGBA; modest margin. A single slender vertical predominant object. Portrait 2:3.",
+      "referenceInputs": [
+        "work/research-catalog/photos/adicional-jeringa-licor.jpg",
+        "work/research-catalog/photos/granizado-con-licor-todos-los-toping-22-onz.jpg"
+      ],
+      "export": {
+        "sourceSize": [
+          1024,
+          1536
+        ],
+        "sourceSha256": "95b50528f625c036082786013b3c728a8e649a629bd2bc394d1cbc37a5591a5c",
+        "masterSize": [
+          1431,
+          3840
+        ],
+        "imageSize": [
+          388,
+          1040
+        ],
+        "smallSize": [
+          89,
+          240
+        ]
+      }
+    },
+    "perlas": {
+      "name": "Perlas",
+      "kind": "topping",
+      "catalogLabel": "PERLAS",
+      "color": "#990E18",
+      "palette": {
+        "shadow": "#580A13",
+        "base": "#990E18",
+        "highlight": "#CC4140"
+      },
+      "maxYaw": 20,
+      "maxPitch": 9,
+      "reuseIngredient": "perlas",
+      "anchor": {
+        "x": 0.61,
+        "y": 0.93
+      },
+      "displayWidth": 0.32,
+      "reference": [
+        {
+          "slug": "arandanos-perlas",
+          "id": "9d544213-e868-52e7-b999-a5e9561562ac",
+          "product": "https://tienda.treinta.co/purpleweb/producto/9d544213-e868-52e7-b999-a5e9561562ac",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/ed66cb5b-dd18-542c-ae89-2b3e64a6e71e.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        },
+        {
+          "slug": "granizado-con-licor-todos-los-toping-22-onz",
+          "id": "87bf24c7-8af3-5be8-b595-e37f41af1a4d",
+          "product": "https://tienda.treinta.co/purpleweb/producto/87bf24c7-8af3-5be8-b595-e37f41af1a4d",
+          "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/a1b506b0-f72e-5775-901b-fdbb90bb1e44.jpeg",
+          "original": [
+            683,
+            1024
+          ]
+        }
+      ],
+      "prompt": "Use case: product-mockup. One isolated ingredient asset for a dimensional premium Colombian food storefront. Photorealistic macro tabletop food photography in soft diffused studio light from the upper left on genuinely transparent alpha. Three translucent jewel-red popping boba pearls from a Colombian slush, one large vivid ruby-red orb at the front right and two offset smaller ones closely behind forming a natural compact cluster. Perfectly round, moist, differently sized by perspective, appetizing with clear highlight, realistic translucent colored gel and soft internal refraction. Soft fill from right, precise natural textures and tactile color. Hero close-up preserves object entirely, tightly cropped square with a little transparent margin all around. No ground plane, extraneous cast shadow, text, props, garnish or decorative elements.",
+      "referenceInputs": [
+        "pieza ya publicada de la vitrina: perlas"
+      ],
+      "export": {
+        "sourceSize": [
+          1254,
+          1254
+        ],
+        "sourceSha256": "a4282c3a9f454f3f23afd7916310712309c721b19554a22e5137f21a89d8413f",
+        "masterSize": [
+          3840,
+          3535
+        ],
+        "imageSize": [
+          1040,
+          957
+        ],
+        "smallSize": [
+          240,
+          221
+        ]
+      }
+    }
+  }
+}

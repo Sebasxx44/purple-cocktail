@@ -20,6 +20,7 @@
         "color": "#536680",
         "image": "/showcase/ingredients/arandanos.webp",
         "model": "/showcase/ingredients/arandanos.glb",
+        "master": "/showcase/ingredients/4k/arandanos.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -31,6 +32,7 @@
         "color": "#b62135",
         "image": "/showcase/ingredients/perlas.webp",
         "model": "/showcase/ingredients/perlas.glb",
+        "master": "/showcase/ingredients/4k/perlas.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -42,6 +44,7 @@
         "color": "#9dcbd8",
         "image": "/showcase/ingredients/hielo.webp",
         "model": "/showcase/ingredients/hielo.glb",
+        "master": "/showcase/ingredients/4k/hielo.webp",
         "maxYaw": 20,
         "maxPitch": 9
       }
@@ -88,6 +91,7 @@
         "color": "#79472b",
         "image": "/showcase/ingredients/carne-smash.webp",
         "model": "/showcase/ingredients/carne-smash.glb",
+        "master": "/showcase/ingredients/4k/carne-smash.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -99,6 +103,7 @@
         "color": "#f5b623",
         "image": "/showcase/ingredients/queso-americano.webp",
         "model": "/showcase/ingredients/queso-americano.glb",
+        "master": "/showcase/ingredients/4k/queso-americano.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -110,6 +115,7 @@
         "color": "#a33e28",
         "image": "/showcase/ingredients/tocineta.webp",
         "model": "/showcase/ingredients/tocineta.glb",
+        "master": "/showcase/ingredients/4k/tocineta.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -121,6 +127,7 @@
         "color": "#cc8c37",
         "image": "/showcase/ingredients/cebolla-crispy.webp",
         "model": "/showcase/ingredients/cebolla-crispy.glb",
+        "master": "/showcase/ingredients/4k/cebolla-crispy.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -132,6 +139,7 @@
         "color": "#723323",
         "image": "/showcase/ingredients/salsa-smash.webp",
         "model": "/showcase/ingredients/salsa-smash.glb",
+        "master": "/showcase/ingredients/4k/salsa-smash.webp",
         "maxYaw": 20,
         "maxPitch": 9
       }
@@ -178,6 +186,7 @@
         "color": "#cd323b",
         "image": "/showcase/ingredients/fresa.webp",
         "model": "/showcase/ingredients/fresa.glb",
+        "master": "/showcase/ingredients/4k/fresa.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -189,6 +198,7 @@
         "color": "#bac2c7",
         "image": "/showcase/ingredients/destilado.webp",
         "model": "/showcase/ingredients/destilado.glb",
+        "master": "/showcase/ingredients/4k/destilado.webp",
         "maxYaw": 20,
         "maxPitch": 9
       }
@@ -235,6 +245,7 @@
         "color": "#bb732b",
         "image": "/showcase/ingredients/brioche.webp",
         "model": "/showcase/ingredients/brioche.glb",
+        "master": "/showcase/ingredients/4k/brioche.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -246,6 +257,7 @@
         "color": "#79472b",
         "image": "/showcase/ingredients/carne-smash.webp",
         "model": "/showcase/ingredients/carne-smash.glb",
+        "master": "/showcase/ingredients/4k/carne-smash.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -257,6 +269,7 @@
         "color": "#ede1b7",
         "image": "/showcase/ingredients/mozzarella.webp",
         "model": "/showcase/ingredients/mozzarella.glb",
+        "master": "/showcase/ingredients/4k/mozzarella.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -268,6 +281,7 @@
         "color": "#9d502e",
         "image": "/showcase/ingredients/tocineta-whisky.webp",
         "model": "/showcase/ingredients/tocineta-whisky.glb",
+        "master": "/showcase/ingredients/4k/tocineta-whisky.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -279,6 +293,7 @@
         "color": "#f2e8ce",
         "image": "/showcase/ingredients/queso-crema.webp",
         "model": "/showcase/ingredients/queso-crema.glb",
+        "master": "/showcase/ingredients/4k/queso-crema.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -290,6 +305,7 @@
         "color": "#e6a064",
         "image": "/showcase/ingredients/salsa-casa.webp",
         "model": "/showcase/ingredients/salsa-casa.glb",
+        "master": "/showcase/ingredients/4k/salsa-casa.webp",
         "maxYaw": 20,
         "maxPitch": 9
       }
@@ -336,6 +352,7 @@
         "color": "#9bc72d",
         "image": "/showcase/ingredients/margarita.webp",
         "model": "/showcase/ingredients/margarita.glb",
+        "master": "/showcase/ingredients/4k/margarita.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -347,6 +364,7 @@
         "color": "#bac2c7",
         "image": "/showcase/ingredients/destilado.webp",
         "model": "/showcase/ingredients/destilado.glb",
+        "master": "/showcase/ingredients/4k/destilado.webp",
         "maxYaw": 20,
         "maxPitch": 9
       }
@@ -393,6 +411,7 @@
         "color": "#79472b",
         "image": "/showcase/ingredients/carne-smash.webp",
         "model": "/showcase/ingredients/carne-smash.glb",
+        "master": "/showcase/ingredients/4k/carne-smash.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -404,6 +423,7 @@
         "color": "#f5b623",
         "image": "/showcase/ingredients/queso-americano.webp",
         "model": "/showcase/ingredients/queso-americano.glb",
+        "master": "/showcase/ingredients/4k/queso-americano.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -415,6 +435,7 @@
         "color": "#913e25",
         "image": "/showcase/ingredients/salsa-tocineta.webp",
         "model": "/showcase/ingredients/salsa-tocineta.glb",
+        "master": "/showcase/ingredients/4k/salsa-tocineta.webp",
         "maxYaw": 20,
         "maxPitch": 9
       },
@@ -426,6 +447,7 @@
         "color": "#8a9f3b",
         "image": "/showcase/ingredients/pepinillos.webp",
         "model": "/showcase/ingredients/pepinillos.glb",
+        "master": "/showcase/ingredients/4k/pepinillos.webp",
         "maxYaw": 20,
         "maxPitch": 9
       }

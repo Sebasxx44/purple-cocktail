@@ -13,7 +13,7 @@
   font-family:var(--sans);color:var(--ink);background:var(--paper);
   scroll-padding-top:var(--header-height);
 }
-html.in-showcase{scrollbar-width:none}
+html.in-showcase{scrollbar-width:none;overflow-anchor:none}
 html.in-showcase::-webkit-scrollbar{display:none}
 *{box-sizing:border-box}body{margin:0;line-height:1.45}button,input,select,textarea{font:inherit;color:inherit}
 button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
@@ -189,8 +189,6 @@ body:has(dialog[open]){overflow:hidden}
 .part-chip .part-img{width:26px;height:26px;flex:none;border-radius:50%;background:#efe4f3;display:grid;place-items:center}
 .part-img img{width:25px;height:24px;object-fit:contain}.part-img>i{height:11px;width:11px;border-radius:50%;background:var(--accent)}
 .part-note,.detail-size{color:#6b5872;font-size:.84rem;margin-top:8px}
-.variant-select{width:100%;min-height:44px;border:1px solid #735f8155;background:#fff;border-radius:9px;padding:7px 32px 7px 10px;appearance:none}
-.variant-wrap{position:relative;margin-bottom:12px}.variant-wrap>.icon{position:absolute;right:10px;bottom:14px;width:15px;height:15px;pointer-events:none}
 .detail-buy{margin-top:19px;display:flex;align-items:stretch;gap:9px}
 .detail-buy>.button{flex:1;padding-inline:12px;min-width:0}.qty{display:inline-flex;align-items:center;justify-content:center;border:1px solid #52365d46;border-radius:99px;flex:none}
 .qty button{display:grid;place-items:center;padding:0;width:34px;min-height:37px;border-radius:50%}.qty button:hover:not(:disabled){background:#6f3a7d13}.qty button .icon{width:14px;height:14px}.qty b{min-width:20px;text-align:center;font-size:.91rem;font-variant-numeric:tabular-nums}
@@ -265,4 +263,4 @@ body:has(dialog[open]){overflow:hidden}
 @media(max-width:700px) and (max-height:660px){.scene-art{height:clamp(205px,38svh,247px)}.showcase-panel{padding-bottom:12px}.hero-actions .primary{min-height:45px}}
 @media(max-width:370px){.select-field:has(#price-filter)>.icon:first-child{display:none}.poster-add span{display:none}.poster-add{width:39px;height:39px;padding:0}.poster-add .icon{width:17px;height:17px}.card-info{padding:9px}.group-link{font-size:.72rem}.family-heading h3{font-size:23px}}
 @media(max-height:575px) and (min-width:701px){:root{--header-height:54px}.showcase-panel{padding-bottom:4px}.hero-main{min-height:325px}.scene-copy{padding:14px 0}.scene-copy h1,.scene-copy h1.word-long{font-size:clamp(47px,6.2vw,76px);margin:10px 0}.hero-price{margin:10px 0}.scene-story{font-size:.94rem}.menu-section{padding-top:calc(var(--header-height) + 20px)}}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.floating-part{translate:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:0s!important}.floating-part{translate:none}}

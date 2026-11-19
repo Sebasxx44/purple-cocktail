@@ -5,7 +5,7 @@ import {initCommerce} from './commerce.mjs';
 import {initReels} from './reels.mjs';
 import {refreshCatalog} from '/catalog/sync.js';
 
-const {data:snapshot,art}=JSON.parse(document.querySelector('#storefront-data').textContent);
+const {data:snapshot,art,optionArt,configurations}=JSON.parse(document.querySelector('#storefront-data').textContent);
 let catalog=snapshot;
 const inventory=new Map(catalog.products.map(p=>[p.id,p]));
 const featureIds=catalog.featured.map(slug=>catalog.products.find(p=>p.slug===slug).id);
@@ -98,7 +98,8 @@ window.addEventListener('popstate',fromURL);
 fromURL();
 const feature=initFeature(featureIds,lookup,art);
 initReels();
-const commerce=initCommerce({lookup,store:catalog.store,art,
+const commerce=initCommerce({lookup,store:catalog.store,art,optionArt,configurations,
+  extraId:catalog.products.find(p=>p.slug==='adicional-jeringa-licor')?.id,
   updateProduct(p){updates.add(p.id);inventory.set(p.id,p);},
   onChanged(){feature.refresh();drawGrid();}
 });

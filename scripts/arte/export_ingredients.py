@@ -133,6 +133,7 @@ def manifest():
             prefix='/showcase/ingredients/'+asset
             pieces.append({'name':name, 'shortName':SHORT.get(name,name), 'description':caption,
                            'mesh':asset,'color':PROFILES[asset][2],'image':prefix+'.webp','model':prefix+'.glb',
+                           'master':'/showcase/ingredients/4k/'+asset+'.webp',
                            'maxYaw':20,'maxPitch':9})
         assert product['ingredients']==[item['name'] for item in pieces],slug
         result.append({'id':product['id'], 'slug':slug, 'name':title, 'displayName':title,
@@ -143,10 +144,13 @@ def manifest():
     (OUT/'manifest.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 
 
-def run(source, assets):
+def run(source, assets, masters_only=False):
     destination=OUT/'ingredients'; destination.mkdir(parents=True,exist_ok=True)
+    masters=destination/'4k'; masters.mkdir(exist_ok=True)
     for slug in assets:
         with Image.open(source/(slug+'.png')) as raw: image=isolated(raw)
+        scaled(image,3840).save(masters/(slug+'.webp'),format='WEBP',quality=87,method=4)
+        if masters_only: continue
         photo=scaled(image,470)
         photo.save(destination/(slug+'.webp'),format='WEBP',quality=89,method=5)
         if slug=='destilado': profile_model(image,slug,destination/(slug+'.glb'))
@@ -157,6 +161,7 @@ def run(source, assets):
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('source',type=Path); parser.add_argument('slugs',nargs='*'); parser.add_argument('--manifest-only',action='store_true')
+    parser.add_argument('--masters-only',action='store_true')
     options=parser.parse_args()
     manifest()
-    if not options.manifest_only: run(options.source,options.slugs or list(PROFILES))
+    if not options.manifest_only: run(options.source,options.slugs or list(PROFILES),options.masters_only)
