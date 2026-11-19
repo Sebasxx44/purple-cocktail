@@ -1,5 +1,6 @@
 import {escape as h, icon, money, readable, categoryLabel, productName} from './shared.mjs';
 import {scenes} from './scenes.mjs';
+import {reelGallery} from './reels.mjs';
 
 export const available = p => Boolean(p && p.available !== false && (p.stock == null || p.stock > 0));
 export const titleFor = p => scenes[p.slug]?.short || productName(p);
@@ -38,7 +39,7 @@ export function stageArt(p, art, first=false) {
   const valid = pieces.map((item,index) => ({item,index})).filter(({item})=>item.image);
   const floats=valid.slice(0,3).map(({item,index}, k) => '<button class="floating-part part-'+(k+1)+' js-only" data-inspect="'+h(p.id)+'" data-part="'+index+'" aria-label="Ver ingrediente '+h(item.name)+'">'+imageTag(item.image,'',{eager:true})+'<span class="ingredient-caption" aria-hidden="true">'+h(item.shortName||item.name)+'</span></button>').join('');
   return '<div class="shadow-pad" aria-hidden="true"></div>'+
-    '<div class="stage-product '+(p.category==='HAMBURGUESAS'?'food-burger':'food-drink')+(a.image?'':' awaiting-art')+'">'+imageTag(a.image || p.image,titleFor(p),{cls:'product-portrait',small:a.imageSmall,smallWidth:a.smallSize?.[0],width:a.imageSize?.[0],sizes:'(max-width: 690px) 64vw, 34vw',eager:true,priority:first})+'</div>'+
+    '<div class="stage-product '+(p.category==='HAMBURGUESAS'?'food-burger':'food-drink')+(a.image?'':' awaiting-art')+'">'+imageTag(a.image || p.image,titleFor(p),{cls:'product-portrait',small:a.imageSmall,smallWidth:a.smallSize?.[0],width:a.imageSize?.[0],sizes:'(max-width: 690px) 64vw, 34vw',eager:true,priority:first})+(a.preview?'<img class="scene-preview" alt="" aria-hidden="true" draggable="false" src="'+h(a.preview)+'">':'')+'</div>'+
     floats;
 }
 function posterInfo(p) {
@@ -92,13 +93,13 @@ export function filters(data) {
     '<div class="select-field">'+icon('tune')+'<label class="sr" for="price-filter">Filtrar por precio</label><select id="price-filter"><option value="">Todos los precios</option>'+data.priceBands.map(b=>'<option value="'+h(b.id)+'">'+h(b.label)+'</option>').join('')+'</select>'+icon('down','select-arrow')+'</div>'+
     '<div class="select-field sort-field"><span aria-hidden="true">Orden</span><label class="sr" for="sort">Ordenar productos</label><select id="sort">'+data.sorts.map(s=>'<option value="'+h(s.id)+'">'+h(s.label)+'</option>').join('')+'</select>'+icon('down','select-arrow')+'</div></div>';
 }
-export function shell(data, art) {
+export function shell(data, art, reels) {
   const d=data.store;
   const featured=data.featured.map(slug=>data.products.find(p=>p.slug===slug)).filter(Boolean);
   const first=featured[0];
   return '<a class="skip" href="#carta">Saltar a la carta</a><header class="site-header" id="topbar"><div class="wrap nav-row">'+
     '<a href="#destacados" class="brand-link" aria-label="Purple, inicio"><span class="brand-mark" role="img" aria-label="Purple"></span></a>'+
-    '<nav class="nav-links" aria-label="Principal"><a class="nav-featured is-here" href="#destacados">Destacados</a><a class="nav-menu" href="#carta">La carta</a></nav>'+
+    '<nav class="nav-links" aria-label="Principal"><a class="nav-featured is-here" href="#destacados">Destacados</a><a class="nav-menu" href="#carta">La carta</a><a class="nav-reels" href="#reels">Reels</a></nav>'+
     '<div class="nav-end"><a class="social-nav" href="'+h(d.instagram)+'" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Purple">'+icon('instagram')+'</a>'+
     '<button type="button" class="nav-cart js-only" data-cart aria-label="Abrir carrito, 0 productos">'+icon('bag')+'<span class="cart-word">Carrito</span><b class="cart-count">0</b></button></div></div></header>'+
     '<main><section class="showcase" id="destacados" style="'+toneFor(first.slug)+'" aria-label="Productos destacados"><div class="showcase-panel"><div class="backdrop-stack" aria-hidden="true">'+backdrop(first.slug)+'</div><div class="grain"></div><div class="wrap">'+
@@ -107,7 +108,7 @@ export function shell(data, art) {
     '<p id="scene-live" role="status" class="sr"></p></div></div></section>'+
     '<section class="menu-section" id="carta" aria-labelledby="menu-title"><div class="wrap"><div class="menu-heading"><h2 id="menu-title">La <em>carta</em></h2><span id="result-count" role="status">'+data.products.length+' productos</span></div>'+
     '<div id="filters" class="js-only">'+filters(data)+'</div><div id="catalog-grid" class="catalog-grid grouped">'+groupedCards(data.products,art,data.featured,true)+'</div><div id="pagination" class="pagination js-only"></div>'+
-    '<noscript><p>Para seleccionar sabores y hacer tu pedido, <a href="'+h(d.sourceUrl)+'">abre la carta de Purple en Treinta</a>.</p></noscript></div></section></main>'+
+    '<noscript><p>Para seleccionar sabores y hacer tu pedido, <a href="'+h(d.sourceUrl)+'">abre la carta de Purple en Treinta</a>.</p></noscript></div></section>'+reelGallery(reels)+'</main>'+
     '<footer class="foot"><div class="wrap foot-inner"><div><a href="#destacados" class="footer-brand" aria-label="Purple, volver al inicio"><span class="brand-mark"></span></a><p>Granizados y hamburguesas · Colombia</p></div><nav aria-label="Purple en línea"><a href="'+h(d.whatsappUrl)+'" target="_blank" rel="noopener noreferrer">'+icon('whatsapp')+'WhatsApp</a><a href="'+h(d.instagram)+'" target="_blank" rel="noopener noreferrer">'+icon('instagram')+'Instagram</a><a href="'+h(d.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Carta en Treinta</a></nav></div></footer>'+
     '<dialog id="product-dialog" class="product-dialog" aria-labelledby="detail-name"><button class="detail-close round-button" data-close="product" aria-label="Cerrar detalle" autofocus>'+icon('close')+'</button><div id="detail-content"></div></dialog>'+
     '<dialog id="cart-dialog" class="cart-dialog" aria-labelledby="cart-name"><div class="drawer-inner" id="cart-content"></div></dialog>'+

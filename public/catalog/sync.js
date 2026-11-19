@@ -75,7 +75,7 @@ function currentProduct(raw, previous, isDetail = false) {
     (hasOptions ? variants.some(v => v.available) : stock !== 0);
   const photo = raw.imageUrl === undefined ? listValues?.imageSource : raw.imageUrl;
   const imageSource = typeof photo === 'string' && photo.startsWith('https://') ? photo : null;
-  const sameImage = imageSource === previous?.imageSource;
+  const keepLocalImage = Boolean(previous?.cutout) || imageSource === previous?.imageSource;
   const category = raw.category === undefined ? listValues?.category : raw.category;
   const description = raw.description === undefined ? listValues?.description : raw.description;
   return {
@@ -83,8 +83,9 @@ function currentProduct(raw, previous, isDetail = false) {
     name: raw.name.trim().replace(/\s+/g, ' '),
     category: category || null, price: raw.price, description: description?.trim() ?? '',
     available, stock,
-    image: sameImage ? previous.image : imageSource,
-    imageSizeOriginal: sameImage ? previous.imageSizeOriginal : null,
+    image: keepLocalImage ? previous.image : imageSource,
+    imageSizeOriginal: keepLocalImage ? previous.imageSizeOriginal : null,
+    ...(previous?.cutout && {cutout:previous.cutout, thumbnail:previous.thumbnail}),
     imageSource, sourceUrl: sourceUrl + '/producto/' + raw.id,
     rank: previous?.rank ?? 0, newestRank: previous?.newestRank ?? 0,
     ingredients: previous?.ingredients ?? [], ...options,

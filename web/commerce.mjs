@@ -140,10 +140,10 @@ export function initCommerce({lookup,updateProduct,store,art,onChanged}) {
     const a=findArt(art,p),s=scenes[p.slug],pieces=a.ingredients||[];
     viewer?.destroy();viewer=null;detailState={id,variant:'',qty:1,part,trigger};
     const currentState=detailState;
-    const photo=a.image||p.image;
+    const photo=a.image||p.cutout||p.image;
     const desc=s?.story || (p.description?readable(p.description):'');
     detailContent.innerHTML='<article class="detail-grid" style="'+toneFor(p.slug)+'">'+
-      '<div class="detail-side">'+(s||photo?'<img class="detail-underlay '+(s?'themed':'')+'" src="'+h(s?'/showcase/backgrounds/'+p.slug+'-mobile.webp':photo)+'" alt="">':'')+'<div class="detail-visual"><div class="detail-photo '+(a.image?'':'regular')+'">'+(photo?'<img alt="'+h(titleFor(p))+'" src="'+h(photo)+'">':'<span class="no-photo">'+icon('drink')+'Sin fotografía</span>')+'</div><div class="viewer-host" hidden></div></div>'+
+      '<div class="detail-side">'+(s||photo?'<img class="detail-underlay '+(s?'themed':'')+'" src="'+h(s?'/showcase/backgrounds/'+p.slug+'-mobile.webp':p.image||photo)+'" alt="">':'')+'<div class="detail-visual"><div class="detail-photo '+(a.image||p.cutout?'':'regular')+'">'+(photo?'<img alt="'+h(titleFor(p))+'" src="'+h(photo)+'">':'<span class="no-photo">'+icon('drink')+'Sin fotografía</span>')+'</div><div class="viewer-host" hidden></div></div>'+
       (pieces.length?'<div class="viewer-actions"><button data-view-part="-1" aria-pressed="false">'+icon('box')+'Producto completo</button><button data-rotate="-6" aria-label="Girar a la izquierda" disabled>'+icon('left')+'</button><button data-rotate="6" aria-label="Girar a la derecha" disabled>'+icon('right')+'</button><button data-reset aria-label="Volver a la vista frontal" disabled>'+icon('turn')+'</button></div>':'')+'</div>'+
       '<div class="detail-panel"><p class="eyebrow">'+h(s?.family||categoryLabel(p.category)||'Purple')+(s?.size?' · '+h(s.size):'')+'</p><h2 id="detail-name">'+h(titleFor(p))+'</h2>'+
       (desc?'<p class="detail-desc">'+h(desc)+'</p>':'')+
@@ -164,8 +164,8 @@ export function initCommerce({lookup,updateProduct,store,art,onChanged}) {
     const key=focus?.dataset.target||'',delta=focus?.dataset.qty,trash=focus?.dataset.remove;
     drawer.innerHTML='<div class="drawer-head"><h2 id="cart-name">Tu carrito</h2><button class="round-button" data-close="cart" aria-label="Cerrar carrito" autofocus>'+icon('close')+'</button></div><div class="drawer-body">'+
       (current.length?current.map(r=>{
-        const a=findArt(art,r.product),img=a.imageSmall||r.product.image;
-        return '<article class="drawer-line"><div class="line-thumb '+(a.image?'':'regular')+'">'+(img?'<img src="'+h(img)+'" alt="">':icon('bag'))+'</div><div class="line-info"><h3>'+h(titleFor(r.product))+'</h3>'+
+        const a=findArt(art,r.product),img=a.imageSmall||r.product.thumbnail||r.product.image;
+        return '<article class="drawer-line"><div class="line-thumb '+(a.image||r.product.cutout?'':'regular')+'">'+(img?'<img src="'+h(img)+'" alt="">':icon('bag'))+'</div><div class="line-info"><h3>'+h(titleFor(r.product))+'</h3>'+
           (r.v||r.choice?'<p>'+h(choiceLabel(r.v?.label||r.choice))+'</p>':'')+'<p>'+(r.pending?'Pendiente de verificar':money(r.price)+' c/u')+'</p>'+quantity(r.qty,r.key,stockLimit(r.product,r.v))+'</div><div class="line-end"><span>'+money(r.qty*r.price)+'</span><button data-remove="'+h(r.key)+'" aria-label="Quitar '+h(titleFor(r.product))+'">'+icon('trash')+'</button></div></article>';
       }).join(''):'<div class="cart-empty">'+icon('bag')+'<h3>Tu carrito está vacío</h3><button class="button outline" data-shop>Explorar la carta</button></div>')+'</div>'+
       (current.length?'<div class="drawer-foot"><div class="drawer-total"><span>Subtotal</span><strong>'+money(linesTotal(current))+' <span class="price-unit">COP</span></strong></div><p class="cart-note">'+h(cartMessage||'Purple confirma la disponibilidad y el valor del domicilio por WhatsApp.')+'</p><button class="button primary" data-checkout'+(checking?' disabled':'')+'>'+icon('whatsapp')+(checking?'Verificando disponibilidad…':'Pedir por WhatsApp')+'</button></div>':cartMessage?'<p class="drawer-foot cart-note" role="status">'+h(cartMessage)+'</p>':'');

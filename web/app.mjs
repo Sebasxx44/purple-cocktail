@@ -2,6 +2,7 @@ import {card, filters, titleFor, groupedCards} from './render.mjs';
 import {normalize} from './shared.mjs';
 import {initFeature} from './feature.mjs';
 import {initCommerce} from './commerce.mjs';
+import {initReels} from './reels.mjs';
 import {refreshCatalog} from '/catalog/sync.js';
 
 const {data:snapshot,art}=JSON.parse(document.querySelector('#storefront-data').textContent);
@@ -9,7 +10,6 @@ let catalog=snapshot;
 const inventory=new Map(catalog.products.map(p=>[p.id,p]));
 const featureIds=catalog.featured.map(slug=>catalog.products.find(p=>p.slug===slug).id);
 const lookup=id=>inventory.get(id);
-const feature=initFeature(featureIds,lookup,art);
 const state={category:'',price:'',order:'featured',search:'',limit:12,expanded:false};
 const grid=document.querySelector('#catalog-grid'), filtersBox=document.querySelector('#filters'), pagination=document.querySelector('#pagination');
 const collator=new Intl.Collator('es-CO',{sensitivity:'base',numeric:true});
@@ -96,6 +96,8 @@ grid.addEventListener('click',e=>{
 });
 window.addEventListener('popstate',fromURL);
 fromURL();
+const feature=initFeature(featureIds,lookup,art);
+initReels();
 const commerce=initCommerce({lookup,store:catalog.store,art,
   updateProduct(p){updates.add(p.id);inventory.set(p.id,p);},
   onChanged(){feature.refresh();drawGrid();}

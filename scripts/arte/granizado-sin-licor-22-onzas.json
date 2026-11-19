@@ -1,0 +1,73 @@
+{
+  "producto": "Granizado sin licor de 22 onzas",
+  "productoTreinta": "https://tienda.treinta.co/purpleweb/producto/6947e83c-5534-50da-9b69-9ea209e0a57e",
+  "tipo": "Reconstrucción ilustrativa generada con ImageGen integrado a partir de dos fotografías oficiales de Purple.",
+  "referencias": [
+    {
+      "producto": "Granizado sin licor 16 onz",
+      "ficha": "https://tienda.treinta.co/purpleweb/producto/cbd61349-02c9-58d8-96f5-ede2e7a9af02",
+      "foto": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/8888a481-3d4b-562b-92d4-e44a377c287a.jpeg",
+      "resolucion": [
+        683,
+        1024
+      ],
+      "uso": "El granizado rojo sin licor, los cristales de hielo, el nivel de llenado y la tapa domo. La carta menciona fresa o mora azul para esa presentación. La representación conserva la variante roja fotografiada."
+    },
+    {
+      "producto": "Granizado licor margarita tequila 22 onz",
+      "ficha": "https://tienda.treinta.co/purpleweb/producto/e3f2260c-3956-5b57-a82d-f7085f38409b",
+      "foto": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/fe4f2a3c-25b8-5b04-aac9-97bc1a8df7ac.jpeg",
+      "resolucion": [
+        683,
+        1024
+      ],
+      "uso": "Forma y proporciones del envase real de 22 onzas, contorno de la tapa y ubicación del rótulo PURPLE. El color del contenido procede de la primera referencia."
+    }
+  ],
+  "resolucionGenerada": [
+    941,
+    1672
+  ],
+  "proceso": "Recorte del vaso íntegro, refinamiento del canal alfa de la cámara vacía de la tapa conservando bordes y reflejos, ampliación Lanczos con alfa premultiplicado y centrado en lienzo 9:16.",
+  "maestro": {
+    "archivo": "/catalog/masters/granizado-sin-licor-22-onzas.png",
+    "formato": "PNG RGBA",
+    "resolucion": [
+      2160,
+      3840
+    ],
+    "bytes": 8639705
+  },
+  "derivados": [
+    {
+      "archivo": "/catalog/images/granizado-sin-licor-22-onzas-recorte-620.webp",
+      "resolucion": [
+        349,
+        620
+      ],
+      "alpha": true,
+      "bytes": 69670
+    },
+    {
+      "archivo": "/catalog/images/granizado-sin-licor-22-onzas-recorte-1050.webp",
+      "resolucion": [
+        591,
+        1050
+      ],
+      "alpha": true,
+      "bytes": 231330
+    },
+    {
+      "archivo": "/catalog/images/granizado-sin-licor-22-onzas.webp",
+      "resolucion": [
+        768,
+        1024
+      ],
+      "alpha": false,
+      "composicion": "Fondo fotográfico berenjena oscuro y sombra de contacto.",
+      "bytes": 93138
+    }
+  ],
+  "verificacion": "Se comprobó el contorno sobre blanco y berenjena, la lectura vertical PURPLE, la firma del envase y la translucidez de la tapa. La copia descargable es idéntica al maestro.",
+  "prompt": "Use case: identity-preserve and background-extraction for a product photograph. Create a single, faithful high-resolution studio packshot of Purple's GRANIZADO SIN LICOR in the brand's 22 oz container. Reference image 1 (red) is the real 16 oz alcohol-free item: reproduce the exact mouthwatering strawberry-red slush color, even fine ice crystals, opaque saturated red content filled to just below the rim, frosty condensation and simple closed clear domed lid from this picture. Reference image 2 (green) documents ONLY the shape and print of a real Purple 22 oz cup: use its tall taper, broad upper molded rim, narrower base ring, calm level frontal camera angle, empty transparent dome with tiny condensation drops, exact black vertical PURPLE print reading from the P at the rim down to the E near the base, and the small black handwritten Cocktail packaging mark in its original place. Disregard all color and liquid in image 2. The new cup contains ONLY the red alcohol-free slush shown in image 1. Do not change it to a mixed-color drink and do not introduce alcohol, fruit, green garnish, a straw, bubbles, pearls, ice cubes, condensation streaks or other toppings. Show precisely one whole cup, upright in front view, all edges visible from dome top to the underside of the base. Keep label typography and orientation faithful to the photos, preserve the subtle clear rectangular label boundary without writing '22 oz', 'sin licor' or other new words. Commercial photorealism with gentle softbox light from upper left, natural texture and true clear plastic, slightly brighter product lighting than the original dark stage. Genuinely transparent background with straight alpha around the complete silhouette and through transparent parts of the empty lid where appropriate. Remove the studio background, floor, ground shadow, reflection, props and border. Output a close, centered 9:16 portrait cutout with a narrow, even alpha margin, ideally 2160 by 3840 pixels."
+}

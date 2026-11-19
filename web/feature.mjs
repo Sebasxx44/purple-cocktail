@@ -1,161 +1,246 @@
 import {heroCopy, stageArt, findArt, titleFor, backdrop} from './render.mjs';
 import {scenes} from './scenes.mjs';
 import {mountIngredientMotion} from './ingredients-motion.mjs';
+import {wheelGesture} from './wheel-gesture.mjs';
+
+const clamp=(value,min,max)=>Math.min(max,Math.max(min,value));
 
 export function initFeature(featureIds, productById, art) {
   const board=document.querySelector('#destacados'), screen=board.querySelector('.showcase-panel');
-  const panel=document.querySelector('#scene-art'),copy=document.querySelector('#scene-copy'),header=document.querySelector('#topbar');
+  const panel=document.querySelector('#scene-art'), copy=document.querySelector('#scene-copy');
+  const header=document.querySelector('#topbar'), stack=screen.querySelector('.backdrop-stack');
+  const reelSection=document.querySelector('#reels'), navLinks=Array.from(header.querySelectorAll('.nav-links a'));
+  const live=document.querySelector('#scene-live'), theme=document.querySelector('meta[name="theme-color"]');
   const reduce=matchMedia('(prefers-reduced-motion: reduce)');
-  const last=featureIds.length-1;
-  const clamp=(n,min,max)=>Math.min(max,Math.max(min,n));
-  const currentProduct=()=>productById(featureIds[current]);
-  let current=0, position=0, frame=0, step=240, inView=true;
-  let viewer=null, version=0, timer=0, yaw=0;
-  let ingredientMotion=mountIngredientMotion(panel,findArt(art,currentProduct()));
-  function attachViewer() {
-    clearTimeout(timer);
-    const token=++version;
-    viewer?.destroy();viewer=null;yaw=0;
+  const portrait=matchMedia('(max-width:700px) and (orientation:portrait)');
+  const last=featureIds.length-1, stages=new Map(), backgrounds=new Map();
+  const productAt=index=>productById(featureIds[index]);
+  let current=0, inView=true, origin=0, step=240, headerHeight=0;
+  let viewer=null, modelTimer=0, modelVersion=0, warmTimer=0, yaw=0;
+  let ingredientMotion=mountIngredientMotion(panel,findArt(art,productAt(0)));
+
+  function decodePhoto(container) {
+    const photo=container.querySelector('.product-portrait');
+    if (!photo) return;
+    const ready=()=>{if(photo.naturalWidth) photo.classList.add('is-ready');};
+    if (photo.decode) photo.decode().then(ready,()=>photo.addEventListener('load',ready,{once:true}));
+    else if (photo.complete) ready();
+    else photo.addEventListener('load',ready,{once:true});
+  }
+  decodePhoto(panel);
+  function stageFor(index) {
+    if (!stages.has(index)) {
+      const container=document.createElement('div');
+      container.innerHTML=stageArt(productAt(index),art);
+      decodePhoto(container);
+      stages.set(index,container);
+    }
+    return stages.get(index);
+  }
+  function warmNeighbors() {
+    clearTimeout(warmTimer);
+    if (!inView || navigator.connection?.saveData) return;
+    warmTimer=setTimeout(()=>{
+      for(const index of [current+1,current-1]) {
+        if(index<0 || index>last) continue;
+        stageFor(index);
+        const slug=productAt(index).slug;
+        const src='/showcase/backgrounds/'+slug+(portrait.matches?'-mobile.webp':'-wide.webp');
+        if (!backgrounds.has(src)) {
+          const img=new Image();
+          img.fetchPriority='low'; img.src=src;
+          img.decode?.().catch(()=>{});
+          backgrounds.set(src,img);
+        }
+      }
+    },45);
+  }
+
+  function releaseViewer() {
+    ++modelVersion; clearTimeout(modelTimer);
+    viewer?.destroy(); viewer=null; yaw=0;
     panel.querySelector('.hero-model')?.remove();
+  }
+  function scheduleViewer() {
+    releaseViewer();
     if (!inView || navigator.connection?.saveData || reduce.matches) return;
-    const a=findArt(art,currentProduct());
-    if (!a.image || !a.model) return;
-    timer=setTimeout(async()=>{
+    const asset=findArt(art,productAt(current)), token=modelVersion;
+    if (!asset.model) return;
+    // Leave input and image decoding free while the visitor moves through the showcase.
+    modelTimer=setTimeout(async()=>{
       try {
         const {mountViewer}=await import('/showcase/viewer.js');
-        if (token!==version || !inView) return;
+        if (token!==modelVersion || !inView) return;
         const node=document.createElement('div');
-        node.className='hero-model';node.inert=true;node.setAttribute('aria-hidden','true');
-        panel.querySelector('.stage-product').append(node);
-        viewer=mountViewer(node,a);
-      } catch { /* The photograph is already visible. */ }
-    },480);
-  }
-  function draw(now,previous) {
-    const elapsed=clamp(now-previous,1,55);
-    position=reduce.matches?current:position+(current-position)*(1-Math.exp(-elapsed/82));
-    const distance=clamp(position-current,-1,1);
-    if (Math.abs(distance)<.009) {
-      position=current;frame=0;
-      for (const el of [panel,copy]) {el.style.removeProperty('transform');el.style.removeProperty('opacity');}
-      return;
-    }
-    panel.style.transform='translateX('+(-distance*42)+'px)';copy.style.transform='translateX('+(-distance*16)+'px)';
-    panel.style.opacity=String(1-Math.abs(distance)*.67);copy.style.opacity=String(1-Math.abs(distance)*.5);
-    frame=requestAnimationFrame(next=>draw(next,now));
+        node.className='hero-model'; node.inert=true; node.setAttribute('aria-hidden','true');
+        const product=panel.querySelector('.stage-product');
+        product.append(node);
+        viewer=mountViewer(node,{...asset,image:product.querySelector('.product-portrait').currentSrc || asset.imageSmall});
+      } catch { /* The responsive product photo is always available. */ }
+    },850);
   }
   function show(index) {
-    if (index===current) return;
-    position=index-Math.sign(index-current);current=index;
-    const p=currentProduct(),s=scenes[p.slug];
-    for (const key of ['tone','light','accent','card']) board.style.setProperty('--'+key,s[key]);
-    board.style.setProperty('--scene-ink',s.ink);board.style.setProperty('--buy-color',s.button);board.style.setProperty('--hero-scale',s.scale);
-    header.style.setProperty('--nav-ink',s.ink);
-    const stack=screen.querySelector('.backdrop-stack');
-    while(stack.children.length>1) stack.firstElementChild.remove();
-    const previous=stack.firstElementChild;
-    stack.insertAdjacentHTML('beforeend',backdrop(p.slug));
-    const layer=stack.lastElementChild;
-    if (!reduce.matches && layer.animate) {
-      layer.animate([{opacity:0},{opacity:1}],{duration:270,easing:'ease-out'}).finished.then(()=>previous?.remove()).catch(()=>previous?.remove());
-    } else previous?.remove();
-    document.querySelector('meta[name="theme-color"]').content=s.tone;
+    if (current===index) return;
+    const p=productAt(index), s=scenes[p.slug], direction=Math.sign(index-current);
     const active=document.activeElement;
-    const restore=copy.contains(active)?(active.closest('[data-add]')?'[data-add]':active.closest('[data-inspect]')?'[data-inspect]':null):null;
+    const restore=copy.contains(active)?active.closest('button')?.getAttributeNames().find(name=>name==='data-add'||name==='data-inspect'):null;
+    releaseViewer();
     ingredientMotion.destroy();
-    copy.innerHTML=heroCopy(p);panel.innerHTML=stageArt(p,art);
+    const previous=stages.get(current) || document.createElement('div');
+    previous.replaceChildren(...panel.childNodes);
+    stages.set(current,previous);
+    current=index;
+    const next=stageFor(current);
+    panel.replaceChildren(...next.childNodes);
+    for (const key of ['tone','light','accent','card']) board.style.setProperty('--'+key,s[key]);
+    board.style.setProperty('--scene-ink',s.ink); board.style.setProperty('--buy-color',s.button); board.style.setProperty('--hero-scale',s.scale);
+    header.style.setProperty('--nav-ink',s.ink);
+    stack.innerHTML=backdrop(p.slug);
+    copy.innerHTML=heroCopy(p);
+    if (restore) copy.querySelector('['+restore+']')?.focus({preventScroll:true});
+    theme.content=s.tone;
+    panel.setAttribute('aria-label','Fotografía y piezas de '+titleFor(p));
+    live.textContent=titleFor(p)+', '+(current+1)+' de '+featureIds.length;
     ingredientMotion=mountIngredientMotion(panel,findArt(art,p));
     ingredientMotion.setVisible(inView);
-    if (restore) copy.querySelector(restore)?.focus({preventScroll:true});
-    panel.setAttribute('aria-label','Fotografía y piezas de '+titleFor(p));
-    document.querySelector('#scene-live').textContent=titleFor(p)+', '+(current+1)+' de '+featureIds.length;
-    cancelAnimationFrame(frame);const t=performance.now();draw(t,t-16);
-    attachViewer();
+    if (!reduce.matches && inView) {
+      panel.getAnimations().forEach(animation=>animation.cancel());
+      panel.animate([{transform:'translateX('+direction*10+'px)'},{transform:'translateX(0)'}],{duration:135,easing:'ease-out'});
+    }
+    warmNeighbors(); scheduleViewer();
   }
-  // Scroll position owns the selected product, including history, native touch and keyboard scrolling.
-  const progress=()=>-board.getBoundingClientRect().top;
-  const go=index=>{
+
+  const offset=()=>window.scrollY-origin;
+  const pinned=()=>offset()>=-1 && offset()<=last*step+1;
+  function go(index) {
     index=clamp(index,0,last);
-    const origin=scrollY+board.getBoundingClientRect().top;
-    window.scrollTo({top:origin+index*step,behavior:'instant'});show(index);
-  };
-  let scrollFrame=0;
+    show(index);
+    window.scrollTo({top:origin+index*step,behavior:'instant'});
+  }
+  let scrollFrame=0, currentSection='';
   function followScroll() {
     scrollFrame=0;
-    const offset=progress();
-    show(clamp(Math.round(offset/step),0,last));
-    const overMenu=board.getBoundingClientRect().bottom<=header.getBoundingClientRect().height+1;
-    header.classList.toggle('on-menu',overMenu);
-    header.querySelector('.nav-menu').classList.toggle('is-here',overMenu);
-    header.querySelector('.nav-featured').classList.toggle('is-here',!overMenu);
+    const bottom=board.getBoundingClientRect().bottom;
+    if (bottom>0) show(clamp(Math.round(offset()/step),0,last));
+    setGestureListeners(bottom>=-innerHeight);
+    const onHero=bottom>headerHeight+1;
+    const onReels=!onHero && reelSection && reelSection.getBoundingClientRect().top<=headerHeight+1;
+    const active=onHero?'#destacados':onReels?'#reels':'#carta';
+    if (active===currentSection) return;
+    currentSection=active;
+    document.documentElement.classList.toggle('in-showcase',onHero);
+    header.classList.toggle('on-menu',!onHero);
+    for(const link of navLinks) {
+      const here=link.hash===active;
+      link.classList.toggle('is-here',here);
+      if(here) link.setAttribute('aria-current','location'); else link.removeAttribute('aria-current');
+    }
   }
   function measure() {
+    const oldStep=step, wasPinned=pinned();
+    origin=scrollY+board.getBoundingClientRect().top;
+    headerHeight=header.offsetHeight;
     step=clamp(Math.round(window.innerHeight*.36),170,350);
     board.style.setProperty('--scroll-travel',(last*step)+'px');
     board.style.setProperty('--panel-height',screen.offsetHeight+'px');
+    if (wasPinned && oldStep!==step && current) go(current);
     followScroll();
   }
   window.addEventListener('scroll',()=>{if (!scrollFrame) scrollFrame=requestAnimationFrame(followScroll);},{passive:true});
   new ResizeObserver(measure).observe(screen);
   window.addEventListener('resize',measure,{passive:true});
-  // Wheel momentum belongs to its first impulse. At either end the next gesture scrolls the page.
-  let wheelTime=-Infinity,direction=0,lastMagnitude=0,peak=0,consumed=false,distance=0;
-  board.addEventListener('wheel',event=>{
-    if (event.ctrlKey || event.metaKey || document.querySelector('dialog[open]')) return;
-    const offset=progress();
-    if (offset<-.5 || offset>last*step+1) return;
-    const raw=Math.abs(event.deltaX)>Math.abs(event.deltaY)?event.deltaX:event.deltaY, sign=Math.sign(raw);
-    if (!sign) return;
-    const now=event.timeStamp, gap=now-wheelTime, magnitude=Math.abs(raw);
-    // A fading trackpad tail can arrive late when a new photograph is decoding.
-    const fading=consumed && gap<500 && magnitude<lastMagnitude*.94;
-    const renewed=gap>=82 && lastMagnitude<peak*.52 && magnitude>lastMagnitude*2.3;
-    if ((gap>170 && !fading) || renewed || sign!==direction) {consumed=false;distance=0;peak=0;}
-    wheelTime=now;direction=sign;lastMagnitude=magnitude;peak=Math.max(peak,magnitude);
-    const next=clamp(current+sign,0,last);
-    if (!consumed && next===current) return;
-    event.preventDefault();
-    if (consumed) return;
-    distance+=Math.abs(raw)*(event.deltaMode===1?16:event.deltaMode===2?innerHeight:1);
-    if (distance>=14) {consumed=true;distance=0;go(next);}
-  },{passive:false});
+
+  const wheel=wheelGesture();
+  let ownsWheel=false;
+  function onWheel(event) {
+    if(event.ctrlKey || event.metaKey || document.querySelector('dialog[open]')) return;
+    const factor=event.deltaMode===1?16:event.deltaMode===2?innerHeight:1;
+    const dx=event.deltaX*factor, dy=event.deltaY*factor;
+    const delta=Math.abs(dx)>Math.abs(dy)*1.35?dx:dy;
+    if (!delta) return;
+    if (!pinned()) {
+      // A fast upward wheel that reaches the showcase first lands on its last product.
+      const beyond=offset()-last*step;
+      if (dy<0 && beyond>1 && beyond<=-dy+1 && window.scrollY<=board.offsetHeight+innerHeight) {
+        event.preventDefault(); wheel.reset(); wheel.read(delta,event.deltaMode,event.timeStamp);
+        ownsWheel=true; go(last);
+      }
+      return;
+    }
+    const signal=wheel.read(delta,event.deltaMode,event.timeStamp), next=current+Math.sign(delta);
+    const canStep=next>=0 && next<=last;
+    if (signal==='step') {
+      ownsWheel=canStep;
+      if (canStep) {event.preventDefault(); go(next);}
+    } else if (ownsWheel || (signal==='pending' && canStep)) event.preventDefault();
+  }
+
   let touch=null;
-  panel.addEventListener('touchstart',e=>{touch=e.touches.length===1?{x:e.touches[0].clientX,y:e.touches[0].clientY}:null;},{passive:true});
-  panel.addEventListener('touchend',e=>{
-    if (!touch||e.touches.length){touch=null;return;}
-    const dx=e.changedTouches[0].clientX-touch.x,dy=e.changedTouches[0].clientY-touch.y;touch=null;
-    if (Math.abs(dx)>38 && Math.abs(dx)>Math.abs(dy)*1.35) go(current+(dx<0?1:-1));
-  },{passive:true});
-  panel.addEventListener('touchcancel',()=>{touch=null;},{passive:true});
-  document.addEventListener('keydown',e=>{
-    if (e.altKey||e.ctrlKey||e.metaKey||document.querySelector('dialog[open]')||e.target.closest('input,select,textarea,[contenteditable=true]')) return;
-    const offset=progress();
-    if (offset<-.5||offset>last*step+1) return;
-    const delta=({ArrowLeft:-1,ArrowRight:1,PageUp:-1,PageDown:1,ArrowUp:-1,ArrowDown:1})[e.key];
-    if (delta && current+delta>=0 && current+delta<=last) {e.preventDefault();go(current+delta);}
+  window.addEventListener('touchstart',event=>{
+    const eligible=event.touches.length===1 && pinned() && (board.contains(event.target)||header.contains(event.target)) && !document.querySelector('dialog[open]');
+    touch=eligible?{x:event.touches[0].clientX,y:event.touches[0].clientY,state:'new'}:null;
+  },{passive:true,capture:true});
+  function onTouchMove(event) {
+    if (!touch || event.touches.length!==1 || touch.state==='native') return;
+    if (touch.state==='stepped') {if (event.cancelable) event.preventDefault(); return;}
+    const dx=touch.x-event.touches[0].clientX, dy=touch.y-event.touches[0].clientY;
+    const distance=Math.abs(dx)>Math.abs(dy)*1.15?dx:dy;
+    if (Math.abs(distance)<2) return;
+    const next=current+Math.sign(distance);
+    if (next<0 || next>last) {touch.state='native';return;}
+    if (event.cancelable) event.preventDefault();
+    if (Math.abs(distance)>=20) {touch.state='stepped';go(next);}
+  }
+  let listening=false;
+  const inputOptions={passive:false,capture:true};
+  function setGestureListeners(nearShowcase) {
+    if (listening===nearShowcase) return;
+    listening=nearShowcase;
+    if (listening) {
+      wheel.reset(); ownsWheel=false;
+      window.addEventListener('wheel',onWheel,inputOptions);
+      window.addEventListener('touchmove',onTouchMove,inputOptions);
+    } else {
+      window.removeEventListener('wheel',onWheel,inputOptions);
+      window.removeEventListener('touchmove',onTouchMove,inputOptions);
+    }
+  }
+  const finishTouch=()=>{touch=null;};
+  window.addEventListener('touchend',finishTouch,{passive:true});
+  window.addEventListener('touchcancel',finishTouch,{passive:true});
+
+  document.addEventListener('keydown',event=>{
+    if (!pinned() || event.altKey || event.ctrlKey || event.metaKey || document.querySelector('dialog[open]') || event.target.closest('input,select,textarea,[contenteditable=true]')) return;
+    let delta=({ArrowLeft:-1,ArrowRight:1,PageUp:-1,PageDown:1,ArrowUp:-1,ArrowDown:1})[event.key];
+    if (event.key===' ' && !event.target.closest('a,button')) delta=event.shiftKey?-1:1;
+    if(delta && current+delta>=0 && current+delta<=last) {event.preventDefault();go(current+delta);}
   });
-  panel.addEventListener('pointermove',e=>{
-    if(reduce.matches||e.pointerType!=='mouse'||!inView) return;
-    const r=panel.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5;
-    if(viewer){const next=x*15;viewer.rotate(next-yaw);yaw=next;}
+  panel.addEventListener('pointermove',event=>{
+    if (!viewer || reduce.matches || event.pointerType!=='mouse' || !inView) return;
+    const rect=panel.getBoundingClientRect(), next=((event.clientX-rect.left)/rect.width-.5)*15;
+    viewer.rotate(next-yaw);yaw=next;
   });
   panel.addEventListener('pointerleave',()=>{viewer?.reset();yaw=0;});
   new IntersectionObserver(([entry])=>{
-    const visible=entry.isIntersecting;
-    if (visible!==inView) {inView=visible;ingredientMotion.setVisible(visible);attachViewer();}
+    if(entry.isIntersecting!==inView) {
+      inView=entry.isIntersecting; ingredientMotion.setVisible(inView); warmNeighbors(); scheduleViewer();
+    }
   }).observe(screen);
-  reduce.addEventListener('change',attachViewer);
-  function followHash(){
-    if(location.hash==='#carta') {document.querySelector('#carta').scrollIntoView({behavior:'instant'});return;}
-    const index=featureIds.findIndex(id=>'#'+productById(id).slug===location.hash);
-    if(index>=0)go(index);
+  reduce.addEventListener('change',scheduleViewer);
+  function followHash() {
+    if (location.hash==='#carta' || location.hash==='#reels' || location.hash.startsWith('#reel-')) {
+      document.getElementById(location.hash.slice(1))?.scrollIntoView({behavior:'instant'}); return;
+    }
+    if (location.hash==='#destacados') {go(0);return;}
+    const index=featureIds.findIndex((_,i)=>'#'+productAt(i).slug===location.hash);
+    if (index>=0) go(index);
   }
   window.addEventListener('hashchange',followHash);
-  measure();followHash();attachViewer();
+  measure(); followHash(); warmNeighbors(); scheduleViewer();
   return {refresh(){
-    const next=document.createElement('template');next.innerHTML=heroCopy(currentProduct());
+    const next=document.createElement('template'); next.innerHTML=heroCopy(productAt(current));
     copy.querySelector('.hero-price strong').textContent=next.content.querySelector('.hero-price strong').textContent;
-    const button=copy.querySelector('[data-add]'),fresh=next.content.querySelector('[data-add]');
-    button.disabled=fresh.disabled;button.innerHTML=fresh.innerHTML;
+    const button=copy.querySelector('[data-add]'), fresh=next.content.querySelector('[data-add]');
+    button.disabled=fresh.disabled; button.innerHTML=fresh.innerHTML;
   }};
 }
