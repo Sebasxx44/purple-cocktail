@@ -3,6 +3,8 @@ import {scenes} from './scenes.mjs';
 
 export const available = p => Boolean(p && p.available !== false && (p.stock == null || p.stock > 0));
 export const titleFor = p => scenes[p.slug]?.short || productName(p);
+const leadCategories=['GRANIZADOS CON LICOR','HAMBURGUESAS','COMBOS'];
+const preferredCategories=[...leadCategories,'GRANIZADO SIN LICOR','BEBIDAS','ADICIONALES'];
 export const toneFor = slug => {
   const s = scenes[slug] || scenes['arandanos-perlas'];
   return '--tone:'+s.tone+';--light:'+s.light+';--accent:'+s.accent+';--card:'+s.card+';--scene-ink:'+s.ink+';--buy-color:'+s.button+';--hero-scale:'+s.scale;
@@ -39,8 +41,21 @@ export function stageArt(p, art, first=false) {
     '<div class="stage-product '+(p.category==='HAMBURGUESAS'?'food-burger':'food-drink')+(a.image?'':' awaiting-art')+'">'+imageTag(a.image || p.image,titleFor(p),{cls:'product-portrait',small:a.imageSmall,smallWidth:a.smallSize?.[0],width:a.imageSize?.[0],sizes:'(max-width: 690px) 64vw, 34vw',eager:true,priority:first})+'</div>'+
     floats;
 }
-export function card(p,art) {
-  const a=findArt(art,p), s=scenes[p.slug], caption=categoryLabel(p.category);
+function posterInfo(p) {
+  const s=scenes[p.slug];
+  const measure=p.name.match(/\b(\d+)\s*ONZ(?:AS?)?\b/i);
+  const volume=measure?measure[1]+' onz':'';
+  const isSlush=/^granizado\b/i.test(p.name);
+  let name=titleFor(p);
+  if (!s && measure) name=name.replace(measure[0].toLowerCase(),'').trim();
+  if(!s && isSlush && !/sin licor/i.test(name)) name=readable(name.replace(/^granizado\s*/i,'').replace(/\b(con licor|licor)\b/gi,'').replace(/\btoping\b/gi,'toppings').trim()) || name;
+  const type=s?.family || (p.category==='HAMBURGUESAS'?'Hamburguesa':p.category==='GRANIZADOS CON LICOR'?'Granizado con licor':categoryLabel(p.category));
+  return {name,volume,type};
+}
+export function card(p,art,groupCategory) {
+  const a=findArt(art,p),s=scenes[p.slug],{name,volume,type}=posterInfo(p);
+  const caption=[groupCategory && p.category===groupCategory?'':type,volume].filter(Boolean).join(' · ');
+  const heading=groupCategory!==undefined?'h4':'h3';
   const src=a.imageSmall||a.image||p.image;
   const href=p.sourceUrl||'#carta';
   const photo=src?imageTag(src,titleFor(p)):'<span class="no-photo">'+icon(p.category?.includes('GRANIZADO')?'drink':'bag')+'<span>Sin fotografía</span></span>';
@@ -48,12 +63,31 @@ export function card(p,art) {
   const background=s?'/showcase/backgrounds/'+p.slug+'-wide.webp':!src?'/showcase/ingredients/hielo.webp':'';
   return '<article class="card" data-card-id="'+h(p.id)+'"'+(s?' style="'+toneFor(p.slug)+'"':'')+'>'+
     '<a class="card-media '+setting+'" href="'+h(href)+'" data-detail="'+h(p.id)+'" aria-label="Ver '+h(titleFor(p))+'" style="--card:'+(s?.card||'#e4dbe8')+'">'+(background?'<img class="card-backdrop" src="'+h(background)+'" loading="lazy" alt="">':'')+(src&&!a.image?'<img class="media-fill" src="'+h(src)+'" loading="lazy" alt="" aria-hidden="true">':'')+photo+'</a>'+
-    '<div class="card-info">'+(caption?'<p class="card-category">'+h(caption)+'</p>':'')+'<h3><a href="'+h(href)+'" data-detail="'+h(p.id)+'">'+h(titleFor(p))+'</a></h3>'+
-    '<div class="card-bottom"><span>'+h(money(p.price))+'</span><button class="add-round js-only" data-add="'+h(p.id)+'" aria-label="Agregar '+h(titleFor(p))+' al carrito"'+(!available(p)?' disabled':'')+'>'+icon('plus')+'</button></div></div></article>';
+    '<div class="card-info">'+(caption?'<p class="card-category">'+h(caption)+'</p>':'')+'<'+heading+'><a href="'+h(href)+'" data-detail="'+h(p.id)+'">'+h(name)+'</a></'+heading+'>'+
+    '<div class="card-bottom"><span>'+h(money(p.price))+'</span><button class="poster-add js-only" data-add="'+h(p.id)+'" aria-label="Agregar '+h(titleFor(p))+' al carrito"'+(!available(p)?' disabled':'')+'>'+icon('plus')+'<span>Agregar</span></button></div></div></article>';
+}
+export function groupedCards(products,art,featured,expanded=false) {
+  const pins=new Map(featured.map((slug,i)=>[slug,i]));
+  const listFor=items=>[...items].sort((a,b)=>(pins.get(a.slug)??99)-(pins.get(b.slug)??99) || a.rank-b.rank);
+  const groups=leadCategories.map(key=>({key,title:categoryLabel(key),items:listFor(products.filter(p=>p.category===key))}));
+  groups.push({key:'',title:'Más de la carta',items:products.filter(p=>!leadCategories.includes(p.category))});
+  return groups.filter(group=>group.items.length).map(group=>{
+    let subset=group.items;
+    if (!expanded && group.key && group.items.length>4){
+      const firstByName=new Map();
+      for (const p of group.items){const {name}=posterInfo(p);if(!firstByName.has(name))firstByName.set(name,p);}
+      const unique=[...firstByName.values()];
+      subset=[...unique,...group.items.filter(p=>!unique.includes(p))].slice(0,4);
+    }
+    const more=group.key && group.items.length>subset.length;
+    const action=more?'<button class="group-link js-only" data-show-category="'+h(group.key)+'">Ver categoría <span>('+group.items.length+')</span></button>':'<span class="group-count">'+group.items.length+' '+(group.items.length===1?'producto':'productos')+'</span>';
+    return '<section class="catalog-family"><div class="family-heading"><h3>'+h(group.title)+'</h3>'+action+'</div><div class="family-grid'+(!group.key?' family-rest':'')+'">'+subset.map(p=>card(p,art,group.key)).join('')+'</div></section>';
+  }).join('');
 }
 export function filters(data) {
+  const categories=[...preferredCategories.filter(c=>data.categories.includes(c)),...data.categories.filter(c=>!preferredCategories.includes(c))];
   return '<div class="category-strip" role="group" aria-label="Categorías"><button class="category active" data-category="" aria-pressed="true">Todo</button>'+
-    data.categories.map(c=>'<button class="category" data-category="'+h(c)+'" aria-pressed="false">'+h(categoryLabel(c))+'</button>').join('')+'</div>'+
+    categories.map(c=>'<button class="category" data-category="'+h(c)+'" aria-pressed="false">'+h(categoryLabel(c))+'</button>').join('')+'</div>'+
     '<div class="filter-row"><label class="search-field">'+icon('search')+'<span class="sr">Buscar productos</span><input id="search" type="search" placeholder="Buscar en la carta" autocomplete="off"></label>'+
     '<div class="select-field">'+icon('tune')+'<label class="sr" for="price-filter">Filtrar por precio</label><select id="price-filter"><option value="">Todos los precios</option>'+data.priceBands.map(b=>'<option value="'+h(b.id)+'">'+h(b.label)+'</option>').join('')+'</select>'+icon('down','select-arrow')+'</div>'+
     '<div class="select-field sort-field"><span aria-hidden="true">Orden</span><label class="sr" for="sort">Ordenar productos</label><select id="sort">'+data.sorts.map(s=>'<option value="'+h(s.id)+'">'+h(s.label)+'</option>').join('')+'</select>'+icon('down','select-arrow')+'</div></div>';
@@ -72,7 +106,7 @@ export function shell(data, art) {
     '<div class="scene-art" id="scene-art" role="group" aria-label="Fotografía y piezas de '+h(titleFor(first))+'">'+stageArt(first,art,true)+'</div></div>'+
     '<p id="scene-live" role="status" class="sr"></p></div></div></section>'+
     '<section class="menu-section" id="carta" aria-labelledby="menu-title"><div class="wrap"><div class="menu-heading"><h2 id="menu-title">La <em>carta</em></h2><span id="result-count" role="status">'+data.products.length+' productos</span></div>'+
-    '<div id="filters" class="js-only">'+filters(data)+'</div><div id="catalog-grid" class="catalog-grid">'+data.products.map(p=>card(p,art)).join('')+'</div><div id="pagination" class="pagination js-only"></div>'+
+    '<div id="filters" class="js-only">'+filters(data)+'</div><div id="catalog-grid" class="catalog-grid grouped">'+groupedCards(data.products,art,data.featured,true)+'</div><div id="pagination" class="pagination js-only"></div>'+
     '<noscript><p>Para seleccionar sabores y hacer tu pedido, <a href="'+h(d.sourceUrl)+'">abre la carta de Purple en Treinta</a>.</p></noscript></div></section></main>'+
     '<footer class="foot"><div class="wrap foot-inner"><div><a href="#destacados" class="footer-brand" aria-label="Purple, volver al inicio"><span class="brand-mark"></span></a><p>Granizados y hamburguesas · Colombia</p></div><nav aria-label="Purple en línea"><a href="'+h(d.whatsappUrl)+'" target="_blank" rel="noopener noreferrer">'+icon('whatsapp')+'WhatsApp</a><a href="'+h(d.instagram)+'" target="_blank" rel="noopener noreferrer">'+icon('instagram')+'Instagram</a><a href="'+h(d.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Carta en Treinta</a></nav></div></footer>'+
     '<dialog id="product-dialog" class="product-dialog" aria-labelledby="detail-name"><button class="detail-close round-button" data-close="product" aria-label="Cerrar detalle" autofocus>'+icon('close')+'</button><div id="detail-content"></div></dialog>'+

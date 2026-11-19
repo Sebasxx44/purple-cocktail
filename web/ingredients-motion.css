@@ -1,0 +1,96 @@
+/* The button carries the drift so its hit area and caption travel with the food. */
+[data-ingredient-motion] .floating-part[data-part] {
+  --travel-range: 1;
+  --im-x: 0px;
+  --im-y: 0px;
+  --im-yaw: 0deg;
+  --im-pitch: 0deg;
+  --im-roll: 0deg;
+  --im-scale: 1;
+  --im-shadow-x: 3px;
+  --im-shadow-y: 7px;
+  --im-shadow-blur: 4px;
+  translate: none;
+  transform: translate3d(var(--im-x), var(--im-y), 0);
+  transition: none;
+  isolation: isolate;
+}
+
+[data-ingredient-motion="on"] .floating-part[data-part] {
+  animation: ingredient-drift var(--im-period) cubic-bezier(.45, .03, .55, .97) var(--im-phase) infinite;
+}
+
+[data-ingredient-motion] .ingredient-body,
+[data-ingredient-motion] .ingredient-orientation {
+  position: absolute;
+  inset: 0;
+  display: block;
+  pointer-events: none;
+}
+
+[data-ingredient-motion] .ingredient-body {
+  transform: rotate(calc(var(--angle, 0deg) + var(--im-roll))) scale(var(--im-scale));
+  filter: drop-shadow(var(--im-shadow-x) var(--im-shadow-y) var(--im-shadow-blur) rgb(41 14 54 / .28));
+}
+
+[data-ingredient-motion="on"] .ingredient-orientation {
+  animation: ingredient-roll var(--im-roll-period) ease-in-out var(--im-phase) infinite;
+}
+
+[data-ingredient-motion] .ingredient-orientation > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: perspective(440px) rotateX(var(--im-pitch)) rotateY(var(--im-yaw));
+  filter: none;
+  opacity: 1;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* The GLB viewer frames its mesh with 5.5% padding. Counter that padding to
+   align the incoming volume with the ingredient photograph, including in portrait. */
+[data-ingredient-motion] .ingredient-model {
+  position: absolute;
+  inset: -6.2%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease-out;
+}
+
+[data-ingredient-model="ready"] .ingredient-orientation > img {
+  opacity: 0;
+  transition: opacity 140ms ease-out;
+}
+
+[data-ingredient-model="ready"] .ingredient-model { opacity: 1; }
+[data-ingredient-motion] .floating-part:focus-visible { z-index: 4; }
+[data-ingredient-motion="off"] .floating-part[data-part] { translate: none; transform: none; }
+
+@keyframes ingredient-drift {
+  0%, 100% { translate: calc(var(--im-travel-x) * var(--travel-range) * -.66) calc(var(--im-travel-y) * var(--travel-range) * .15); }
+  25% { translate: calc(var(--im-travel-x) * var(--travel-range) * .28) calc(var(--im-travel-y) * var(--travel-range) * -1); }
+  53% { translate: calc(var(--im-travel-x) * var(--travel-range)) calc(var(--im-travel-y) * var(--travel-range) * -.12); }
+  77% { translate: calc(var(--im-travel-x) * var(--travel-range) * -.15) calc(var(--im-travel-y) * var(--travel-range) * .88); }
+}
+
+@keyframes ingredient-roll {
+  0%, 100% { rotate: calc(var(--im-sway) * var(--travel-range) * -.65); }
+  43% { rotate: calc(var(--im-sway) * var(--travel-range)); }
+  70% { rotate: calc(var(--im-sway) * var(--travel-range) * .15); }
+}
+
+@media (max-width: 700px), (pointer: coarse) {
+  [data-ingredient-motion] .floating-part[data-part] { --travel-range: .46; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-ingredient-motion] .floating-part[data-part],
+  [data-ingredient-motion] .ingredient-orientation {
+    animation: none;
+    translate: none;
+    rotate: none;
+  }
+}

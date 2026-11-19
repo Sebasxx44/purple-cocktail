@@ -39,7 +39,7 @@ const page = `<!doctype html>
 <meta name="theme-color" content="#ad89e5"><meta property="og:title" content="Purple · Granizados y hamburguesas"><meta property="og:description" content="Recorre la selección de Purple, descubre sus ingredientes y arma tu pedido."><meta property="og:locale" content="es_CO"><meta property="og:type" content="website">
 <meta property="og:image" content="https://purple-cocktail.vercel.app/catalog/images/arandanos-perlas.webp"><link rel="icon" href="/ui/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/fraunces-normal.woff2" crossorigin><link rel="preload" as="image" href="${escape(portrait)}"${hero.imageSmall?' imagesrcset="'+escape(hero.imageSmall)+' '+hero.smallSize[0]+'w, '+escape(portrait)+' '+hero.imageSize[0]+'w" imagesizes="(max-width: 690px) 64vw, 34vw"':''}>
-<link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/web/style.css">
+<link rel="stylesheet" href="/fonts/fonts.css"><link rel="stylesheet" href="/web/style.css"><link rel="stylesheet" href="/web/ingredients-motion.css">
 <script>document.documentElement.classList.add('js')</script></head><body>
 ${shell(data,art)}
 <script id="storefront-data" type="application/json">${payload}</script>

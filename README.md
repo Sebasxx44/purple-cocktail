@@ -17,8 +17,12 @@ La vista previa se abre en el puerto 4781. Vercel ejecuta la misma compilación,
 
 La primera carga usa `public/catalog/catalog.json`. La función `api/treinta.mjs` actualiza el catálogo desde la tienda pública de Purple. La ficha consulta las variantes del producto y el carrito vuelve a verificar los precios y las existencias al preparar el mensaje de WhatsApp. El pedido se guarda en el navegador del cliente.
 
+La carta permite explorar cada familia, abrir los 37 productos de la selección inicial y combinar categoría, búsqueda, precio y orden. Las tarjetas superponen los nombres y los botones en sus fotografías.
+
 ## Fotografías y modelos
 
 Los seis maestros PNG tienen transparencia y 3840 píxeles en el lado mayor. La tienda sirve versiones WebP adaptadas al tamaño de la pantalla. Las mallas GLB de los productos y los ingredientes se cargan bajo demanda y conservan la fotografía como alternativa. El manifiesto registra las dimensiones originales, las ampliaciones y las rutas de cada archivo. [Manifiesto visual](public/showcase/manifest.json) · [Maestros PNG](public/showcase/masters) · [Procedencia de las imágenes](scripts/arte/procedencia.json)
 
 Cada escena tiene una composición horizontal y otra vertical para su fondo decorativo. El enlace a una escena usa el identificador del producto como fragmento de la dirección. [Fresa vodka](https://purple-cocktail.vercel.app/#fresa-vodka)
+
+Los ingredientes reaccionan a la proximidad del puntero con desplazamiento, giro y sombras. Al enfocar una pieza se carga su malla. Un toque abre el desglose también en móvil. La interacción respeta las preferencias de movimiento y ahorro de datos del dispositivo.

@@ -1,5 +1,6 @@
 import {heroCopy, stageArt, findArt, titleFor, backdrop} from './render.mjs';
 import {scenes} from './scenes.mjs';
+import {mountIngredientMotion} from './ingredients-motion.mjs';
 
 export function initFeature(featureIds, productById, art) {
   const board=document.querySelector('#destacados'), screen=board.querySelector('.showcase-panel');
@@ -10,6 +11,7 @@ export function initFeature(featureIds, productById, art) {
   const currentProduct=()=>productById(featureIds[current]);
   let current=0, position=0, frame=0, step=240, inView=true;
   let viewer=null, version=0, timer=0, yaw=0;
+  let ingredientMotion=mountIngredientMotion(panel,findArt(art,currentProduct()));
   function attachViewer() {
     clearTimeout(timer);
     const token=++version;
@@ -60,7 +62,10 @@ export function initFeature(featureIds, productById, art) {
     document.querySelector('meta[name="theme-color"]').content=s.tone;
     const active=document.activeElement;
     const restore=copy.contains(active)?(active.closest('[data-add]')?'[data-add]':active.closest('[data-inspect]')?'[data-inspect]':null):null;
+    ingredientMotion.destroy();
     copy.innerHTML=heroCopy(p);panel.innerHTML=stageArt(p,art);
+    ingredientMotion=mountIngredientMotion(panel,findArt(art,p));
+    ingredientMotion.setVisible(inView);
     if (restore) copy.querySelector(restore)?.focus({preventScroll:true});
     panel.setAttribute('aria-label','Fotografía y piezas de '+titleFor(p));
     document.querySelector('#scene-live').textContent=titleFor(p)+', '+(current+1)+' de '+featureIds.length;
@@ -131,17 +136,17 @@ export function initFeature(featureIds, productById, art) {
   });
   panel.addEventListener('pointermove',e=>{
     if(reduce.matches||e.pointerType!=='mouse'||!inView) return;
-    const r=panel.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
-    panel.style.setProperty('--mx',x*15+'px');panel.style.setProperty('--my',y*12+'px');
+    const r=panel.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5;
     if(viewer){const next=x*15;viewer.rotate(next-yaw);yaw=next;}
   });
-  panel.addEventListener('pointerleave',()=>{panel.style.removeProperty('--mx');panel.style.removeProperty('--my');viewer?.reset();yaw=0;});
+  panel.addEventListener('pointerleave',()=>{viewer?.reset();yaw=0;});
   new IntersectionObserver(([entry])=>{
     const visible=entry.isIntersecting;
-    if (visible!==inView) {inView=visible;attachViewer();}
+    if (visible!==inView) {inView=visible;ingredientMotion.setVisible(visible);attachViewer();}
   }).observe(screen);
   reduce.addEventListener('change',attachViewer);
   function followHash(){
+    if(location.hash==='#carta') {document.querySelector('#carta').scrollIntoView({behavior:'instant'});return;}
     const index=featureIds.findIndex(id=>'#'+productById(id).slug===location.hash);
     if(index>=0)go(index);
   }

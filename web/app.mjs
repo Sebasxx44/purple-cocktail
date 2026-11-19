@@ -1,4 +1,4 @@
-import {card, filters, titleFor} from './render.mjs';
+import {card, filters, titleFor, groupedCards} from './render.mjs';
 import {normalize} from './shared.mjs';
 import {initFeature} from './feature.mjs';
 import {initCommerce} from './commerce.mjs';
@@ -10,7 +10,7 @@ const inventory=new Map(catalog.products.map(p=>[p.id,p]));
 const featureIds=catalog.featured.map(slug=>catalog.products.find(p=>p.slug===slug).id);
 const lookup=id=>inventory.get(id);
 const feature=initFeature(featureIds,lookup,art);
-const state={category:'',price:'',order:'featured',search:'',limit:12};
+const state={category:'',price:'',order:'featured',search:'',limit:12,expanded:false};
 const grid=document.querySelector('#catalog-grid'), filtersBox=document.querySelector('#filters'), pagination=document.querySelector('#pagination');
 const collator=new Intl.Collator('es-CO',{sensitivity:'base',numeric:true});
 const updates=new Set();
@@ -33,7 +33,9 @@ function drawGrid() {
     return a.rank-b.rank;
   };
   list.sort((a,b)=>compare(a,b) || a.rank-b.rank);
-  const markup=list.slice(0,state.limit).map(p=>card(p,art)).join('');
+  const grouped=!state.category && !state.price && !terms.length && state.order==='featured';
+  const markup=grouped?groupedCards(list,art,catalog.featured,state.expanded):list.slice(0,state.limit).map(p=>card(p,art)).join('');
+  grid.classList.toggle('grouped',grouped);
   if (lastGridMarkup!==markup) {
     const el=grid.contains(document.activeElement)?document.activeElement:null;
     const old=el?.closest('[data-card-id]')?.dataset.cardId,attr=el?.hasAttribute('data-add')?'data-add':'data-detail';
@@ -42,12 +44,14 @@ function drawGrid() {
     if (old) grid.querySelector('['+attr+'="'+CSS.escape(old)+'"]')?.focus({preventScroll:true});
   }
   document.querySelector('#result-count').textContent=list.length+' '+(list.length===1?'producto':'productos');
-  const more=list.length>state.limit?'<button class="button outline" data-more>Ver más productos <span>('+Math.min(12,list.length-state.limit)+')</span></button>':'';
+  let more='';
+  if(grouped && !state.expanded && grid.querySelector('[data-show-category]')) more='<button class="button outline" data-expand>Ver la carta completa ('+list.length+')</button>';
+  else if(!grouped && list.length>state.limit) more='<button class="button outline" data-more>Ver más productos <span>('+Math.min(12,list.length-state.limit)+')</span></button>';
   if (pagination.innerHTML!==more) pagination.innerHTML=more;
 }
 function writeURL() {
   const url=new URL(location.href);
-  for (const [param,value] of [['categoria',state.category],['precio',state.price],['orden',state.order==='featured'?'':state.order],['q',state.search]]) {
+  for (const [param,value] of [['categoria',state.category],['precio',state.price],['orden',state.order==='featured'?'':state.order],['q',state.search],['vista',state.expanded?'completa':'']]) {
     if (value) url.searchParams.set(param,value);else url.searchParams.delete(param);
   }
   history.replaceState(null,'',url);
@@ -61,13 +65,13 @@ function matchControls() {
   document.querySelector('#sort').value=state.order;
   if (document.querySelector('#search').value!==state.search) document.querySelector('#search').value=state.search;
 }
-function applyFilters() {state.limit=12;matchControls();writeURL();drawGrid();}
+function applyFilters() {state.limit=12;state.expanded=false;matchControls();writeURL();drawGrid();}
 function fromURL() {
   const params=new URL(location.href).searchParams;
   state.category=catalog.categories.includes(params.get('categoria'))?params.get('categoria'):'';
   state.price=catalog.priceBands.some(x=>x.id===params.get('precio'))?params.get('precio'):'';
   state.order=catalog.sorts.some(x=>x.id===params.get('orden'))?params.get('orden'):'featured';
-  state.search=params.get('q')||'';state.limit=12;matchControls();drawGrid();
+  state.search=params.get('q')||'';state.expanded=params.get('vista')==='completa';state.limit=12;matchControls();drawGrid();
 }
 filtersBox.addEventListener('click',e=>{const b=e.target.closest('[data-category]');if(b){state.category=b.dataset.category;applyFilters();}});
 filtersBox.addEventListener('input',e=>{if(e.target.id==='search'){state.search=e.target.value;applyFilters();}});
@@ -76,12 +80,18 @@ filtersBox.addEventListener('change',e=>{
   applyFilters();
 });
 pagination.addEventListener('click',e=>{
+  if(e.target.closest('[data-expand]')){
+    state.expanded=true;writeURL();drawGrid();
+    document.querySelector('#carta').scrollIntoView();document.querySelector('#filters [data-category=""]').focus({preventScroll:true});return;
+  }
   if(e.target.closest('[data-more]')){
     const before=grid.children.length;state.limit+=12;drawGrid();
     grid.children[before]?.querySelector('a')?.focus({preventScroll:true});
   }
 });
 grid.addEventListener('click',e=>{
+  const group=e.target.closest('[data-show-category]');
+  if(group){state.category=group.dataset.showCategory;applyFilters();document.querySelector('#carta').scrollIntoView();filtersBox.querySelector('.category.active')?.focus({preventScroll:true});return;}
   if(e.target.closest('[data-clear]')){Object.assign(state,{category:'',price:'',order:'featured',search:''});applyFilters();document.querySelector('#search').focus();}
 });
 window.addEventListener('popstate',fromURL);
