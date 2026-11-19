@@ -237,7 +237,7 @@ export function initFeature(featureIds, productById, art) {
   reduce.addEventListener('change',scheduleViewer);
   function followHash() {
     releaseHash();
-    if (location.hash==='#carta' || location.hash==='#reels' || location.hash.startsWith('#reel-')) {
+    if (['#carta','#granizados','#hamburguesas','#reels'].includes(location.hash) || location.hash.startsWith('#reel-')) {
       document.getElementById(location.hash.slice(1))?.scrollIntoView({behavior:'instant'}); return;
     }
     const index=location.hash==='#destacados'?0:featureIds.findIndex((_,i)=>'#'+productAt(i).slug===location.hash);

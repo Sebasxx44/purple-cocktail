@@ -4,6 +4,8 @@ import path from 'node:path';
 import {shell, findArt} from '../web/render.mjs';
 import {escape} from '../web/shared.mjs';
 import {reels} from '../web/reels-data.mjs';
+import {galleryFamily} from '../web/gallery.mjs';
+import {burgerRecipes} from '../web/burger-recipes.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const dist = path.join(root, 'dist');
@@ -14,7 +16,7 @@ const readStudio=name=>readJSON('public/showcase/'+name+'/manifest.json').catch(
   if (draft && error.code==='ENOENT') return {};
   throw error;
 });
-const [optionArt,configurations]=await Promise.all([readStudio('options'),readStudio('configurations')]);
+const [optionArt,configurations,galleryArt,burgerLayers]=await Promise.all(['options','configurations','gallery','burger-layers'].map(readStudio));
 let art = [];
 try {
   const manifest = await readJSON('public/showcase/manifest.json');
@@ -25,6 +27,21 @@ try {
 }
 if (!process.argv.includes('--draft')) {
   const files=new Set();
+  for(const p of data.products.filter(galleryFamily)) {
+    const scene=galleryArt[p.slug];
+    if(!scene?.objects?.length) throw Error('Falta el escenario de '+p.slug);
+    for(const key of ['image','imageSmall','image4k','master','model','background','backgroundMobile']) files.add(scene[key]);
+    for(const object of scene.objects) files.add(object.image);
+    if(p.category==='HAMBURGUESAS') {
+      const recipe=burgerRecipes[p.slug];
+      if(!recipe) throw Error('Falta la receta de '+p.slug);
+      for(const key of [...recipe.layers.map(l=>l.key),...(recipe.optional||[]),recipe.support].filter(Boolean)) {
+        const layer=burgerLayers[key];
+        if(!layer?.width || !layer.height || !layer.thickness) throw Error('Falta la capa '+key);
+        for(const field of ['image','imageSmall','model','master']) files.add(layer[field]);
+      }
+    }
+  }
   for (const piece of Object.values(optionArt)) {
     for(const key of ['image','imageSmall','master','model']) files.add(piece[key]);
   }
@@ -56,7 +73,7 @@ for (const entry of art) {
 }
 const hero = findArt(art,first);
 const portrait = hero.image || first.image;
-const payload=JSON.stringify({data,art,optionArt,configurations}).replace(/</g,'\\u003c');
+const payload=JSON.stringify({data,art,optionArt,configurations,galleryArt,burgerLayers}).replace(/</g,'\\u003c');
 const page = `<!doctype html>
 <html lang="es-CO"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Purple · Granizados y hamburguesas</title>
@@ -65,8 +82,9 @@ const page = `<!doctype html>
 <meta property="og:image" content="https://purple-cocktail.vercel.app/catalog/images/arandanos-perlas.webp"><link rel="icon" href="/ui/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/bebas-neue-latin.woff2" crossorigin><link rel="preload" as="image" fetchpriority="high" href="${escape(portrait)}"${hero.imageSmall?' imagesrcset="'+escape(hero.imageSmall)+' '+hero.smallSize[0]+'w, '+escape(portrait)+' '+hero.imageSize[0]+'w" imagesizes="(max-width: 690px) 64vw, 34vw"':''}>
 <link rel="stylesheet" href="/fonts/fonts.css?v=purple-type-2"><link rel="stylesheet" href="/web/style.css"><link rel="stylesheet" href="/web/ingredients-motion.css"><link rel="stylesheet" href="/web/reels.css"><link rel="stylesheet" href="/web/product-detail.css">
-<script>document.documentElement.classList.add('js');if(!['#carta','#reels'].includes(location.hash)&&!location.hash.startsWith('#reel-'))document.documentElement.classList.add('in-showcase')</script></head><body>
-${shell(data,art,reels)}
+<link rel="stylesheet" href="/web/gallery.css"><link rel="stylesheet" href="/web/burger.css">
+<script>document.documentElement.classList.add('js');if(!['#carta','#reels','#granizados','#hamburguesas'].includes(location.hash)&&!location.hash.startsWith('#reel-'))document.documentElement.classList.add('in-showcase')</script></head><body>
+${shell(data,art,reels,galleryArt)}
 <script id="storefront-data" type="application/json">${payload}</script>
 <script type="module" src="/web/app.mjs"></script></body></html>`;
 await writeFile(path.join(dist,'index.html'),page);

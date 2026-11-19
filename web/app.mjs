@@ -3,9 +3,10 @@ import {normalize} from './shared.mjs';
 import {initFeature} from './feature.mjs';
 import {initCommerce} from './commerce.mjs';
 import {initReels} from './reels.mjs';
+import {galleryFamily,initGalleries} from './gallery.mjs';
 import {refreshCatalog} from '/catalog/sync.js';
 
-const {data:snapshot,art,optionArt,configurations}=JSON.parse(document.querySelector('#storefront-data').textContent);
+const {data:snapshot,art,optionArt,configurations,galleryArt,burgerLayers}=JSON.parse(document.querySelector('#storefront-data').textContent);
 let catalog=snapshot;
 const inventory=new Map(catalog.products.map(p=>[p.id,p]));
 const featureIds=catalog.featured.map(slug=>catalog.products.find(p=>p.slug===slug).id);
@@ -13,6 +14,7 @@ const lookup=id=>inventory.get(id);
 const state={category:'',price:'',order:'featured',search:'',limit:12,expanded:false};
 const grid=document.querySelector('#catalog-grid'), filtersBox=document.querySelector('#filters'), pagination=document.querySelector('#pagination');
 const collator=new Intl.Collator('es-CO',{sensitivity:'base',numeric:true});
+const drawGalleries=initGalleries(document.querySelector('#gallery-list'),galleryArt);
 const updates=new Set();
 let lastGridMarkup=null;
 function drawGrid() {
@@ -34,7 +36,12 @@ function drawGrid() {
   };
   list.sort((a,b)=>compare(a,b) || a.rank-b.rank);
   const grouped=!state.category && !state.price && !terms.length && state.order==='featured';
-  const markup=grouped?groupedCards(list,art,catalog.featured,state.expanded):list.slice(0,state.limit).map(p=>card(p,art)).join('');
+  const featureOrder=new Map(catalog.featured.map((slug,i)=>[slug,i]));
+  const show=state.order==='featured'?[...list].sort((a,b)=>(featureOrder.get(a.slug)??99)-(featureOrder.get(b.slug)??99)):list;
+  drawGalleries(show);
+  const rest=list.filter(p=>!galleryFamily(p));
+  const markup=grouped?groupedCards(rest,art,catalog.featured,state.expanded):rest.slice(0,state.limit).map(p=>card(p,art)).join('');
+  grid.hidden=!rest.length && list.length>0;
   grid.classList.toggle('grouped',grouped);
   if (lastGridMarkup!==markup) {
     const el=grid.contains(document.activeElement)?document.activeElement:null;
@@ -46,7 +53,7 @@ function drawGrid() {
   document.querySelector('#result-count').textContent=list.length+' '+(list.length===1?'producto':'productos');
   let more='';
   if(grouped && !state.expanded && grid.querySelector('[data-show-category]')) more='<button class="button outline" data-expand>Ver la carta completa ('+list.length+')</button>';
-  else if(!grouped && list.length>state.limit) more='<button class="button outline" data-more>Ver más productos <span>('+Math.min(12,list.length-state.limit)+')</span></button>';
+  else if(!grouped && rest.length>state.limit) more='<button class="button outline" data-more>Ver más productos <span>('+Math.min(12,rest.length-state.limit)+')</span></button>';
   if (pagination.innerHTML!==more) pagination.innerHTML=more;
 }
 function writeURL() {
@@ -98,7 +105,7 @@ window.addEventListener('popstate',fromURL);
 fromURL();
 const feature=initFeature(featureIds,lookup,art);
 initReels();
-const commerce=initCommerce({lookup,store:catalog.store,art,optionArt,configurations,
+const commerce=initCommerce({lookup,store:catalog.store,art,optionArt,configurations,galleryArt,burgerLayers,
   extraId:catalog.products.find(p=>p.slug==='adicional-jeringa-licor')?.id,
   updateProduct(p){updates.add(p.id);inventory.set(p.id,p);},
   onChanged(){feature.refresh();drawGrid();}

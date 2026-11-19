@@ -1,0 +1,337 @@
+{
+  "collection": "Capas del armado de hamburguesas y papas de Purple",
+  "references": {
+    "absolut-crispy": {
+      "id": "a7141307-480e-5a2e-9592-58438d7e83dd",
+      "product": "https://tienda.treinta.co/purpleweb/producto/a7141307-480e-5a2e-9592-58438d7e83dd",
+      "photo": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/7bad34dd-ed03-5186-9cfc-5a6a81570265.jpg"
+    },
+    "american-purple": {
+      "id": "531a7dda-ba19-5e9d-bad3-9b69e9155a9f",
+      "product": "https://tienda.treinta.co/purpleweb/producto/531a7dda-ba19-5e9d-bad3-9b69e9155a9f",
+      "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/f811666d-75fd-5b43-8882-4b86209b0d79.jpeg"
+    },
+    "atlantica": {
+      "id": "62f0331b-c091-5d27-af10-7d0ecaf48480",
+      "product": "https://tienda.treinta.co/purpleweb/producto/62f0331b-c091-5d27-af10-7d0ecaf48480",
+      "photo": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/f07706ad-d401-5879-8547-9b5b97319c43.jpg"
+    },
+    "infinive": {
+      "id": "9e737764-bed2-5f22-9443-a1db169c7346",
+      "product": "https://tienda.treinta.co/purpleweb/producto/9e737764-bed2-5f22-9443-a1db169c7346",
+      "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/5e8609b9-8385-573a-b8ac-654027ad01be.jpeg"
+    },
+    "jack-bacon": {
+      "id": "ebb868da-8d5b-5e30-9ad1-1d41912c64df",
+      "product": "https://tienda.treinta.co/purpleweb/producto/ebb868da-8d5b-5e30-9ad1-1d41912c64df",
+      "photo": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/5ff09e35-6aad-5d2d-b93d-52a6fd06c3af.jpg"
+    },
+    "mistic-fries": {
+      "id": "b8cc0af7-8386-5f10-be72-87bedf5834a3",
+      "product": "https://tienda.treinta.co/purpleweb/producto/b8cc0af7-8386-5f10-be72-87bedf5834a3",
+      "photo": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/1a54f025-70c3-5719-8928-eb09103ba3de.jpg"
+    },
+    "purple-classic": {
+      "id": "7673e9ae-d996-5c1f-b4fb-b696a6a224bc",
+      "product": "https://tienda.treinta.co/purpleweb/producto/7673e9ae-d996-5c1f-b4fb-b696a6a224bc",
+      "photo": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/d994df2e-9de1-5557-895e-a0217d1dafe1.jpeg"
+    },
+    "purple-crispy": {
+      "id": "df7c59e7-c371-54b1-956e-7038aebdd77d",
+      "product": "https://tienda.treinta.co/purpleweb/producto/df7c59e7-c371-54b1-956e-7038aebdd77d",
+      "photo": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/e7e0af1d-0cb9-5633-8a9f-756941a246be.jpg"
+    },
+    "wendys-smash": {
+      "id": "5305b9cc-59f7-55ff-a04c-daeba089fdc7",
+      "product": "https://tienda.treinta.co/purpleweb/producto/5305b9cc-59f7-55ff-a04c-daeba089fdc7",
+      "photo": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/0ca054aa-10c3-5d6f-a3e7-a9ca1f9d31dd.jpg"
+    }
+  },
+  "method": "ImageGen integrado generó siete láminas RGBA de 1024 × 1536, con tres ingredientes separados por lámina. Se compararon sus formas, color y disposición con las fotografías de la carta y las ilustraciones de ingredientes existentes. Cada PNG aislado se exportó con alfa conservado a WebP responsivo y a un maestro WebP de 3840 px de lado mayor por interpolación Lanczos. Estos recortes ilustran la composición de las recetas. La geometría se reconstruye en unidades relativas al diámetro del pan, con mallas cerradas y textura frontal.",
+  "geometry": "Bollos y recipiente tienen perfiles de revolución cerrados; el recipiente incluye cara interior, pared, labio y base. Las otras capas se reconstruyen con intersecciones de rayos sobre secciones superelípticas a 12° y se cierran alrededor de la silueta y sus huecos. Todas las mallas se centran en los tres ejes. El eje vertical es Y. La cara fotografiada mira hacia +Z. Width es diámetro horizontal, depth es el fondo físico y thickness es el alto físico. Height es la altura de proyección a 12°. stackAdvance describe el alto físico que consume cada pieza una vez asentada.",
+  "sheets": {
+    "bread": {
+      "pieces": [
+        "bun-top",
+        "bun-bottom",
+        "patty"
+      ],
+      "officialProducts": [
+        "purple-crispy",
+        "jack-bacon"
+      ],
+      "sourceCollages": [
+        "bread-beef"
+      ],
+      "prompt": "Create an editorial PHOTO ASSET CONTACT SHEET of exactly THREE SEPARATE isolated edible objects / layers, ONE in each of three clear horizontal rows from TOP to BOTTOM in a PORTRAIT 2:3 frame, true alpha transparent background. Invisible baseline. Three objects stacked vertically in the sheet, with at least 8% completely transparent space separating successive rows and all outer edges clear. Each object is horizontally centered, uses 83–90% of the canvas WIDTH, 80–100 mm as if for the same Colombian smash burger, and photographed in exactly the same straight-on orientation: long axis horizontal, camera in front only 12 degrees above the table, very slightly visible top, for an exploded burger viewer. Make each item a cohesive ONE ACTUAL HORIZONTAL LAYER high-end advertising macro, natural tasty textures, detailed side edge, soft upper-left light, subtle shading under folds, distinguishable silhouette, food at its natural Z-height. Do not place on a surface: no shadow outside the individual objects, no ground plane, props, labels, lettering, or drawn separators. Nothing touches another row or the image edges. No sandwiches, plates, brands, steam, hands, floating debris or extra food. The three subjects must be fully visible, separate, appetizing, detailed and realistic. The reference collage is the ACTUAL restaurant's products and textures: ignore layout and any text. Row 1 top: ONLY the matching TOP crown of Purple's smooth light-to-dark golden shiny brioche bun, quite low rounded dome, delicate puffed irregularities and two short natural cracks, NO sesame, evenly baked tan edge, broadest width near its flat bottom, pale cut edge very subtly visible at base. Width roughly 3 times its physical height, tempting amber gloss. Row 2 middle: ONLY the BOTTOM HEEL of that same brioche, flat low cylinder with tawny porous sides, thin darker golden base, level, pale toasted buttered cut face looking upward, crust height a quarter of the crown height. Row 3 bottom: ONLY ONE cooked smash beef patty, broad thin irregular diameter, deep brown Maillard crust, peppered tiny jags and fine crispy lacelike edges, naturally juicy front edge, center thick and natural. Absolutely no cheese, sauces, buns or onions on the meat. The heel and beef are each presented largely edge-on with a little top visible, shaped like broad horizontal ellipses. Actual food photographs."
+    },
+    "cheese": {
+      "pieces": [
+        "american-cheese",
+        "mozzarella",
+        "cream-cheese"
+      ],
+      "officialProducts": [
+        "atlantica",
+        "jack-bacon",
+        "american-purple"
+      ],
+      "sourceCollages": [
+        "cheeses"
+      ],
+      "prompt": "Create an editorial PHOTO ASSET CONTACT SHEET of exactly THREE SEPARATE isolated edible objects / layers, ONE in each of three clear horizontal rows from TOP to BOTTOM in a PORTRAIT 2:3 frame, true alpha transparent background. Invisible baseline. Three objects stacked vertically in the sheet, with at least 8% completely transparent space separating successive rows and all outer edges clear. Each object is horizontally centered, uses 83–90% of the canvas WIDTH, 80–100 mm as if for the same Colombian smash burger, and photographed in exactly the same straight-on orientation: long axis horizontal, camera in front only 12 degrees above the table, very slightly visible top, for an exploded burger viewer. Make each item a cohesive ONE ACTUAL HORIZONTAL LAYER high-end advertising macro, natural tasty textures, detailed side edge, soft upper-left light, subtle shading under folds, distinguishable silhouette, food at its natural Z-height. Do not place on a surface: no shadow outside the individual objects, no ground plane, props, labels, lettering, or drawn separators. Nothing touches another row or the image edges. No sandwiches, plates, brands, steam, hands, floating debris or extra food. The three subjects must be fully visible, separate, appetizing, detailed and realistic. The reference collage is the ACTUAL restaurant's products and textures: ignore layout and any text. Row 1 top: one single vivid golden orange American cheese square slice, gently MELTED in-place over an invisible patty, as a flat low broad 10-cm blanket with two slightly dangling unequal corners toward the camera and one folded rear edge, camera looks almost along its top, sauce-free flat soft top, no patty. Row 2 middle: one slightly warmer off-white thick melt of mozzarella with silky smooth top and 2 short soft dangling sections attached on the front edge, stretched into a nearly round broad flat blanket for one patty. Nothing else. Row 3 bottom: a very low wide smear layer of thick off-white CREAM CHEESE (queso crema), a roughly circular 9cm spread on an invisible bun, soft matte spatula marks, gently ridged broken front edge. Give the spreads subtle realistic volume: each of these 3 layers is around four times as wide as its total photographic silhouette height. Do not render standing cheese blocks or photograph from above."
+    },
+    "bacon": {
+      "pieces": [
+        "bacon",
+        "bacon-jam",
+        "whisky-bacon"
+      ],
+      "officialProducts": [
+        "purple-crispy",
+        "atlantica",
+        "jack-bacon"
+      ],
+      "sourceCollages": [
+        "bacon"
+      ],
+      "prompt": "Create an editorial PHOTO ASSET CONTACT SHEET of exactly THREE SEPARATE isolated edible objects / layers, ONE in each of three clear horizontal rows from TOP to BOTTOM in a PORTRAIT 2:3 frame, true alpha transparent background. Invisible baseline. Three objects stacked vertically in the sheet, with at least 8% completely transparent space separating successive rows and all outer edges clear. Each object is horizontally centered, uses 83–90% of the canvas WIDTH, 80–100 mm as if for the same Colombian smash burger, and photographed in exactly the same straight-on orientation: long axis horizontal, camera in front only 12 degrees above the table, very slightly visible top, for an exploded burger viewer. Make each item a cohesive ONE ACTUAL HORIZONTAL LAYER high-end advertising macro, natural tasty textures, detailed side edge, soft upper-left light, subtle shading under folds, distinguishable silhouette, food at its natural Z-height. Do not place on a surface: no shadow outside the individual objects, no ground plane, props, labels, lettering, or drawn separators. Nothing touches another row or the image edges. No sandwiches, plates, brands, steam, hands, floating debris or extra food. The three subjects must be fully visible, separate, appetizing, detailed and realistic. The reference collage is the ACTUAL restaurant's products and textures: ignore layout and any text. Row 1 top: two very crisp wavy strips of grilled streaky BACON laid horizontally across a burger diameter from left to right, overlapping at the center, front strip angled only slightly, reddish brown lean meat, toasted gold fat, curls mostly flat, full untrimmed ends. Row 2 middle: one wide low spooned LAYER of the Atlántica's sticky deep mahogany BACON JAM / salsa de tocineta with tiny reddish browned bacon dice bound into a moist thick dark sauce in a low uneven oval, slightly ragged edge, absolutely not a tall mountain. Row 3 bottom: one broad single-layer row of larger, separate-looking tender rectangular bacon cubes in a shiny deep amber WHISKY REDUCTION, soft fat stripes visible, a dozen cubes spanning a bun's width in a thin oval circular layer, shiny irregular sides. Differentiate the second row's thick dark relish from the third row's amber-glazed bacon bites. Fill most of the width, with realistic hot-food highlights."
+    },
+    "onion": {
+      "pieces": [
+        "crispy-onion",
+        "wine-onion",
+        "pickles"
+      ],
+      "officialProducts": [
+        "wendys-smash",
+        "purple-crispy",
+        "atlantica"
+      ],
+      "sourceCollages": [
+        "onion-pickles"
+      ],
+      "prompt": "Create an editorial PHOTO ASSET CONTACT SHEET of exactly THREE SEPARATE isolated edible objects / layers, ONE in each of three clear horizontal rows from TOP to BOTTOM in a PORTRAIT 2:3 frame, true alpha transparent background. Invisible baseline. Three objects stacked vertically in the sheet, with at least 8% completely transparent space separating successive rows and all outer edges clear. Each object is horizontally centered, uses 83–90% of the canvas WIDTH, 80–100 mm as if for the same Colombian smash burger, and photographed in exactly the same straight-on orientation: long axis horizontal, camera in front only 12 degrees above the table, very slightly visible top, for an exploded burger viewer. Make each item a cohesive ONE ACTUAL HORIZONTAL LAYER high-end advertising macro, natural tasty textures, detailed side edge, soft upper-left light, subtle shading under folds, distinguishable silhouette, food at its natural Z-height. Do not place on a surface: no shadow outside the individual objects, no ground plane, props, labels, lettering, or drawn separators. Nothing touches another row or the image edges. No sandwiches, plates, brands, steam, hands, floating debris or extra food. The three subjects must be fully visible, separate, appetizing, detailed and realistic. The reference collage is the ACTUAL restaurant's products and textures: ignore layout and any text. Row 1 top: a thin airy wide horizontal nest of finely shredded golden CRISPY ONION strands as in Purple Crispy, crunchy caramel edges with naturally interlaced holes showing alpha. Do not make onion rings or a tall haystack. Row 2 middle: a wide LOW oval layer of soft onion ribbons in a RED WINE REDUCTION as in Wendys Smash; soft translucent caramel-brown and burgundy wilted ribbon-like onions, glossy and juicy with a couple curved ends, thick warm brown-red juices between the ribbons. No bottles or grapes. Row 3 bottom: ONLY four bright olive-green ridged pickle coins arranged in overlapping row as they would rest across a burger patty. 3–4 mm thickness, visible serrated cucumber skin and wet seed centers, low perspective with horizontally oriented ovals (do not have slices standing vertically). Colors like actual crunchy gherkins. All layers lie flat, no towers."
+    },
+    "sauces": {
+      "pieces": [
+        "smash-sauce",
+        "house-sauce",
+        "bbq"
+      ],
+      "officialProducts": [
+        "absolut-crispy",
+        "purple-classic",
+        "jack-bacon",
+        "mistic-fries"
+      ],
+      "sourceCollages": [
+        "sauces",
+        "bread-beef"
+      ],
+      "prompt": "Create an editorial PHOTO ASSET CONTACT SHEET of exactly THREE SEPARATE isolated edible objects / layers, ONE in each of three clear horizontal rows from TOP to BOTTOM in a PORTRAIT 2:3 frame, true alpha transparent background. Invisible baseline. Three objects stacked vertically in the sheet, with at least 8% completely transparent space separating successive rows and all outer edges clear. Each object is horizontally centered, uses 83–90% of the canvas WIDTH, 80–100 mm as if for the same Colombian smash burger, and photographed in exactly the same straight-on orientation: long axis horizontal, camera in front only 12 degrees above the table, very slightly visible top, for an exploded burger viewer. Make each item a cohesive ONE ACTUAL HORIZONTAL LAYER high-end advertising macro, natural tasty textures, detailed side edge, soft upper-left light, subtle shading under folds, distinguishable silhouette, food at its natural Z-height. Do not place on a surface: no shadow outside the individual objects, no ground plane, props, labels, lettering, or drawn separators. Nothing touches another row or the image edges. No sandwiches, plates, brands, steam, hands, floating debris or extra food. The three subjects must be fully visible, separate, appetizing, detailed and realistic. The reference collage is the ACTUAL restaurant's products and textures: ignore layout and any text. Row 1 top: creamy pale salmon-peach SMASH burger sauce seen below the meat in Purple's own Absolut/Classic-style burgers, with a small number of tiny dark flecks; wide, flat 9cm footprint with 1–2 squeezed irregular concentric ribbons together, moist soft organic front edge. Row 2 middle: house dressing from the JACK BACON bottom bun; lighter warm beige-peach/light golden orange creamy sauce with a few tiny dark flecks, spread with a spatula as a low wide oval with smooth swirls, tiny bulges on front edge. Row 3 bottom: dark mahogany glossy BBQ SAUCE drifted in a loose irregular zigzag drizzle horizontally over a circular 9cm portion, 3 connected curved ribbons with some actual clear negative spaces; faithfully like dark BBQ on Mistic Fries. Three independent low sauce layers, NOT tall splashes, upright peaks or bowls. Physical height only 3–6 mm; the shallow top surfaces and the squeezed ribbon edges are visible."
+    },
+    "fries": {
+      "pieces": [
+        "fries",
+        "sausage",
+        "bacon-bits"
+      ],
+      "officialProducts": [
+        "american-purple",
+        "mistic-fries"
+      ],
+      "sourceCollages": [
+        "fries",
+        "bacon"
+      ],
+      "prompt": "Create an editorial PHOTO ASSET CONTACT SHEET of exactly THREE SEPARATE isolated edible objects / layers, ONE in each of three clear horizontal rows from TOP to BOTTOM in a PORTRAIT 2:3 frame, true alpha transparent background. Invisible baseline. Three objects stacked vertically in the sheet, with at least 8% completely transparent space separating successive rows and all outer edges clear. Each object is horizontally centered, uses 83–90% of the canvas WIDTH, 80–100 mm as if for the same Colombian smash burger, and photographed in exactly the same straight-on orientation: long axis horizontal, camera in front only 12 degrees above the table, very slightly visible top, for an exploded burger viewer. Make each item a cohesive ONE ACTUAL HORIZONTAL LAYER high-end advertising macro, natural tasty textures, detailed side edge, soft upper-left light, subtle shading under folds, distinguishable silhouette, food at its natural Z-height. Do not place on a surface: no shadow outside the individual objects, no ground plane, props, labels, lettering, or drawn separators. Nothing touches another row or the image edges. No sandwiches, plates, brands, steam, hands, floating debris or extra food. The three subjects must be fully visible, separate, appetizing, detailed and realistic. The reference collage is the ACTUAL restaurant's products and textures: ignore layout and any text. All rows are elements from the actual two takeout french fry bowls shown. Row 1 top: a loose shallow mound of actual straight thick-cut golden FRENCH FRIES suitable for filling a takeaway bowl, arranged in naturally crisscrossing sticks rather than upright, stack of approximately 15 fries, tan crisp edges, broad circular 13cm footprint about twice as wide as tall. No container, cheese or toppings. Row 2 middle: only a small layer of roughly ten PIÈCES OF SALCHICHA RANCHERA coin-shaped sausage slices like the retailer's Mistic Fries, dark browned reddish casing, warm pink interior visible on a few cut surfaces; scattered in a low horizontally broad connected group. Short unequal cylinders with browned surfaces, not intact links. Row 3 bottom: ONE wide low scattered cluster of many small 5mm crunchy smoked bacon bits, crisp deep auburn/burgundy-red and some toasted gold slivers, proportion and finish like American Purple fries photo. Clearly smaller than the sausage pieces. All separated into 3 rows."
+    },
+    "bowls": {
+      "pieces": [
+        "cheddar",
+        "american-cheese-sauce",
+        "serving-bowl"
+      ],
+      "officialProducts": [
+        "american-purple",
+        "mistic-fries"
+      ],
+      "sourceCollages": [
+        "fries",
+        "cheeses"
+      ],
+      "prompt": "Create an editorial PHOTO ASSET CONTACT SHEET of exactly THREE SEPARATE isolated edible objects / layers, ONE in each of three clear horizontal rows from TOP to BOTTOM in a PORTRAIT 2:3 frame, true alpha transparent background. Invisible baseline. Three objects stacked vertically in the sheet, with at least 8% completely transparent space separating successive rows and all outer edges clear. Each object is horizontally centered, uses 83–90% of the canvas WIDTH, 80–100 mm as if for the same Colombian smash burger, and photographed in exactly the same straight-on orientation: long axis horizontal, camera in front only 12 degrees above the table, very slightly visible top, for an exploded burger viewer. Make each item a cohesive ONE ACTUAL HORIZONTAL LAYER high-end advertising macro, natural tasty textures, detailed side edge, soft upper-left light, subtle shading under folds, distinguishable silhouette, food at its natural Z-height. Do not place on a surface: no shadow outside the individual objects, no ground plane, props, labels, lettering, or drawn separators. Nothing touches another row or the image edges. No sandwiches, plates, brands, steam, hands, floating debris or extra food. The three subjects must be fully visible, separate, appetizing, detailed and realistic. The reference collage is the ACTUAL restaurant's products and textures: ignore layout and any text. Row 1 top: only a vivid warm orange-gold creamy CHEDDAR SAUCE topping for Mistic Fries, arranged as 3–4 loose connected generous thin drizzle ribbons in a wide flat circular footprint, front-facing almost edge on, clear gaps between some ribbons; milk-smooth and glossy. Row 2 middle: only melted AMERICAN CHEESE as visible on American Purple fries, shiny rich soft golden yellow, thicker broader sauce flowing in an unequal woven band across a flat wide patch, coherent broad melting surface with a few drooping beads. A distinct lower, smoother spread compared with row 1; no fries visible in either row. Row 3 bottom: one EMPTY plain matte brown kraft-paper takeaway bowl exactly like the official Purple fries container; smooth tapered round brown kraft sides lighter rim rolled from paper, straight unprinted walls, narrower base, open top facing up at same 12-degree frontal view, brown kraft interior visible inside its thin rim. No decoration, markings, food, hands or lid. Bowl natural ratio: a width of 13cm and a height of 5.5cm. Allow slightly more room for this third item if needed while keeping completely clear space between rows."
+    }
+  },
+  "pieces": {
+    "bun-top": {
+      "name": "Pan brioche superior",
+      "width": 1,
+      "thickness": 0.23,
+      "depth": 0.94,
+      "profile": "crown",
+      "stackAdvance": 0.2185
+    },
+    "bun-bottom": {
+      "name": "Pan brioche inferior",
+      "width": 0.98,
+      "thickness": 0.105,
+      "depth": 0.93,
+      "profile": "heel",
+      "stackAdvance": 0.1008
+    },
+    "patty": {
+      "name": "Carne smash",
+      "width": 0.99,
+      "thickness": 0.105,
+      "depth": 0.89,
+      "profile": "patty",
+      "stackAdvance": 0.0977
+    },
+    "american-cheese": {
+      "name": "Queso americano",
+      "width": 0.96,
+      "thickness": 0.045,
+      "depth": 0.88,
+      "profile": "slice",
+      "stackAdvance": 0.0256
+    },
+    "mozzarella": {
+      "name": "Mozzarella",
+      "width": 0.93,
+      "thickness": 0.049,
+      "depth": 0.88,
+      "profile": "slice",
+      "stackAdvance": 0.0319
+    },
+    "cream-cheese": {
+      "name": "Queso crema",
+      "width": 0.86,
+      "thickness": 0.053,
+      "depth": 0.8,
+      "profile": "spread",
+      "stackAdvance": 0.0408
+    },
+    "bacon": {
+      "name": "Tocineta",
+      "width": 1.09,
+      "thickness": 0.065,
+      "depth": 0.67,
+      "profile": "ribbon",
+      "stackAdvance": 0.0546
+    },
+    "bacon-jam": {
+      "name": "Salsa de tocineta",
+      "width": 0.83,
+      "thickness": 0.064,
+      "depth": 0.76,
+      "profile": "relish",
+      "stackAdvance": 0.0512
+    },
+    "whisky-bacon": {
+      "name": "Tocineta al whisky",
+      "width": 0.88,
+      "thickness": 0.09,
+      "depth": 0.76,
+      "profile": "bites",
+      "stackAdvance": 0.0738
+    },
+    "crispy-onion": {
+      "name": "Cebolla crispy",
+      "width": 1.02,
+      "thickness": 0.12,
+      "depth": 0.83,
+      "profile": "onionNest",
+      "stackAdvance": 0.0924
+    },
+    "wine-onion": {
+      "name": "Cebolla al vino tinto",
+      "width": 0.89,
+      "thickness": 0.065,
+      "depth": 0.81,
+      "profile": "ribbon",
+      "stackAdvance": 0.052
+    },
+    "pickles": {
+      "name": "Pepinillos",
+      "width": 0.89,
+      "thickness": 0.048,
+      "depth": 0.7,
+      "profile": "coins",
+      "stackAdvance": 0.0326
+    },
+    "smash-sauce": {
+      "name": "Salsa Smash",
+      "width": 0.86,
+      "thickness": 0.03,
+      "depth": 0.78,
+      "profile": "spread",
+      "stackAdvance": 0.0174
+    },
+    "house-sauce": {
+      "name": "Salsa de la casa",
+      "width": 0.86,
+      "thickness": 0.031,
+      "depth": 0.78,
+      "profile": "spread",
+      "stackAdvance": 0.0192
+    },
+    "bbq": {
+      "name": "Salsa BBQ",
+      "width": 0.99,
+      "thickness": 0.038,
+      "depth": 0.83,
+      "profile": "drizzle",
+      "stackAdvance": 0.0236
+    },
+    "fries": {
+      "name": "Papas a la francesa",
+      "width": 1.04,
+      "thickness": 0.21,
+      "depth": 0.90,
+      "profile": "fries",
+      "stackAdvance": 0.1764
+    },
+    "sausage": {
+      "name": "Salchicha ranchera",
+      "width": 0.94,
+      "thickness": 0.13,
+      "depth": 0.82,
+      "profile": "coins",
+      "stackAdvance": 0.0988
+    },
+    "bacon-bits": {
+      "name": "Tocineta picada",
+      "width": 0.87,
+      "thickness": 0.068,
+      "depth": 0.79,
+      "profile": "bites",
+      "stackAdvance": 0.0558
+    },
+    "cheddar": {
+      "name": "Cheddar",
+      "width": 1.02,
+      "thickness": 0.045,
+      "depth": 0.89,
+      "profile": "drizzle",
+      "stackAdvance": 0.0279
+    },
+    "american-cheese-sauce": {
+      "name": "Queso americano fundido",
+      "width": 1.02,
+      "thickness": 0.052,
+      "depth": 0.89,
+      "profile": "spread",
+      "stackAdvance": 0.0338
+    },
+    "serving-bowl": {
+      "name": "Bol de cartón kraft",
+      "width": 1.17,
+      "thickness": 0.45,
+      "depth": 1.13,
+      "profile": "bowl",
+      "stackAdvance": 0.37
+    }
+  }
+}

@@ -1,0 +1,890 @@
+{
+  "arandanos-perlas": {
+    "name": "Arándanos y perlas",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "tone": "#ad89e5",
+    "light": "#e2cbff",
+    "ink": "#281039",
+    "button": "#481166",
+    "background": "/showcase/gallery/backgrounds/arandanos-perlas-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/arandanos-perlas-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/ing-arandanos.webp",
+        "x": 29,
+        "y": 28,
+        "width": 10,
+        "rotate": -16,
+        "xMobile": 20,
+        "yMobile": 26,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/opt-perlas.webp",
+        "x": 69,
+        "y": 61,
+        "width": 8,
+        "rotate": 15,
+        "xMobile": 81,
+        "yMobile": 54,
+        "widthMobile": 13
+      }
+    ],
+    "image": "/showcase/products/arandanos-perlas.webp",
+    "imageSmall": "/showcase/products/arandanos-perlas-sm.webp",
+    "model": "/showcase/products/arandanos-perlas.glb",
+    "master": "/showcase/masters/arandanos-perlas.png",
+    "image4k": "/showcase/gallery/hires/arandanos-perlas.webp"
+  },
+  "granizado-con-licor-fresa-vodka-16-onz": {
+    "name": "Fresa vodka",
+    "eyebrow": "Granizado con licor · 16 onz",
+    "tone": "#ff8286",
+    "light": "#ffd4c8",
+    "ink": "#440d23",
+    "button": "#63132f",
+    "background": "/showcase/gallery/backgrounds/granizado-con-licor-fresa-vodka-16-onz-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-con-licor-fresa-vodka-16-onz-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/opt-fresa.webp",
+        "x": 70,
+        "y": 32,
+        "width": 10,
+        "rotate": -14,
+        "xMobile": 81,
+        "yMobile": 27,
+        "widthMobile": 19
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-fresa.webp",
+        "x": 32,
+        "y": 61,
+        "width": 8,
+        "rotate": 12,
+        "xMobile": 17,
+        "yMobile": 55,
+        "widthMobile": 15
+      }
+    ],
+    "image": "/showcase/products/fresa-vodka.webp",
+    "imageSmall": "/showcase/products/fresa-vodka-sm.webp",
+    "model": "/showcase/products/fresa-vodka.glb",
+    "master": "/showcase/masters/fresa-vodka.png",
+    "image4k": "/showcase/gallery/hires/fresa-vodka.webp"
+  },
+  "granizado-con-licor-frutos-silvestres-16-onz": {
+    "name": "Frutos silvestres",
+    "eyebrow": "Granizado con licor · 16 onz",
+    "tone": "#d783ee",
+    "light": "#f9c6ff",
+    "ink": "#371043",
+    "button": "#541e68",
+    "background": "/showcase/gallery/backgrounds/granizado-con-licor-frutos-silvestres-16-onz-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-con-licor-frutos-silvestres-16-onz-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/opt-frutos-silvestres.webp",
+        "x": 70,
+        "y": 27,
+        "width": 11,
+        "rotate": 14,
+        "xMobile": 80,
+        "yMobile": 25,
+        "widthMobile": 19
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-hielo.webp",
+        "x": 30,
+        "y": 63,
+        "width": 8,
+        "rotate": -16,
+        "xMobile": 19,
+        "yMobile": 56,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/configurations/frutos-silvestres.webp",
+    "imageSmall": "/showcase/configurations/frutos-silvestres-sm.webp",
+    "model": "/showcase/configurations/frutos-silvestres.glb",
+    "master": "/showcase/gallery/food/frutos-silvestres-4k.png",
+    "image4k": "/showcase/gallery/hires/frutos-silvestres.webp"
+  },
+  "granizado-con-licor-margarita-22-onz": {
+    "name": "Margarita",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "tone": "#b4ce54",
+    "light": "#edffaf",
+    "ink": "#2b3710",
+    "button": "#364513",
+    "background": "/showcase/gallery/backgrounds/granizado-con-licor-margarita-22-onz-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-con-licor-margarita-22-onz-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/citrico-seco.webp",
+        "x": 70,
+        "y": 27,
+        "width": 11,
+        "rotate": 14,
+        "xMobile": 80,
+        "yMobile": 25,
+        "widthMobile": 19
+      },
+      {
+        "image": "/showcase/gallery/objects/opt-jeringa-licor.webp",
+        "x": 30,
+        "y": 63,
+        "width": 8,
+        "rotate": -16,
+        "xMobile": 19,
+        "yMobile": 56,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/configurations/margarita-con-jeringa.webp",
+    "imageSmall": "/showcase/configurations/margarita-con-jeringa-sm.webp",
+    "model": "/showcase/configurations/margarita-con-jeringa.glb",
+    "master": "/showcase/gallery/food/margarita-con-jeringa-4k.png",
+    "image4k": "/showcase/gallery/hires/margarita-con-jeringa.webp"
+  },
+  "granizado-con-licor-todos-los-toping-22-onz": {
+    "name": "Todos los toppings",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "tone": "#f66c98",
+    "light": "#ffd0e5",
+    "ink": "#49112b",
+    "button": "#6e193f",
+    "background": "/showcase/gallery/backgrounds/granizado-con-licor-todos-los-toping-22-onz-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-con-licor-todos-los-toping-22-onz-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/opt-dulces.webp",
+        "x": 29,
+        "y": 28,
+        "width": 10,
+        "rotate": -16,
+        "xMobile": 20,
+        "yMobile": 26,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/opt-perlas.webp",
+        "x": 69,
+        "y": 61,
+        "width": 8,
+        "rotate": 15,
+        "xMobile": 81,
+        "yMobile": 54,
+        "widthMobile": 13
+      }
+    ],
+    "image": "/showcase/configurations/todos-los-toppings.webp",
+    "imageSmall": "/showcase/configurations/todos-los-toppings-sm.webp",
+    "model": "/showcase/configurations/todos-los-toppings.glb",
+    "master": "/showcase/gallery/food/todos-los-toppings-4k.png",
+    "image4k": "/showcase/gallery/hires/todos-los-toppings.webp"
+  },
+  "fresa-vodka": {
+    "name": "Fresa vodka",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "tone": "#ff3b4b",
+    "light": "#ff8677",
+    "ink": "#330914",
+    "button": "#5b0825",
+    "background": "/showcase/gallery/backgrounds/fresa-vodka-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/fresa-vodka-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/ing-fresa.webp",
+        "x": 29,
+        "y": 33,
+        "width": 10,
+        "rotate": 11,
+        "xMobile": 18,
+        "yMobile": 28,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-destilado.webp",
+        "x": 68,
+        "y": 59,
+        "width": 8,
+        "rotate": -14,
+        "xMobile": 83,
+        "yMobile": 52,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/products/fresa-vodka.webp",
+    "imageSmall": "/showcase/products/fresa-vodka-sm.webp",
+    "model": "/showcase/products/fresa-vodka.glb",
+    "master": "/showcase/masters/fresa-vodka.png",
+    "image4k": "/showcase/gallery/hires/fresa-vodka.webp"
+  },
+  "granizado-licor-frutos-silvestres-brandy-vodka-22-onz": {
+    "name": "Frutos silvestres",
+    "eyebrow": "Brandy y vodka · 22 onz",
+    "tone": "#be70cf",
+    "light": "#f4bced",
+    "ink": "#33123e",
+    "button": "#581957",
+    "background": "/showcase/gallery/backgrounds/granizado-licor-frutos-silvestres-brandy-vodka-22-onz-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-licor-frutos-silvestres-brandy-vodka-22-onz-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/opt-frutos-silvestres.webp",
+        "x": 29,
+        "y": 28,
+        "width": 10,
+        "rotate": -16,
+        "xMobile": 20,
+        "yMobile": 26,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-destilado.webp",
+        "x": 69,
+        "y": 61,
+        "width": 8,
+        "rotate": 15,
+        "xMobile": 81,
+        "yMobile": 54,
+        "widthMobile": 13
+      }
+    ],
+    "image": "/showcase/configurations/frutos-silvestres.webp",
+    "imageSmall": "/showcase/configurations/frutos-silvestres-sm.webp",
+    "model": "/showcase/configurations/frutos-silvestres.glb",
+    "master": "/showcase/gallery/food/frutos-silvestres-4k.png",
+    "image4k": "/showcase/gallery/hires/frutos-silvestres.webp"
+  },
+  "margarita-tequila": {
+    "name": "Margarita tequila",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "tone": "#a4d92d",
+    "light": "#e6ff9a",
+    "ink": "#1d300b",
+    "button": "#284409",
+    "background": "/showcase/gallery/backgrounds/margarita-tequila-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/margarita-tequila-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/ing-margarita.webp",
+        "x": 70,
+        "y": 27,
+        "width": 11,
+        "rotate": 14,
+        "xMobile": 80,
+        "yMobile": 25,
+        "widthMobile": 19
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-destilado.webp",
+        "x": 30,
+        "y": 63,
+        "width": 8,
+        "rotate": -16,
+        "xMobile": 19,
+        "yMobile": 56,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/products/margarita-tequila.webp",
+    "imageSmall": "/showcase/products/margarita-tequila-sm.webp",
+    "model": "/showcase/products/margarita-tequila.glb",
+    "master": "/showcase/masters/margarita-tequila.png",
+    "image4k": "/showcase/gallery/hires/margarita-tequila.webp"
+  },
+  "granizado-licor-smirnoff-vodka-22-onz": {
+    "name": "Smirnoff vodka",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "tone": "#b8c9ee",
+    "light": "#e0ecff",
+    "ink": "#1a2543",
+    "button": "#29395c",
+    "background": "/showcase/gallery/backgrounds/granizado-licor-smirnoff-vodka-22-onz-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-licor-smirnoff-vodka-22-onz-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/ing-hielo.webp",
+        "x": 29,
+        "y": 28,
+        "width": 10,
+        "rotate": -16,
+        "xMobile": 20,
+        "yMobile": 26,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-destilado.webp",
+        "x": 69,
+        "y": 61,
+        "width": 8,
+        "rotate": 15,
+        "xMobile": 81,
+        "yMobile": 54,
+        "widthMobile": 13
+      }
+    ],
+    "image": "/showcase/configurations/smirnoff-vodka.webp",
+    "imageSmall": "/showcase/configurations/smirnoff-vodka-sm.webp",
+    "model": "/showcase/configurations/smirnoff-vodka.glb",
+    "master": "/showcase/gallery/food/smirnoff-vodka-4k.png",
+    "image4k": "/showcase/gallery/hires/smirnoff-vodka.webp"
+  },
+  "granizado-margarita-con-licor-16-onz": {
+    "name": "Margarita",
+    "eyebrow": "Granizado con licor · 16 onz",
+    "tone": "#c4ee5c",
+    "light": "#f4ffc5",
+    "ink": "#26380c",
+    "button": "#3c5013",
+    "background": "/showcase/gallery/backgrounds/granizado-margarita-con-licor-16-onz-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-margarita-con-licor-16-onz-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/opt-margarita.webp",
+        "x": 29,
+        "y": 28,
+        "width": 10,
+        "rotate": -16,
+        "xMobile": 20,
+        "yMobile": 26,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-hielo.webp",
+        "x": 69,
+        "y": 61,
+        "width": 8,
+        "rotate": 15,
+        "xMobile": 81,
+        "yMobile": 54,
+        "widthMobile": 13
+      }
+    ],
+    "image": "/showcase/products/margarita-tequila.webp",
+    "imageSmall": "/showcase/products/margarita-tequila-sm.webp",
+    "model": "/showcase/products/margarita-tequila.glb",
+    "master": "/showcase/masters/margarita-tequila.png",
+    "image4k": "/showcase/gallery/hires/margarita-tequila.webp"
+  },
+  "granizado-margarita-tradicional-con-licor-22onz": {
+    "name": "Margarita tradicional",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "tone": "#f3bc55",
+    "light": "#ffe1a7",
+    "ink": "#3c270d",
+    "button": "#5e3e11",
+    "background": "/showcase/gallery/backgrounds/granizado-margarita-tradicional-con-licor-22onz-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-margarita-tradicional-con-licor-22onz-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/citrico-seco.webp",
+        "x": 29,
+        "y": 33,
+        "width": 10,
+        "rotate": 11,
+        "xMobile": 18,
+        "yMobile": 28,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-hielo.webp",
+        "x": 68,
+        "y": 59,
+        "width": 8,
+        "rotate": -14,
+        "xMobile": 83,
+        "yMobile": 52,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/configurations/margarita-tradicional.webp",
+    "imageSmall": "/showcase/configurations/margarita-tradicional-sm.webp",
+    "model": "/showcase/configurations/margarita-tradicional.glb",
+    "master": "/showcase/gallery/food/margarita-tradicional-4k.png",
+    "image4k": "/showcase/gallery/hires/margarita-tradicional.webp"
+  },
+  "granizado-mora-azul-con-licor-16-onz": {
+    "name": "Mora azul",
+    "eyebrow": "Granizado con licor · 16 onz",
+    "tone": "#66cdf2",
+    "light": "#c2f3ff",
+    "ink": "#0d2e46",
+    "button": "#144a63",
+    "background": "/showcase/gallery/backgrounds/granizado-mora-azul-con-licor-16-onz-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-mora-azul-con-licor-16-onz-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/opt-mora-azul.webp",
+        "x": 70,
+        "y": 32,
+        "width": 10,
+        "rotate": -14,
+        "xMobile": 81,
+        "yMobile": 27,
+        "widthMobile": 19
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-hielo.webp",
+        "x": 32,
+        "y": 61,
+        "width": 8,
+        "rotate": 12,
+        "xMobile": 17,
+        "yMobile": 55,
+        "widthMobile": 15
+      }
+    ],
+    "image": "/showcase/configurations/mora-azul-tequila.webp",
+    "imageSmall": "/showcase/configurations/mora-azul-tequila-sm.webp",
+    "model": "/showcase/configurations/mora-azul-tequila.glb",
+    "master": "/showcase/gallery/food/mora-azul-tequila-4k.png",
+    "image4k": "/showcase/gallery/hires/mora-azul-tequila.webp"
+  },
+  "granizado-sin-licor-16-onz": {
+    "name": "Granizado sin licor",
+    "eyebrow": "Sin licor · 16 onz",
+    "tone": "#ff9dba",
+    "light": "#ffe0e8",
+    "ink": "#4b1930",
+    "button": "#702641",
+    "background": "/showcase/gallery/backgrounds/granizado-sin-licor-16-onz-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-sin-licor-16-onz-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/opt-mora-azul.webp",
+        "x": 70,
+        "y": 27,
+        "width": 11,
+        "rotate": 14,
+        "xMobile": 80,
+        "yMobile": 25,
+        "widthMobile": 19
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-fresa.webp",
+        "x": 30,
+        "y": 63,
+        "width": 8,
+        "rotate": -16,
+        "xMobile": 19,
+        "yMobile": 56,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/products/fresa-vodka.webp",
+    "imageSmall": "/showcase/products/fresa-vodka-sm.webp",
+    "model": "/showcase/products/fresa-vodka.glb",
+    "master": "/showcase/masters/fresa-vodka.png",
+    "image4k": "/showcase/gallery/hires/fresa-vodka.webp"
+  },
+  "granizado-sin-licor-22-onzas": {
+    "name": "Granizado sin licor",
+    "eyebrow": "Sin licor · 22 onz",
+    "tone": "#ffa8a0",
+    "light": "#ffe2cf",
+    "ink": "#47201e",
+    "button": "#662e2d",
+    "background": "/showcase/gallery/backgrounds/granizado-sin-licor-22-onzas-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-sin-licor-22-onzas-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/ing-hielo.webp",
+        "x": 29,
+        "y": 28,
+        "width": 10,
+        "rotate": -16,
+        "xMobile": 20,
+        "yMobile": 26,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/opt-fresa.webp",
+        "x": 69,
+        "y": 61,
+        "width": 8,
+        "rotate": 15,
+        "xMobile": 81,
+        "yMobile": 54,
+        "widthMobile": 13
+      }
+    ],
+    "image": "/catalog/images/granizado-sin-licor-22-onzas-recorte-1050.webp",
+    "imageSmall": "/catalog/images/granizado-sin-licor-22-onzas-recorte-620.webp",
+    "master": "/catalog/masters/granizado-sin-licor-22-onzas.png",
+    "model": "/showcase/gallery/food/granizado-sin-licor-22-onzas.glb",
+    "image4k": "/showcase/gallery/hires/granizado-sin-licor-22-onzas.webp"
+  },
+  "granizado-smirnoff-vodka-con-licor-16-onz": {
+    "name": "Smirnoff vodka",
+    "eyebrow": "Granizado con licor · 16 onz",
+    "tone": "#a3e4e2",
+    "light": "#e7faf3",
+    "ink": "#123836",
+    "button": "#1c504d",
+    "background": "/showcase/gallery/backgrounds/granizado-smirnoff-vodka-con-licor-16-onz-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/granizado-smirnoff-vodka-con-licor-16-onz-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/opt-smirnoff.webp",
+        "x": 29,
+        "y": 33,
+        "width": 10,
+        "rotate": 11,
+        "xMobile": 18,
+        "yMobile": 28,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-hielo.webp",
+        "x": 68,
+        "y": 59,
+        "width": 8,
+        "rotate": -14,
+        "xMobile": 83,
+        "yMobile": 52,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/configurations/smirnoff-vodka.webp",
+    "imageSmall": "/showcase/configurations/smirnoff-vodka-sm.webp",
+    "model": "/showcase/configurations/smirnoff-vodka.glb",
+    "master": "/showcase/gallery/food/smirnoff-vodka-4k.png",
+    "image4k": "/showcase/gallery/hires/smirnoff-vodka.webp"
+  },
+  "absolut-crispy": {
+    "name": "Absolut Crispy",
+    "eyebrow": "Hamburguesa · Triple carne smash",
+    "tone": "#e99a40",
+    "light": "#ffdfa1",
+    "ink": "#3e230b",
+    "button": "#603310",
+    "background": "/showcase/gallery/backgrounds/absolut-crispy-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/absolut-crispy-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/ing-cebolla-crispy.webp",
+        "x": 70,
+        "y": 27,
+        "width": 11,
+        "rotate": 14,
+        "xMobile": 80,
+        "yMobile": 25,
+        "widthMobile": 19
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-queso-americano.webp",
+        "x": 30,
+        "y": 63,
+        "width": 8,
+        "rotate": -16,
+        "xMobile": 19,
+        "yMobile": 56,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/gallery/food/absolut-crispy.webp",
+    "imageSmall": "/showcase/gallery/food/absolut-crispy-small.webp",
+    "master": "/showcase/gallery/food/absolut-crispy-4k.png",
+    "model": "/showcase/gallery/food/absolut-crispy.glb",
+    "image4k": "/showcase/gallery/hires/absolut-crispy.webp"
+  },
+  "american-purple": {
+    "name": "American Purple",
+    "eyebrow": "Papas a la francesa",
+    "tone": "#efb32d",
+    "light": "#ffe69b",
+    "ink": "#352207",
+    "button": "#59400b",
+    "background": "/showcase/gallery/backgrounds/american-purple-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/american-purple-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/burger-layers/fries-sm.webp",
+        "x": 29,
+        "y": 33,
+        "width": 10,
+        "rotate": 11,
+        "xMobile": 18,
+        "yMobile": 28,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/burger-layers/american-cheese-sauce-sm.webp",
+        "x": 68,
+        "y": 59,
+        "width": 8,
+        "rotate": -14,
+        "xMobile": 83,
+        "yMobile": 52,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/gallery/food/american-purple.webp",
+    "imageSmall": "/showcase/gallery/food/american-purple-small.webp",
+    "master": "/showcase/gallery/food/american-purple-4k.png",
+    "model": "/showcase/gallery/food/american-purple.glb",
+    "image4k": "/showcase/gallery/hires/american-purple.webp"
+  },
+  "atlantica": {
+    "name": "Atlántica",
+    "eyebrow": "Hamburguesa · Doble carne smash",
+    "tone": "#a9b65f",
+    "light": "#ede89d",
+    "ink": "#242c0c",
+    "button": "#394514",
+    "background": "/showcase/gallery/backgrounds/atlantica-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/atlantica-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/ing-pepinillos.webp",
+        "x": 29,
+        "y": 33,
+        "width": 10,
+        "rotate": 11,
+        "xMobile": 18,
+        "yMobile": 28,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-salsa-tocineta.webp",
+        "x": 68,
+        "y": 59,
+        "width": 8,
+        "rotate": -14,
+        "xMobile": 83,
+        "yMobile": 52,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/products/atlantica.webp",
+    "imageSmall": "/showcase/products/atlantica-sm.webp",
+    "master": "/showcase/masters/atlantica.png",
+    "model": "/showcase/products/atlantica.glb",
+    "image4k": "/showcase/gallery/hires/atlantica.webp"
+  },
+  "infinive": {
+    "name": "Infinive",
+    "eyebrow": "Hamburguesa · Doble carne smash",
+    "tone": "#edc5ae",
+    "light": "#ffebd9",
+    "ink": "#3d261c",
+    "button": "#5f3b2e",
+    "background": "/showcase/gallery/backgrounds/infinive-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/infinive-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/ing-queso-crema.webp",
+        "x": 70,
+        "y": 32,
+        "width": 10,
+        "rotate": -14,
+        "xMobile": 81,
+        "yMobile": 27,
+        "widthMobile": 19
+      },
+      {
+        "image": "/showcase/burger-layers/bacon-bits-sm.webp",
+        "x": 32,
+        "y": 61,
+        "width": 8,
+        "rotate": 12,
+        "xMobile": 17,
+        "yMobile": 55,
+        "widthMobile": 15
+      }
+    ],
+    "image": "/showcase/gallery/food/infinive.webp",
+    "imageSmall": "/showcase/gallery/food/infinive-small.webp",
+    "master": "/showcase/gallery/food/infinive-4k.png",
+    "model": "/showcase/gallery/food/infinive.glb",
+    "image4k": "/showcase/gallery/hires/infinive.webp"
+  },
+  "jack-bacon": {
+    "name": "Jack Bacon",
+    "eyebrow": "Hamburguesa · Doble carne smash",
+    "tone": "#dd7848",
+    "light": "#ffd193",
+    "ink": "#341405",
+    "button": "#56210d",
+    "background": "/showcase/gallery/backgrounds/jack-bacon-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/jack-bacon-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/ing-tocineta-whisky.webp",
+        "x": 29,
+        "y": 28,
+        "width": 10,
+        "rotate": -16,
+        "xMobile": 20,
+        "yMobile": 26,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-mozzarella.webp",
+        "x": 69,
+        "y": 61,
+        "width": 8,
+        "rotate": 15,
+        "xMobile": 81,
+        "yMobile": 54,
+        "widthMobile": 13
+      }
+    ],
+    "image": "/showcase/products/jack-bacon.webp",
+    "imageSmall": "/showcase/products/jack-bacon-sm.webp",
+    "master": "/showcase/masters/jack-bacon.png",
+    "model": "/showcase/products/jack-bacon.glb",
+    "image4k": "/showcase/gallery/hires/jack-bacon.webp"
+  },
+  "mistic-fries": {
+    "name": "Mistic Fríes",
+    "eyebrow": "Papas con salchicha ranchera",
+    "tone": "#e88b68",
+    "light": "#ffd1aa",
+    "ink": "#3c1c14",
+    "button": "#5f2d20",
+    "background": "/showcase/gallery/backgrounds/mistic-fries-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/mistic-fries-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/burger-layers/sausage-sm.webp",
+        "x": 70,
+        "y": 27,
+        "width": 11,
+        "rotate": 14,
+        "xMobile": 80,
+        "yMobile": 25,
+        "widthMobile": 19
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-cebolla-crispy.webp",
+        "x": 30,
+        "y": 63,
+        "width": 8,
+        "rotate": -16,
+        "xMobile": 19,
+        "yMobile": 56,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/gallery/food/mistic-fries.webp",
+    "imageSmall": "/showcase/gallery/food/mistic-fries-small.webp",
+    "master": "/showcase/gallery/food/mistic-fries-4k.png",
+    "model": "/showcase/gallery/food/mistic-fries.glb",
+    "image4k": "/showcase/gallery/hires/mistic-fries.webp"
+  },
+  "purple-classic": {
+    "name": "Purple Classic",
+    "eyebrow": "Hamburguesa",
+    "tone": "#e4a572",
+    "light": "#ffdfb5",
+    "ink": "#392219",
+    "button": "#5c3327",
+    "background": "/showcase/gallery/backgrounds/purple-classic-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/purple-classic-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/ing-tocineta.webp",
+        "x": 70,
+        "y": 32,
+        "width": 10,
+        "rotate": -14,
+        "xMobile": 81,
+        "yMobile": 27,
+        "widthMobile": 19
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-brioche.webp",
+        "x": 32,
+        "y": 61,
+        "width": 8,
+        "rotate": 12,
+        "xMobile": 17,
+        "yMobile": 55,
+        "widthMobile": 15
+      }
+    ],
+    "image": "/showcase/gallery/food/purple-classic.webp",
+    "imageSmall": "/showcase/gallery/food/purple-classic-small.webp",
+    "master": "/showcase/gallery/food/purple-classic-4k.png",
+    "model": "/showcase/gallery/food/purple-classic.glb",
+    "image4k": "/showcase/gallery/hires/purple-classic.webp"
+  },
+  "purple-crispy": {
+    "name": "Purple Crispy",
+    "eyebrow": "Hamburguesa · Doble carne smash",
+    "tone": "#f3ae48",
+    "light": "#ffe7a2",
+    "ink": "#341607",
+    "button": "#652107",
+    "background": "/showcase/gallery/backgrounds/purple-crispy-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/purple-crispy-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/gallery/objects/ing-cebolla-crispy.webp",
+        "x": 29,
+        "y": 28,
+        "width": 10,
+        "rotate": -16,
+        "xMobile": 20,
+        "yMobile": 26,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-salsa-smash.webp",
+        "x": 69,
+        "y": 61,
+        "width": 8,
+        "rotate": 15,
+        "xMobile": 81,
+        "yMobile": 54,
+        "widthMobile": 13
+      }
+    ],
+    "image": "/showcase/products/purple-crispy.webp",
+    "imageSmall": "/showcase/products/purple-crispy-sm.webp",
+    "master": "/showcase/masters/purple-crispy.png",
+    "model": "/showcase/products/purple-crispy.glb",
+    "image4k": "/showcase/gallery/hires/purple-crispy.webp"
+  },
+  "wendys-smash": {
+    "name": "Wendys Smash",
+    "eyebrow": "Hamburguesa · Doble carne smash",
+    "tone": "#cb8397",
+    "light": "#f0c5d1",
+    "ink": "#3c1524",
+    "button": "#5b2238",
+    "background": "/showcase/gallery/backgrounds/wendys-smash-wide.webp",
+    "backgroundMobile": "/showcase/gallery/backgrounds/wendys-smash-mobile.webp",
+    "objects": [
+      {
+        "image": "/showcase/burger-layers/wine-onion-sm.webp",
+        "x": 29,
+        "y": 33,
+        "width": 10,
+        "rotate": 11,
+        "xMobile": 18,
+        "yMobile": 28,
+        "widthMobile": 18
+      },
+      {
+        "image": "/showcase/gallery/objects/ing-tocineta.webp",
+        "x": 68,
+        "y": 59,
+        "width": 8,
+        "rotate": -14,
+        "xMobile": 83,
+        "yMobile": 52,
+        "widthMobile": 14
+      }
+    ],
+    "image": "/showcase/gallery/food/wendys-smash.webp",
+    "imageSmall": "/showcase/gallery/food/wendys-smash-small.webp",
+    "master": "/showcase/gallery/food/wendys-smash-4k.png",
+    "model": "/showcase/gallery/food/wendys-smash.glb",
+    "image4k": "/showcase/gallery/hires/wendys-smash.webp"
+  }
+}

@@ -1,4 +1,9 @@
-export const lineKey=(id,variant='',extra='')=>[id,variant,extra].join('|');
+export function lineKey(id,variant='',extra='',changes) {
+  const fields=[id,variant,extra];
+  const recipe=Object.entries(changes||{}).filter(([,delta])=>delta).sort(([a],[b])=>a.localeCompare(b)).map(([key,n])=>key+':'+n).join(',');
+  if(recipe)fields.push(recipe);
+  return fields.join('|');
+}
 export const variantFor=(p,id)=>p?.variants?.find(v=>v.id===id);
 export const positiveInt=n=>Number.isSafeInteger(n)&&n>0;
 
@@ -15,6 +20,6 @@ export function reserve(used,line) {
 }
 export function holds(lines,except) {
   const used=new Map();
-  for (const line of lines) if(lineKey(line.id,line.variant,line.extra)!==except) reserve(used,line);
+  for (const line of lines) if(lineKey(line.id,line.variant,line.extra,line.changes)!==except) reserve(used,line);
   return used;
 }

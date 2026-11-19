@@ -1,6 +1,7 @@
 import {escape as h, icon, money, readable, categoryLabel, productName} from './shared.mjs';
 import {scenes} from './scenes.mjs';
 import {reelGallery} from './reels.mjs';
+import {galleryFamily,galleryMarkup} from './gallery.mjs';
 
 export const available = p => Boolean(p && p.available !== false && (p.stock == null || p.stock > 0));
 export const titleFor = p => scenes[p.slug]?.short || productName(p);
@@ -93,7 +94,7 @@ export function filters(data) {
     '<div class="select-field">'+icon('tune')+'<label class="sr" for="price-filter">Filtrar por precio</label><select id="price-filter"><option value="">Todos los precios</option>'+data.priceBands.map(b=>'<option value="'+h(b.id)+'">'+h(b.label)+'</option>').join('')+'</select>'+icon('down','select-arrow')+'</div>'+
     '<div class="select-field sort-field"><span aria-hidden="true">Orden</span><label class="sr" for="sort">Ordenar productos</label><select id="sort">'+data.sorts.map(s=>'<option value="'+h(s.id)+'">'+h(s.label)+'</option>').join('')+'</select>'+icon('down','select-arrow')+'</div></div>';
 }
-export function shell(data, art, reels) {
+export function shell(data, art, reels, galleryArt={}) {
   const d=data.store;
   const featured=data.featured.map(slug=>data.products.find(p=>p.slug===slug)).filter(Boolean);
   const first=featured[0];
@@ -107,7 +108,7 @@ export function shell(data, art, reels) {
     '<div class="scene-art" id="scene-art" role="group" aria-label="Fotografía y piezas de '+h(titleFor(first))+'">'+stageArt(first,art,true)+'</div></div>'+
     '<p id="scene-live" role="status" class="sr"></p></div></div></section>'+
     '<section class="menu-section" id="carta" aria-labelledby="menu-title"><div class="wrap"><div class="menu-heading"><h2 id="menu-title">La <em>carta</em></h2><span id="result-count" role="status">'+data.products.length+' productos</span></div>'+
-    '<div id="filters" class="js-only">'+filters(data)+'</div><div id="catalog-grid" class="catalog-grid grouped">'+groupedCards(data.products,art,data.featured,true)+'</div><div id="pagination" class="pagination js-only"></div>'+
+    '<div id="filters" class="js-only">'+filters(data)+'</div></div><div id="gallery-list">'+galleryMarkup([...featured,...data.products.filter(p=>!featured.includes(p)).sort((a,b)=>a.rank-b.rank)],galleryArt)+'</div><div class="wrap menu-remainder"><div id="catalog-grid" class="catalog-grid grouped">'+groupedCards(data.products.filter(p=>!galleryFamily(p)),art,data.featured,true)+'</div><div id="pagination" class="pagination js-only"></div>'+
     '<noscript><p>Para seleccionar sabores y hacer tu pedido, <a href="'+h(d.sourceUrl)+'">abre la carta de Purple en Treinta</a>.</p></noscript></div></section>'+reelGallery(reels,data.products)+'</main>'+
     '<footer class="foot"><div class="wrap foot-inner"><div><a href="#destacados" class="footer-brand" aria-label="Purple, volver al inicio"><span class="brand-mark"></span></a><p>Granizados y hamburguesas · Colombia</p></div><nav aria-label="Purple en línea"><a href="'+h(d.whatsappUrl)+'" target="_blank" rel="noopener noreferrer">'+icon('whatsapp')+'WhatsApp</a><a href="'+h(d.instagram)+'" target="_blank" rel="noopener noreferrer">'+icon('instagram')+'Instagram</a><a href="'+h(d.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Carta en Treinta</a></nav></div></footer>'+
     '<dialog id="product-dialog" class="product-dialog" aria-labelledby="detail-name"><button class="detail-close round-button" data-close="product" aria-label="Cerrar detalle" autofocus>'+icon('close')+'</button><div id="detail-content"></div></dialog>'+

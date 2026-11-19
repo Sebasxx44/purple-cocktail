@@ -1,0 +1,434 @@
+{
+  "arandanos-perlas": {
+    "name": "Arándanos y perlas",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "colors": [
+      "#ad89e5",
+      "#e2cbff",
+      "#281039",
+      "#481166"
+    ],
+    "source": "@arandanos-perlas",
+    "objects": [
+      "ing/arandanos",
+      "opt/perlas"
+    ],
+    "layout": "a",
+    "zoom": 1,
+    "portraitFocus": 0.84
+  },
+  "granizado-con-licor-fresa-vodka-16-onz": {
+    "name": "Fresa vodka",
+    "eyebrow": "Granizado con licor · 16 onz",
+    "colors": [
+      "#ff8286",
+      "#ffd4c8",
+      "#440d23",
+      "#63132f"
+    ],
+    "source": "@fresa-vodka",
+    "objects": [
+      "opt/fresa-vodka",
+      "ing/fresa"
+    ],
+    "layout": "d",
+    "zoom": 1.06,
+    "portraitFocus": 0.74
+  },
+  "granizado-con-licor-frutos-silvestres-16-onz": {
+    "name": "Frutos silvestres",
+    "eyebrow": "Granizado con licor · 16 onz",
+    "colors": [
+      "#d783ee",
+      "#f9c6ff",
+      "#371043",
+      "#541e68"
+    ],
+    "source": "violeta",
+    "objects": [
+      "opt/frutos-silvestres",
+      "ing/hielo"
+    ],
+    "layout": "b",
+    "zoom": 1.08,
+    "portraitFocus": 0.8
+  },
+  "granizado-con-licor-margarita-22-onz": {
+    "name": "Margarita",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "colors": [
+      "#b4ce54",
+      "#edffaf",
+      "#2b3710",
+      "#364513"
+    ],
+    "source": "margarita-seca",
+    "objects": [
+      "obj/citrico-seco",
+      "opt/jeringa-licor"
+    ],
+    "layout": "b",
+    "zoom": 1,
+    "portraitFocus": 0.85
+  },
+  "granizado-con-licor-todos-los-toping-22-onz": {
+    "name": "Todos los toppings",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "colors": [
+      "#f66c98",
+      "#ffd0e5",
+      "#49112b",
+      "#6e193f"
+    ],
+    "source": "dulceria",
+    "objects": [
+      "opt/dulces",
+      "opt/perlas"
+    ],
+    "layout": "a",
+    "zoom": 1,
+    "portraitFocus": 0.84
+  },
+  "fresa-vodka": {
+    "name": "Fresa vodka",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "colors": [
+      "#ff3b4b",
+      "#ff8677",
+      "#330914",
+      "#5b0825"
+    ],
+    "source": "@fresa-vodka",
+    "objects": [
+      "ing/fresa",
+      "ing/destilado"
+    ],
+    "layout": "c",
+    "zoom": 1,
+    "portraitFocus": 0.84
+  },
+  "granizado-licor-frutos-silvestres-brandy-vodka-22-onz": {
+    "name": "Frutos silvestres",
+    "eyebrow": "Brandy y vodka · 22 onz",
+    "colors": [
+      "#be70cf",
+      "#f4bced",
+      "#33123e",
+      "#581957"
+    ],
+    "source": "violeta",
+    "objects": [
+      "opt/frutos-silvestres",
+      "ing/destilado"
+    ],
+    "layout": "a",
+    "zoom": 1,
+    "portraitFocus": 0.88
+  },
+  "margarita-tequila": {
+    "name": "Margarita tequila",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "colors": [
+      "#a4d92d",
+      "#e6ff9a",
+      "#1d300b",
+      "#284409"
+    ],
+    "source": "@margarita-tequila",
+    "objects": [
+      "ing/margarita",
+      "ing/destilado"
+    ],
+    "layout": "b",
+    "zoom": 1,
+    "portraitFocus": 0.84
+  },
+  "granizado-licor-smirnoff-vodka-22-onz": {
+    "name": "Smirnoff vodka",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "colors": [
+      "#b8c9ee",
+      "#e0ecff",
+      "#1a2543",
+      "#29395c"
+    ],
+    "source": "cristal",
+    "objects": [
+      "ing/hielo",
+      "ing/destilado"
+    ],
+    "layout": "a",
+    "zoom": 1,
+    "portraitFocus": 0.82
+  },
+  "granizado-margarita-con-licor-16-onz": {
+    "name": "Margarita",
+    "eyebrow": "Granizado con licor · 16 onz",
+    "colors": [
+      "#c4ee5c",
+      "#f4ffc5",
+      "#26380c",
+      "#3c5013"
+    ],
+    "source": "@margarita-tequila",
+    "objects": [
+      "opt/margarita-tequila",
+      "ing/hielo"
+    ],
+    "layout": "a",
+    "zoom": 1.11,
+    "portraitFocus": 0.85
+  },
+  "granizado-margarita-tradicional-con-licor-22onz": {
+    "name": "Margarita tradicional",
+    "eyebrow": "Granizado con licor · 22 onz",
+    "colors": [
+      "#f3bc55",
+      "#ffe1a7",
+      "#3c270d",
+      "#5e3e11"
+    ],
+    "source": "margarita-seca",
+    "objects": [
+      "obj/citrico-seco",
+      "ing/hielo"
+    ],
+    "layout": "c",
+    "zoom": 1.14,
+    "portraitFocus": 0.79
+  },
+  "granizado-mora-azul-con-licor-16-onz": {
+    "name": "Mora azul",
+    "eyebrow": "Granizado con licor · 16 onz",
+    "colors": [
+      "#66cdf2",
+      "#c2f3ff",
+      "#0d2e46",
+      "#144a63"
+    ],
+    "source": "cristal",
+    "objects": [
+      "opt/mora-azul-tequila",
+      "ing/hielo"
+    ],
+    "layout": "d",
+    "zoom": 1.12,
+    "portraitFocus": 0.83
+  },
+  "granizado-sin-licor-16-onz": {
+    "name": "Granizado sin licor",
+    "eyebrow": "Sin licor · 16 onz",
+    "colors": [
+      "#ff9dba",
+      "#ffe0e8",
+      "#4b1930",
+      "#702641"
+    ],
+    "source": "@fresa-vodka",
+    "objects": [
+      "opt/mora-azul-tequila",
+      "ing/fresa"
+    ],
+    "layout": "b",
+    "zoom": 1.18,
+    "portraitFocus": 0.84
+  },
+  "granizado-sin-licor-22-onzas": {
+    "name": "Granizado sin licor",
+    "eyebrow": "Sin licor · 22 onz",
+    "colors": [
+      "#ffa8a0",
+      "#ffe2cf",
+      "#47201e",
+      "#662e2d"
+    ],
+    "source": "cristal",
+    "objects": [
+      "ing/hielo",
+      "opt/fresa-vodka"
+    ],
+    "layout": "a",
+    "zoom": 1.02,
+    "portraitFocus": 0.8
+  },
+  "granizado-smirnoff-vodka-con-licor-16-onz": {
+    "name": "Smirnoff vodka",
+    "eyebrow": "Granizado con licor · 16 onz",
+    "colors": [
+      "#a3e4e2",
+      "#e7faf3",
+      "#123836",
+      "#1c504d"
+    ],
+    "source": "cristal",
+    "objects": [
+      "opt/smirnoff-vodka",
+      "ing/hielo"
+    ],
+    "layout": "c",
+    "zoom": 1.08,
+    "portraitFocus": 0.87
+  },
+  "absolut-crispy": {
+    "name": "Absolut Crispy",
+    "eyebrow": "Hamburguesa · Triple carne smash",
+    "colors": [
+      "#e99a40",
+      "#ffdfa1",
+      "#3e230b",
+      "#603310"
+    ],
+    "source": "@purple-crispy",
+    "objects": [
+      "ing/cebolla-crispy",
+      "ing/queso-americano"
+    ],
+    "layout": "b",
+    "zoom": 1.13,
+    "portraitFocus": 0.84
+  },
+  "american-purple": {
+    "name": "American Purple",
+    "eyebrow": "Papas a la francesa",
+    "colors": [
+      "#efb32d",
+      "#ffe69b",
+      "#352207",
+      "#59400b"
+    ],
+    "source": "papas",
+    "objects": [
+      "layer/fries",
+      "layer/american-cheese-sauce"
+    ],
+    "layout": "c",
+    "zoom": 1,
+    "portraitFocus": 0.84
+  },
+  "atlantica": {
+    "name": "Atlántica",
+    "eyebrow": "Hamburguesa · Doble carne smash",
+    "colors": [
+      "#a9b65f",
+      "#ede89d",
+      "#242c0c",
+      "#394514"
+    ],
+    "source": "@atlantica",
+    "objects": [
+      "ing/pepinillos",
+      "ing/salsa-tocineta"
+    ],
+    "layout": "c",
+    "zoom": 1,
+    "portraitFocus": 0.84
+  },
+  "infinive": {
+    "name": "Infinive",
+    "eyebrow": "Hamburguesa · Doble carne smash",
+    "colors": [
+      "#edc5ae",
+      "#ffebd9",
+      "#3d261c",
+      "#5f3b2e"
+    ],
+    "source": "crema",
+    "objects": [
+      "ing/queso-crema",
+      "layer/bacon-bits"
+    ],
+    "layout": "d",
+    "zoom": 1,
+    "portraitFocus": 0.83
+  },
+  "jack-bacon": {
+    "name": "Jack Bacon",
+    "eyebrow": "Hamburguesa · Doble carne smash",
+    "colors": [
+      "#dd7848",
+      "#ffd193",
+      "#341405",
+      "#56210d"
+    ],
+    "source": "@jack-bacon",
+    "objects": [
+      "ing/tocineta-whisky",
+      "ing/mozzarella"
+    ],
+    "layout": "a",
+    "zoom": 1,
+    "portraitFocus": 0.84
+  },
+  "mistic-fries": {
+    "name": "Mistic Fríes",
+    "eyebrow": "Papas con salchicha ranchera",
+    "colors": [
+      "#e88b68",
+      "#ffd1aa",
+      "#3c1c14",
+      "#5f2d20"
+    ],
+    "source": "bbq",
+    "objects": [
+      "layer/sausage",
+      "ing/cebolla-crispy"
+    ],
+    "layout": "b",
+    "zoom": 1.03,
+    "portraitFocus": 0.88
+  },
+  "purple-classic": {
+    "name": "Purple Classic",
+    "eyebrow": "Hamburguesa",
+    "colors": [
+      "#e4a572",
+      "#ffdfb5",
+      "#392219",
+      "#5c3327"
+    ],
+    "source": "@jack-bacon",
+    "objects": [
+      "ing/tocineta",
+      "ing/brioche"
+    ],
+    "layout": "d",
+    "zoom": 1.15,
+    "portraitFocus": 0.78
+  },
+  "purple-crispy": {
+    "name": "Purple Crispy",
+    "eyebrow": "Hamburguesa · Doble carne smash",
+    "colors": [
+      "#f3ae48",
+      "#ffe7a2",
+      "#341607",
+      "#652107"
+    ],
+    "source": "@purple-crispy",
+    "objects": [
+      "ing/cebolla-crispy",
+      "ing/salsa-smash"
+    ],
+    "layout": "a",
+    "zoom": 1,
+    "portraitFocus": 0.84
+  },
+  "wendys-smash": {
+    "name": "Wendys Smash",
+    "eyebrow": "Hamburguesa · Doble carne smash",
+    "colors": [
+      "#cb8397",
+      "#f0c5d1",
+      "#3c1524",
+      "#5b2238"
+    ],
+    "source": "cebolla-vino",
+    "objects": [
+      "layer/wine-onion",
+      "ing/tocineta"
+    ],
+    "layout": "c",
+    "zoom": 1,
+    "portraitFocus": 0.84
+  }
+}

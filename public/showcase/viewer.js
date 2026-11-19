@@ -57,7 +57,7 @@ function createProgram(gl) {
   }
 }
 
-function readModel(bytes) {
+export function readModel(bytes) {
   const header = new DataView(bytes);
   if (header.getUint32(0, true) !== glbHeader || header.getUint32(4, true) !== 2) {
     throw new Error('Modelo GLB desconocido.');
@@ -85,7 +85,7 @@ function readModel(bytes) {
   };
 }
 
-async function loadTexture(blob) {
+export async function loadTexture(blob) {
   const url = URL.createObjectURL(blob);
   try {
     const image = new Image();
@@ -97,7 +97,7 @@ async function loadTexture(blob) {
   }
 }
 
-function createRenderer(canvas) {
+export function createRenderer(canvas) {
   const gl = canvas.getContext('webgl', {alpha:true, antialias:true, premultipliedAlpha:false, powerPreference:'low-power'});
   if (!gl) return null;
   const program = createProgram(gl);
@@ -147,8 +147,8 @@ function createRenderer(canvas) {
     layers=decorations.map(layer=>({...layer,object:allocate(layer.mesh.data,layer.mesh.image)}));
   }
 
-  function draw(width,height,angle,pitch) {
-    if (!asset || !width || !height || gl.isContextLost()) return false;
+  function project(width,height,angle,pitch,frame,coverage) {
+    if (!width || !height || gl.isContextLost()) return false;
     const ratio = Math.min(window.devicePixelRatio || 1, 2);
     const w = Math.max(1,Math.round(width*ratio)), h = Math.max(1,Math.round(height*ratio));
     if (canvas.width !== w || canvas.height !== h) { canvas.width = w; canvas.height = h; }
@@ -158,12 +158,12 @@ function createRenderer(canvas) {
     gl.enable(gl.DEPTH_TEST);
     gl.disable(gl.CULL_FACE);
     gl.useProgram(program);
-    const frame=composition(asset.width,asset.height,layers.map(layer=>({...layer,aspect:layer.object.width/layer.object.height})));
-    const aspect=w/h,scale=Math.min(1.78/frame.height,1.78*aspect/frame.width);
-    const cx=frame.left+frame.width/2,cy=frame.top+frame.height/2;
+    const aspect=w/h,scale=Math.min(coverage/frame.height,coverage*aspect/frame.width);
     gl.uniform2f(uniforms.rotation,angle*degrees,pitch*degrees);
     gl.uniform2f(uniforms.screenScale,scale/aspect,scale);
-    function paint(object,x,y,z,factor) {
+    return true;
+  }
+  function paint(object,x,y,z,factor) {
       const [posData,uvData,idxData]=object.entries;
       gl.bindBuffer(gl.ARRAY_BUFFER,object.buffers[0]); gl.enableVertexAttribArray(position);
       gl.vertexAttribPointer(position,3,gl.FLOAT,false,0,posData.byteOffset||0);
@@ -172,18 +172,40 @@ function createRenderer(canvas) {
       gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,object.buffers[2]);
       gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D,object.texture);
       gl.uniform1i(uniforms.photograph,0);gl.uniform3fv(uniforms.center,object.center);
-      gl.uniform3f(uniforms.offset,x-cx,cy-y,z);gl.uniform1f(uniforms.objectScale,factor);
+      gl.uniform3f(uniforms.offset,x,y,z);gl.uniform1f(uniforms.objectScale,factor);
       gl.drawElements(gl.TRIANGLES,idxData.count,idxData.componentType,idxData.byteOffset||0);
     }
-    paint(asset,asset.width/2,asset.height/2,0,1);
+  function draw(width,height,angle,pitch) {
+    if (!asset) return false;
+    const frame=composition(asset.width,asset.height,layers.map(layer=>({...layer,aspect:layer.object.width/layer.object.height})));
+    if (!project(width,height,angle,pitch,frame,1.78)) return false;
+    const cx=frame.left+frame.width/2,cy=frame.top+frame.height/2;
+    paint(asset,asset.width/2-cx,cy-asset.height/2,0,1);
     layers.forEach((layer,i)=>{
       const rect=frame.objects[i];
-      paint(layer.object,rect.x+rect.width/2,rect.y+rect.height/2,asset.depth*.50+i*.006,rect.width/layer.object.width);
+      paint(layer.object,rect.x+rect.width/2-cx,cy-rect.y-rect.height/2,asset.depth*.50+i*.006,rect.width/layer.object.width);
     });
     return true;
   }
 
-  return {use,draw,release,destroy() {release(); gl.deleteProgram(program); gl.getExtension('WEBGL_lose_context')?.loseContext();}};
+  const ingredients=new Map();
+  function addIngredient(key,data,picture) {
+    if(!ingredients.has(key)) ingredients.set(key,allocate(data,picture));
+  }
+  function drawStack(width,height,angle,pitch,frame) {
+    if(!frame.items.length || frame.items.some(item=>!ingredients.has(item.key))) return false;
+    if(!project(width,height,angle,pitch,frame,1.82)) return false;
+    const cx=frame.left+frame.width/2,cy=frame.top+frame.height/2;
+    frame.items.forEach((rect,i)=>{
+      const object=ingredients.get(rect.key);
+      paint(object,rect.x+rect.width/2-cx,cy-rect.y-rect.height/2,i*.009,rect.width/object.width);
+    });
+    return true;
+  }
+  return {use,draw,release,addIngredient,drawStack,destroy() {
+    release();ingredients.forEach(dispose);ingredients.clear();
+    gl.deleteProgram(program);gl.getExtension('WEBGL_lose_context')?.loseContext();
+  }};
 }
 
 /**
