@@ -117,9 +117,14 @@ export function initFeature(featureIds, productById, art) {
     show(index);
     window.scrollTo({top:origin+index*step,behavior:'instant'});
   }
-  let scrollFrame=0, currentSection='';
+  let scrollFrame=0, currentSection='',hashTarget=null,hashTimer=0;
+  function releaseHash() {clearTimeout(hashTimer);hashTarget=null;}
   function followScroll() {
     scrollFrame=0;
+    if(hashTarget!==null && Math.abs(offset()-hashTarget*step)>1) {
+      if(!document.querySelector('dialog[open]')) window.scrollTo({top:origin+hashTarget*step,behavior:'instant'});
+      return;
+    }
     const bottom=board.getBoundingClientRect().bottom;
     if (bottom>0) show(clamp(Math.round(offset()/step),0,last));
     setGestureListeners(bottom>=-innerHeight);
@@ -154,6 +159,7 @@ export function initFeature(featureIds, productById, art) {
   let ownsWheel=false;
   function onWheel(event) {
     if(event.ctrlKey || event.metaKey || document.querySelector('dialog[open]')) return;
+    releaseHash();
     const factor=event.deltaMode===1?16:event.deltaMode===2?innerHeight:1;
     const dx=event.deltaX*factor, dy=event.deltaY*factor;
     const delta=Math.abs(dx)>Math.abs(dy)*1.35?dx:dy;
@@ -186,6 +192,7 @@ export function initFeature(featureIds, productById, art) {
     const dx=touch.x-event.touches[0].clientX, dy=touch.y-event.touches[0].clientY;
     const distance=Math.abs(dx)>Math.abs(dy)*1.15?dx:dy;
     if (Math.abs(distance)<2) return;
+    releaseHash();
     const next=current+Math.sign(distance);
     if (next<0 || next>last) {touch.state='native';return;}
     if (event.cancelable) event.preventDefault();
@@ -211,6 +218,7 @@ export function initFeature(featureIds, productById, art) {
 
   document.addEventListener('keydown',event=>{
     if (!pinned() || event.altKey || event.ctrlKey || event.metaKey || document.querySelector('dialog[open]') || event.target.closest('input,select,textarea,[contenteditable=true]')) return;
+    if (['PageUp','PageDown','ArrowLeft','ArrowRight','ArrowUp','ArrowDown',' ','Home','End','Tab'].includes(event.key)) releaseHash();
     let delta=({ArrowLeft:-1,ArrowRight:1,PageUp:-1,PageDown:1,ArrowUp:-1,ArrowDown:1})[event.key];
     if (event.key===' ' && !event.target.closest('a,button')) delta=event.shiftKey?-1:1;
     if(delta && current+delta>=0 && current+delta<=last) {event.preventDefault();go(current+delta);}
@@ -228,12 +236,22 @@ export function initFeature(featureIds, productById, art) {
   }).observe(screen);
   reduce.addEventListener('change',scheduleViewer);
   function followHash() {
+    releaseHash();
     if (location.hash==='#carta' || location.hash==='#reels' || location.hash.startsWith('#reel-')) {
       document.getElementById(location.hash.slice(1))?.scrollIntoView({behavior:'instant'}); return;
     }
-    if (location.hash==='#destacados') {go(0);return;}
-    const index=featureIds.findIndex((_,i)=>'#'+productAt(i).slug===location.hash);
-    if (index>=0) go(index);
+    const index=location.hash==='#destacados'?0:featureIds.findIndex((_,i)=>'#'+productAt(i).slug===location.hash);
+    if(index<0) return;
+    // Mobile browsers can restore a just-closed dialog's offscreen trigger
+    // during the same navigation. Keep the requested product until it settles.
+    hashTarget=index;
+    go(index);
+    if (document.activeElement!==document.body && !board.contains(document.activeElement)) {
+      const heading=document.querySelector('#scene-title');
+      heading.tabIndex=-1;heading.focus({preventScroll:true});
+    }
+    hashTimer=setTimeout(releaseHash,1200);
+    followScroll();
   }
   window.addEventListener('hashchange',followHash);
   measure(); followHash(); warmNeighbors(); scheduleViewer();
