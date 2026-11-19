@@ -94,16 +94,19 @@ export function initFeature(featureIds, productById, art) {
   new ResizeObserver(measure).observe(screen);
   window.addEventListener('resize',measure,{passive:true});
   // Wheel momentum belongs to its first impulse. At either end the next gesture scrolls the page.
-  let wheelTime=-Infinity,direction=0,consumed=false,distance=0;
+  let wheelTime=-Infinity,direction=0,lastMagnitude=0,peak=0,consumed=false,distance=0;
   board.addEventListener('wheel',event=>{
     if (event.ctrlKey || event.metaKey || document.querySelector('dialog[open]')) return;
     const offset=progress();
     if (offset<-.5 || offset>last*step+1) return;
     const raw=Math.abs(event.deltaX)>Math.abs(event.deltaY)?event.deltaX:event.deltaY, sign=Math.sign(raw);
     if (!sign) return;
-    const now=performance.now();
-    if (now-wheelTime>180 || sign!==direction) {consumed=false;distance=0;}
-    wheelTime=now;direction=sign;
+    const now=event.timeStamp, gap=now-wheelTime, magnitude=Math.abs(raw);
+    // A fading trackpad tail can arrive late when a new photograph is decoding.
+    const fading=consumed && gap<500 && magnitude<lastMagnitude*.94;
+    const renewed=gap>=82 && lastMagnitude<peak*.52 && magnitude>lastMagnitude*2.3;
+    if ((gap>170 && !fading) || renewed || sign!==direction) {consumed=false;distance=0;peak=0;}
+    wheelTime=now;direction=sign;lastMagnitude=magnitude;peak=Math.max(peak,magnitude);
     const next=clamp(current+sign,0,last);
     if (!consumed && next===current) return;
     event.preventDefault();
