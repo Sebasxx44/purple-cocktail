@@ -1,0 +1,110 @@
+{
+  "arandanos-perlas": {
+    "sourceSize": [
+      941,
+      1672
+    ],
+    "masterSize": [
+      2020,
+      3840
+    ],
+    "imageSize": [
+      631,
+      1200
+    ],
+    "smallSize": [
+      268,
+      510
+    ]
+  },
+  "purple-crispy": {
+    "sourceSize": [
+      1448,
+      1086
+    ],
+    "masterSize": [
+      3840,
+      2961
+    ],
+    "imageSize": [
+      1200,
+      925
+    ],
+    "smallSize": [
+      510,
+      393
+    ]
+  },
+  "fresa-vodka": {
+    "sourceSize": [
+      1024,
+      1535
+    ],
+    "masterSize": [
+      1954,
+      3840
+    ],
+    "imageSize": [
+      611,
+      1200
+    ],
+    "smallSize": [
+      260,
+      510
+    ]
+  },
+  "jack-bacon": {
+    "sourceSize": [
+      1289,
+      1220
+    ],
+    "masterSize": [
+      3840,
+      3659
+    ],
+    "imageSize": [
+      1200,
+      1143
+    ],
+    "smallSize": [
+      510,
+      486
+    ]
+  },
+  "margarita-tequila": {
+    "sourceSize": [
+      1024,
+      1535
+    ],
+    "masterSize": [
+      2034,
+      3840
+    ],
+    "imageSize": [
+      636,
+      1200
+    ],
+    "smallSize": [
+      270,
+      510
+    ]
+  },
+  "atlantica": {
+    "sourceSize": [
+      1278,
+      1230
+    ],
+    "masterSize": [
+      3840,
+      3785
+    ],
+    "imageSize": [
+      1200,
+      1183
+    ],
+    "smallSize": [
+      510,
+      503
+    ]
+  }
+}

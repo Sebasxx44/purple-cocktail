@@ -1,0 +1,1434 @@
+{
+  "store": {
+    "name": "PURPLE",
+    "catalogName": "PURPLE WEB",
+    "sourceUrl": "https://tienda.treinta.co/purpleweb",
+    "fetchedAt": "2026-11-19T03:20:14.776Z",
+    "currency": "COP",
+    "country": "Colombia",
+    "whatsapp": "573215458806",
+    "whatsappUrl": "https://wa.me/573215458806",
+    "instagram": "https://instagram.com/granizadospurplecocktail",
+    "logo": "/catalog/wordmark.png",
+    "logoOriginal": "/catalog/logo-original.jpg"
+  },
+  "categories": [
+    "ADICIONALES",
+    "BEBIDAS",
+    "COMBOS",
+    "GRANIZADO SIN LICOR",
+    "GRANIZADOS CON LICOR",
+    "HAMBURGUESAS"
+  ],
+  "priceBands": [
+    {
+      "id": "price-low",
+      "max": 17000,
+      "label": "Hasta $17.000"
+    },
+    {
+      "id": "price-mid",
+      "min": 17000,
+      "max": 27000,
+      "excludeMin": true,
+      "label": "$17.000 a $27.000"
+    },
+    {
+      "id": "price-high",
+      "min": 27000,
+      "excludeMin": true,
+      "label": "Más de $27.000"
+    }
+  ],
+  "sorts": [
+    {
+      "id": "featured",
+      "label": "Destacados"
+    },
+    {
+      "id": "newest",
+      "label": "Más nuevos"
+    },
+    {
+      "id": "price-asc",
+      "label": "Menor precio"
+    },
+    {
+      "id": "price-desc",
+      "label": "Mayor precio"
+    },
+    {
+      "id": "name-asc",
+      "label": "Nombre (A–Z)"
+    }
+  ],
+  "featured": [
+    "arandanos-perlas",
+    "purple-crispy",
+    "fresa-vodka",
+    "jack-bacon",
+    "margarita-tequila",
+    "atlantica"
+  ],
+  "products": [
+    {
+      "id": "a7141307-480e-5a2e-9592-58438d7e83dd",
+      "slug": "absolut-crispy",
+      "name": "ABSOLUT CRISPY",
+      "category": "HAMBURGUESAS",
+      "price": 33000,
+      "description": "3 carnes Smash 3 quesos americanos tocineta cebolla CRISPY salsa Smash",
+      "available": true,
+      "stock": 5,
+      "image": "/catalog/images/absolut-crispy.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/7bad34dd-ed03-5186-9cfc-5a6a81570265.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/a7141307-480e-5a2e-9592-58438d7e83dd",
+      "rank": 0,
+      "newestRank": 8,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "517f2980-c694-5ee6-971c-aff4acbda01d",
+      "slug": "adicional-jeringa-licor",
+      "name": "ADICIONAL JERINGA LICOR",
+      "category": "ADICIONALES",
+      "price": 5000,
+      "description": "",
+      "available": true,
+      "stock": 4,
+      "image": "/catalog/images/adicional-jeringa-licor.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/3d2eba39-6a71-52b7-a844-69a963e40b47.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/517f2980-c694-5ee6-971c-aff4acbda01d",
+      "rank": 1,
+      "newestRank": 14,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "91ebc6a9-7df0-5f6f-a2be-377cf9c4ff3c",
+      "slug": "agua-purple-500ml",
+      "name": "AGUA PURPLE 500ML",
+      "category": "BEBIDAS",
+      "price": 4000,
+      "description": "",
+      "available": true,
+      "stock": 10,
+      "image": "/catalog/images/agua-purple-500ml.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/20b2ed69-4576-5ed8-91cc-69d198aebc8a.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/91ebc6a9-7df0-5f6f-a2be-377cf9c4ff3c",
+      "rank": 2,
+      "newestRank": 9,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "531a7dda-ba19-5e9d-bad3-9b69e9155a9f",
+      "slug": "american-purple",
+      "name": "AMERICAN PURPLE",
+      "category": "HAMBURGUESAS",
+      "price": 17000,
+      "description": "PAPAS A LA FRANCESA, QUESO AMERICANO, TOCINETA",
+      "available": true,
+      "stock": 4,
+      "image": "/catalog/images/american-purple.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/f811666d-75fd-5b43-8882-4b86209b0d79.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/531a7dda-ba19-5e9d-bad3-9b69e9155a9f",
+      "rank": 3,
+      "newestRank": 27,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "62f0331b-c091-5d27-af10-7d0ecaf48480",
+      "slug": "atlantica",
+      "name": "ATLÁNTICA",
+      "category": "HAMBURGUESAS",
+      "price": 25000,
+      "description": "DOBLE CARNE SMASH, DOBLE QUESO AMERICANO, SALSA DE TOCINETA PEPINILLOS",
+      "available": true,
+      "stock": 10,
+      "image": "/catalog/images/atlantica.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/f07706ad-d401-5879-8547-9b5b97319c43.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/62f0331b-c091-5d27-af10-7d0ecaf48480",
+      "rank": 4,
+      "newestRank": 26,
+      "ingredients": [
+        "Doble carne smash",
+        "Doble queso americano",
+        "Salsa de tocineta",
+        "Pepinillos"
+      ],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "cd125f33-934c-5bab-8578-635a0efa4da4",
+      "slug": "coca-cola",
+      "name": "COCA COLA",
+      "category": "BEBIDAS",
+      "price": 4000,
+      "description": "",
+      "available": true,
+      "stock": 10,
+      "image": "/catalog/images/coca-cola.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/b0c85ca3-0534-58bc-8689-c2ef3c61488a.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/cd125f33-934c-5bab-8578-635a0efa4da4",
+      "rank": 5,
+      "newestRank": 7,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "fe4debd9-1b95-5844-acf6-c00cf58817c8",
+      "slug": "combo-crispy-x2",
+      "name": "COMBO CRISPY X2",
+      "category": "COMBOS",
+      "price": 59000,
+      "description": "2 hamburguesas SMASH doble carne doble queso tocineta  cebolla CRISPY y salsa BBQ y salsa SMASH  acompañado de 2 coca cola y 1 porción de papas  ideal para compartir",
+      "available": true,
+      "stock": 10,
+      "image": "/catalog/images/combo-crispy-x2.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/16e8f08e-b342-58b6-a66b-098242d0136d.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/fe4debd9-1b95-5844-acf6-c00cf58817c8",
+      "rank": 6,
+      "newestRank": 2,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "9c139c89-e313-5477-ba15-af559ba16c50",
+      "slug": "combo-infinive",
+      "name": "COMBO INFINIVE",
+      "category": "COMBOS",
+      "price": 65000,
+      "description": "2 HAMBURGUESAS SMASH DOBLE CARNE DOBLE QUESO TOCINETA SALSA QUESO CREMA SALSA ESPECIAL PAPAS PURPLE 2 COCA COLA",
+      "available": true,
+      "stock": 10,
+      "image": "/catalog/images/combo-infinive.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/af727be0-bf0f-588a-9910-d5e6ffd0e11f.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/9c139c89-e313-5477-ba15-af559ba16c50",
+      "rank": 7,
+      "newestRank": 24,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "465f42ef-4973-576e-b24e-026111cecfd2",
+      "slug": "combo-mistic",
+      "name": "COMBO MISTIC",
+      "category": "COMBOS",
+      "price": 54000,
+      "description": "",
+      "available": true,
+      "stock": 10,
+      "image": "/catalog/images/combo-mistic.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/be1ac8de-fe3e-5583-855b-c2190041c055.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/465f42ef-4973-576e-b24e-026111cecfd2",
+      "rank": 8,
+      "newestRank": 18,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "34a78fd5-2ae1-53e6-a90c-053ac657f38a",
+      "slug": "combo-mistic-granizado-con-licor",
+      "name": "COMBO MISTIC + GRANIZADO CON LICOR",
+      "category": "COMBOS",
+      "price": 34000,
+      "description": "HAMBURHUESA SMASH DOBLE CARNE, DOBLE TOCINETA, DOBLE QUESO + GRANIZADO CON LICOR",
+      "available": true,
+      "stock": 8,
+      "image": "/catalog/images/combo-mistic-granizado-con-licor.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/b25c58ae-ac61-5939-86dc-48a77d5cc78a.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/34a78fd5-2ae1-53e6-a90c-053ac657f38a",
+      "rank": 9,
+      "newestRank": 20,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "367ef896-c51a-51b5-ab19-85bd4f2028fc",
+      "slug": "combo-papas-y-gaseosa",
+      "name": "COMBO PAPAS Y GASEOSA",
+      "category": "COMBOS",
+      "price": 10000,
+      "description": "",
+      "available": true,
+      "stock": 10,
+      "image": "/catalog/images/combo-papas-y-gaseosa.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/31ed2beb-b5a4-5a4d-b358-04fbc682eeb7.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/367ef896-c51a-51b5-ab19-85bd4f2028fc",
+      "rank": 10,
+      "newestRank": 12,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "49377d9f-3d43-579f-9520-ea6eca106a62",
+      "slug": "combo-wendys",
+      "name": "COMBO WENDYS",
+      "category": "COMBOS",
+      "price": 58000,
+      "description": "DOS HAMBURGUESAS DOBLE CARNE, DOBLE QUESO, TOCINETA, CEBOLLA EN REDUCCIÓN DE VINO TINTO",
+      "available": true,
+      "stock": 34,
+      "image": "/catalog/images/combo-wendys.webp",
+      "imageSizeOriginal": {
+        "width": 1024,
+        "height": 820
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/c41cb7fb-4a95-5d62-9464-666a9e9a278f.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/49377d9f-3d43-579f-9520-ea6eca106a62",
+      "rank": 11,
+      "newestRank": 29,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "248ed1ca-6aba-5573-925e-571856ede7e6",
+      "slug": "combo-x-3-granizados-con-licor-16-onz",
+      "name": "COMBO X 3 GRANIZADOS CON LICOR 16 ONZ",
+      "category": "COMBOS",
+      "price": 42000,
+      "description": "EL SABOR  Y TOPING PUEDE VAREAR EN PROMOS",
+      "available": true,
+      "stock": 100,
+      "image": "/catalog/images/combo-x-3-granizados-con-licor-16-onz.webp",
+      "imageSizeOriginal": {
+        "width": 577,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/af8c2c74-48ff-554b-8cd9-f9a859cd4a5e.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/248ed1ca-6aba-5573-925e-571856ede7e6",
+      "rank": 12,
+      "newestRank": 34,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "66250e61-0420-5f9a-ad88-4992acc17402",
+      "slug": "combo-x2-granizados-con-licor-16-onz",
+      "name": "COMBO x2 GRANIZADOS CON LICOR 16 ONZ",
+      "category": "COMBOS",
+      "price": 28000,
+      "description": "2 GRANIZADOS CON LICOR 16 ONZ \nSABORES Y TOPING EN COMBO\nVAREAN SEGÚN DISPONIBILIDAD",
+      "available": true,
+      "stock": 100,
+      "image": "/catalog/images/combo-x2-granizados-con-licor-16-onz.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/7e3ba7b4-24fe-518b-b3e4-b79803f47b8a.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/66250e61-0420-5f9a-ad88-4992acc17402",
+      "rank": 13,
+      "newestRank": 6,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "11268a42-02b4-532a-9492-751d66a8312c",
+      "slug": "combo-x4-granizados-l",
+      "name": "COMBO X4 GRANIZADOS L",
+      "category": "COMBOS",
+      "price": 58000,
+      "description": "",
+      "available": true,
+      "stock": 100,
+      "image": "/catalog/images/combo-x4-granizados-l.webp",
+      "imageSizeOriginal": {
+        "width": 820,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/f383c546-a4d1-5fae-9df3-f9a8b76d57c1.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/11268a42-02b4-532a-9492-751d66a8312c",
+      "rank": 14,
+      "newestRank": 5,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "9d544213-e868-52e7-b999-a5e9561562ac",
+      "slug": "arandanos-perlas",
+      "name": "GRANIZADO CON LICOR ARANDANOS Y PERLAS 22 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 27000,
+      "description": "",
+      "available": true,
+      "stock": 47,
+      "image": "/catalog/images/arandanos-perlas.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/ed66cb5b-dd18-542c-ae89-2b3e64a6e71e.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/9d544213-e868-52e7-b999-a5e9561562ac",
+      "rank": 15,
+      "newestRank": 11,
+      "ingredients": [
+        "Arándanos",
+        "Perlas",
+        "Granizado con licor a elección"
+      ],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN SABOR",
+          "options": [
+            "FRESA VODKA",
+            "MORA AZUL TEQUILA",
+            "FRUTOS SILVESTRES BRANDY VODKA",
+            "MARGARITA TEQUILA",
+            "SMIRNOFF VODKA"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "18c77d5a-e44c-52c0-9335-8e847bd1467e",
+          "label": "FRESA VODKA",
+          "price": 27000,
+          "stock": 7,
+          "available": true,
+          "attributes": {
+            "ELIGE UN SABOR": "FRESA VODKA"
+          }
+        },
+        {
+          "id": "affa5998-a899-5d24-af42-27f3328a8589",
+          "label": "MORA AZUL TEQUILA",
+          "price": 27000,
+          "stock": 10,
+          "available": true,
+          "attributes": {
+            "ELIGE UN SABOR": "MORA AZUL TEQUILA"
+          }
+        },
+        {
+          "id": "85c89772-f42e-5eaf-93c3-ecd6711131d7",
+          "label": "FRUTOS SILVESTRES BRANDY VODKA",
+          "price": 27000,
+          "stock": 10,
+          "available": true,
+          "attributes": {
+            "ELIGE UN SABOR": "FRUTOS SILVESTRES BRANDY VODKA"
+          }
+        },
+        {
+          "id": "c64d257f-c933-5991-a49c-be69bd7f331f",
+          "label": "MARGARITA TEQUILA",
+          "price": 27000,
+          "stock": 10,
+          "available": true,
+          "attributes": {
+            "ELIGE UN SABOR": "MARGARITA TEQUILA"
+          }
+        },
+        {
+          "id": "4f6d888a-5e8f-549d-b1c5-1d7a9a0f7d2a",
+          "label": "SMIRNOFF VODKA",
+          "price": 27000,
+          "stock": 10,
+          "available": true,
+          "attributes": {
+            "ELIGE UN SABOR": "SMIRNOFF VODKA"
+          }
+        }
+      ]
+    },
+    {
+      "id": "d963b86e-31ee-52fe-ba65-81115cdd6e9f",
+      "slug": "granizado-con-licor-fresa-vodka-16-onz",
+      "name": "GRANIZADO CON LICOR FRESA VODKA 16 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 16000,
+      "description": "",
+      "available": true,
+      "stock": 1200,
+      "image": "/catalog/images/granizado-con-licor-fresa-vodka-16-onz.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/d057b6f7-4578-5d31-9a22-1f68ee123696.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/d963b86e-31ee-52fe-ba65-81115cdd6e9f",
+      "rank": 16,
+      "newestRank": 33,
+      "ingredients": [],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN TOPING",
+          "options": [
+            "DULCES",
+            "JERINGA MÁS LICOR",
+            "PERLAS"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "d8af045c-f960-45a2-921c-fe9f90940473",
+          "label": "DULCES",
+          "price": 16000,
+          "stock": 100,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "DULCES"
+          }
+        },
+        {
+          "id": "a7cd7299-3bc9-4854-99bd-5e29aa171552",
+          "label": "JERINGA MÁS LICOR",
+          "price": 16000,
+          "stock": 100,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "JERINGA MÁS LICOR"
+          }
+        },
+        {
+          "id": "1db9cbb2-f099-4ee1-981c-ee78be68067b",
+          "label": "PERLAS",
+          "price": 16000,
+          "stock": 1000,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "PERLAS"
+          }
+        }
+      ]
+    },
+    {
+      "id": "310eb222-f87b-5d2f-a5b8-149ef51a5697",
+      "slug": "granizado-con-licor-frutos-silvestres-16-onz",
+      "name": "GRANIZADO CON LICOR FRUTOS SILVESTRES 16 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 16000,
+      "description": "",
+      "available": true,
+      "stock": 97,
+      "image": "/catalog/images/granizado-con-licor-frutos-silvestres-16-onz.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/84d55aa5-b84d-5ca4-b636-a71e17cefaeb.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/310eb222-f87b-5d2f-a5b8-149ef51a5697",
+      "rank": 17,
+      "newestRank": 28,
+      "ingredients": [],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN TOPING",
+          "options": [
+            "DULCES",
+            "JERINGA MÁS LICOR"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "9be27304-8003-488b-8370-1488373e7066",
+          "label": "DULCES",
+          "price": 16000,
+          "stock": 100,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "DULCES"
+          }
+        },
+        {
+          "id": "6c57469c-a596-46e0-9450-d978c53ba05b",
+          "label": "JERINGA MÁS LICOR",
+          "price": 16000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "JERINGA MÁS LICOR"
+          }
+        }
+      ]
+    },
+    {
+      "id": "3bc829c3-ba2f-57b3-b6a8-569e303f80e1",
+      "slug": "granizado-con-licor-margarita-22-onz",
+      "name": "GRANIZADO CON LICOR MARGARITA 22 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 22000,
+      "description": "",
+      "available": true,
+      "stock": 100,
+      "image": "/catalog/images/granizado-con-licor-margarita-22-onz.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/a895b8f8-f00c-5009-8235-24881c26f322.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/3bc829c3-ba2f-57b3-b6a8-569e303f80e1",
+      "rank": 18,
+      "newestRank": 15,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "87bf24c7-8af3-5be8-b595-e37f41af1a4d",
+      "slug": "granizado-con-licor-todos-los-toping-22-onz",
+      "name": "GRANIZADO CON LICOR TODOS LOS TOPING 22 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 32000,
+      "description": "",
+      "available": true,
+      "stock": 102,
+      "image": "/catalog/images/granizado-con-licor-todos-los-toping-22-onz.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/a1b506b0-f72e-5775-901b-fdbb90bb1e44.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/87bf24c7-8af3-5be8-b595-e37f41af1a4d",
+      "rank": 19,
+      "newestRank": 17,
+      "ingredients": [],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN SABOR",
+          "options": [
+            "FRESA VODKA",
+            "FRUTOS SILVESTRES BRANDY VODKA",
+            "MARGARITA TEQUILA"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "d74a95c3-e60d-5fb2-b3bd-a0d489012797",
+          "label": "FRESA VODKA",
+          "price": 32000,
+          "stock": 100,
+          "available": true,
+          "attributes": {
+            "ELIGE UN SABOR": "FRESA VODKA"
+          }
+        },
+        {
+          "id": "862f3635-70e2-53e8-8a77-a801aa79051e",
+          "label": "FRUTOS SILVESTRES BRANDY VODKA",
+          "price": 32000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN SABOR": "FRUTOS SILVESTRES BRANDY VODKA"
+          }
+        },
+        {
+          "id": "69c75169-1d41-58bc-a56c-9457e7eb9cf1",
+          "label": "MARGARITA TEQUILA",
+          "price": 32000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN SABOR": "MARGARITA TEQUILA"
+          }
+        }
+      ]
+    },
+    {
+      "id": "0d248358-970f-5bbf-a904-15bfc820e9a8",
+      "slug": "fresa-vodka",
+      "name": "GRANIZADO FRESA VODKA LICOR 22 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 22000,
+      "description": "",
+      "available": true,
+      "stock": 102,
+      "image": "/catalog/images/fresa-vodka.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/3acd035a-8bc5-5c04-88ba-cd6fd912a01a.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/0d248358-970f-5bbf-a904-15bfc820e9a8",
+      "rank": 20,
+      "newestRank": 19,
+      "ingredients": [
+        "Fresa",
+        "Vodka"
+      ],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN TOPING",
+          "options": [
+            "DULCES",
+            "JERINGA MÁS LICOR",
+            "PERLAS"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "c1776be1-a12d-5411-904e-2fc45d333472",
+          "label": "DULCES",
+          "price": 22000,
+          "stock": 100,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "DULCES"
+          }
+        },
+        {
+          "id": "7db549ab-790d-582c-8400-1cc0c621930e",
+          "label": "JERINGA MÁS LICOR",
+          "price": 22000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "JERINGA MÁS LICOR"
+          }
+        },
+        {
+          "id": "58cb36f0-94aa-55fc-aae7-40bb94d02b12",
+          "label": "PERLAS",
+          "price": 22000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "PERLAS"
+          }
+        }
+      ]
+    },
+    {
+      "id": "4a43632b-dc54-5779-948a-d69d78db6e20",
+      "slug": "granizado-licor-frutos-silvestres-brandy-vodka-22-onz",
+      "name": "GRANIZADO LICOR FRUTOS SILVESTRES BRANDY VODKA 22 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 22000,
+      "description": "",
+      "available": true,
+      "stock": 1002,
+      "image": "/catalog/images/granizado-licor-frutos-silvestres-brandy-vodka-22-onz.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/531aa63e-c0fd-5ece-ad76-516df5c9087a.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/4a43632b-dc54-5779-948a-d69d78db6e20",
+      "rank": 21,
+      "newestRank": 16,
+      "ingredients": [],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN TOPING",
+          "options": [
+            "DULCES",
+            "JERINGA MÁS LICOR",
+            "PERLAS"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "6318c559-ffc7-56de-bbf3-8379556e91f6",
+          "label": "DULCES",
+          "price": 22000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "DULCES"
+          }
+        },
+        {
+          "id": "56e8e324-1ae2-515a-93bb-feee75a4cf1d",
+          "label": "JERINGA MÁS LICOR",
+          "price": 22000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "JERINGA MÁS LICOR"
+          }
+        },
+        {
+          "id": "e65872ad-51c9-5a32-a866-5a5f7d483964",
+          "label": "PERLAS",
+          "price": 22000,
+          "stock": 1000,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "PERLAS"
+          }
+        }
+      ]
+    },
+    {
+      "id": "e3f2260c-3956-5b57-a82d-f7085f38409b",
+      "slug": "margarita-tequila",
+      "name": "GRANIZADO LICOR MARGARITA TEQUILA 22 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 22000,
+      "description": "",
+      "available": true,
+      "stock": 102,
+      "image": "/catalog/images/margarita-tequila.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/fe4f2a3c-25b8-5b04-aac9-97bc1a8df7ac.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/e3f2260c-3956-5b57-a82d-f7085f38409b",
+      "rank": 22,
+      "newestRank": 13,
+      "ingredients": [
+        "Granizado de margarita",
+        "Tequila"
+      ],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN TOPING",
+          "options": [
+            "DULCES",
+            "JERINGA MÁS LICOR",
+            "PERLAS"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "8dd40f1d-38cb-56c6-af3c-002bdf510f3a",
+          "label": "DULCES",
+          "price": 22000,
+          "stock": 100,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "DULCES"
+          }
+        },
+        {
+          "id": "127c5d6f-153c-5e3d-a482-4800f024488a",
+          "label": "JERINGA MÁS LICOR",
+          "price": 22000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "JERINGA MÁS LICOR"
+          }
+        },
+        {
+          "id": "5ef0dfaa-ae44-5732-a0f8-51ae0b4d2160",
+          "label": "PERLAS",
+          "price": 22000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "PERLAS"
+          }
+        }
+      ]
+    },
+    {
+      "id": "05ad162a-a6f2-52e6-821e-89ba3ce4ba5c",
+      "slug": "granizado-licor-smirnoff-vodka-22-onz",
+      "name": "GRANIZADO LICOR SMIRNOFF VODKA 22 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 22000,
+      "description": "",
+      "available": true,
+      "stock": 102,
+      "image": "/catalog/images/granizado-licor-smirnoff-vodka-22-onz.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/363a9385-b832-5e9a-8b5d-8bca0dd4adf7.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/05ad162a-a6f2-52e6-821e-89ba3ce4ba5c",
+      "rank": 23,
+      "newestRank": 10,
+      "ingredients": [],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN TOPING",
+          "options": [
+            "DULCES",
+            "JERINGA MÁS LICOR",
+            "PERLAS"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "fb276979-1061-5864-92ad-7803012c3fc3",
+          "label": "DULCES",
+          "price": 22000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "DULCES"
+          }
+        },
+        {
+          "id": "c9eed999-5248-5d0f-a817-c1ac58596a0d",
+          "label": "JERINGA MÁS LICOR",
+          "price": 22000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "JERINGA MÁS LICOR"
+          }
+        },
+        {
+          "id": "02f41e97-c4b2-56a7-a481-1012b2b12112",
+          "label": "PERLAS",
+          "price": 22000,
+          "stock": 100,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "PERLAS"
+          }
+        }
+      ]
+    },
+    {
+      "id": "b4b6f070-232b-53bc-8e37-d0567e066d1e",
+      "slug": "granizado-margarita-con-licor-16-onz",
+      "name": "GRANIZADO MARGARITA CON LICOR 16 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 16000,
+      "description": "",
+      "available": true,
+      "stock": 102,
+      "image": "/catalog/images/granizado-margarita-con-licor-16-onz.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/26ae3165-4c75-5cc2-839b-20b420df8fa9.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/b4b6f070-232b-53bc-8e37-d0567e066d1e",
+      "rank": 24,
+      "newestRank": 35,
+      "ingredients": [],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN TOPING",
+          "options": [
+            "DULCES",
+            "JERINGA MÁS LICOR",
+            "PERLAS"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "c2f7bb5b-aee6-4f49-9ff9-80481c96ee54",
+          "label": "DULCES",
+          "price": 16000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "DULCES"
+          }
+        },
+        {
+          "id": "a924aea9-6d23-4db5-a967-07a682ff009e",
+          "label": "JERINGA MÁS LICOR",
+          "price": 16000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "JERINGA MÁS LICOR"
+          }
+        },
+        {
+          "id": "4c1038d6-c96b-4b5a-ac01-195f07080651",
+          "label": "PERLAS",
+          "price": 16000,
+          "stock": 100,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "PERLAS"
+          }
+        }
+      ]
+    },
+    {
+      "id": "da5ed527-5666-5e30-800d-83debcc64c93",
+      "slug": "granizado-margarita-tradicional-con-licor-22onz",
+      "name": "GRANIZADO MARGARITA TRADICIONAL CON LICOR 22onz",
+      "category": null,
+      "price": 22000,
+      "description": "",
+      "available": true,
+      "stock": 3,
+      "image": "/catalog/images/granizado-margarita-tradicional-con-licor-22onz.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/68a1068d-06e6-5255-8e51-9b9c5fc3d2e2.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/da5ed527-5666-5e30-800d-83debcc64c93",
+      "rank": 25,
+      "newestRank": 3,
+      "ingredients": [],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN TOPING",
+          "options": [
+            "DULCES",
+            "PERLAS",
+            "JERINGA MÁS LICOR"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "c66f2d66-dd1f-575e-9266-20d710ee9d92",
+          "label": "DULCES",
+          "price": 22000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "DULCES"
+          }
+        },
+        {
+          "id": "2251b382-3f3e-5bbe-9362-ab5190638d85",
+          "label": "PERLAS",
+          "price": 22000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "PERLAS"
+          }
+        },
+        {
+          "id": "8a80ae92-88fd-502c-a1c8-7928912988dd",
+          "label": "JERINGA MÁS LICOR",
+          "price": 22000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "JERINGA MÁS LICOR"
+          }
+        }
+      ]
+    },
+    {
+      "id": "7d0e8608-2e96-51a5-bae9-bc158b3867df",
+      "slug": "granizado-mora-azul-con-licor-16-onz",
+      "name": "GRANIZADO MORA AZUL CON LICOR 16 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 16000,
+      "description": "",
+      "available": true,
+      "stock": 102,
+      "image": "/catalog/images/granizado-mora-azul-con-licor-16-onz.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/b538222e-8712-5c58-ae62-9ed7915bc407.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/7d0e8608-2e96-51a5-bae9-bc158b3867df",
+      "rank": 26,
+      "newestRank": 22,
+      "ingredients": [],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN TOPING",
+          "options": [
+            "DULCES",
+            "JERINGA MÁS LICOR",
+            "PERLAS"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "72fcbcbb-9979-4930-9e03-b5ad9bdfd116",
+          "label": "DULCES",
+          "price": 16000,
+          "stock": 100,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "DULCES"
+          }
+        },
+        {
+          "id": "5e5852ee-97cf-4ac0-bfd3-a20761cbb56f",
+          "label": "JERINGA MÁS LICOR",
+          "price": 16000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "JERINGA MÁS LICOR"
+          }
+        },
+        {
+          "id": "3a22b99b-d84f-45c7-a76a-a87fb7be63a5",
+          "label": "PERLAS",
+          "price": 16000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "PERLAS"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cbd61349-02c9-58d8-96f5-ede2e7a9af02",
+      "slug": "granizado-sin-licor-16-onz",
+      "name": "GRANIZADO SIN LICOR 16 ONZ",
+      "category": "GRANIZADO SIN LICOR",
+      "price": 12000,
+      "description": "GRANIZADO SIN LICOR \nEL SABOR PUEDE VAREAR DE FRESA O MORA AZUL",
+      "available": true,
+      "stock": 1099,
+      "image": "/catalog/images/granizado-sin-licor-16-onz.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/8888a481-3d4b-562b-92d4-e44a377c287a.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/cbd61349-02c9-58d8-96f5-ede2e7a9af02",
+      "rank": 27,
+      "newestRank": 30,
+      "ingredients": [],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN TOPING",
+          "options": [
+            "PERLAS",
+            "DULCES"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "0d6b7435-99d7-40dc-8e64-a80a0afd15cf",
+          "label": "PERLAS",
+          "price": 12000,
+          "stock": 99,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "PERLAS"
+          }
+        },
+        {
+          "id": "b3852d05-dffd-42c1-b801-029c8773d17c",
+          "label": "DULCES",
+          "price": 12000,
+          "stock": 1000,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "DULCES"
+          }
+        }
+      ]
+    },
+    {
+      "id": "6947e83c-5534-50da-9b69-9ea209e0a57e",
+      "slug": "granizado-sin-licor-22-onzas",
+      "name": "GRANIZADO SIN LICOR 22 ONZAS",
+      "category": "GRANIZADO SIN LICOR",
+      "price": 15000,
+      "description": "",
+      "available": true,
+      "stock": 100,
+      "image": null,
+      "imageSizeOriginal": null,
+      "imageSource": null,
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/6947e83c-5534-50da-9b69-9ea209e0a57e",
+      "rank": 28,
+      "newestRank": 1,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "a251c941-1bd5-54ac-a547-d98652fade5f",
+      "slug": "granizado-smirnoff-vodka-con-licor-16-onz",
+      "name": "GRANIZADO SMIRNOFF VODKA CON LICOR 16 ONZ",
+      "category": "GRANIZADOS CON LICOR",
+      "price": 16000,
+      "description": "",
+      "available": true,
+      "stock": 102,
+      "image": "/catalog/images/granizado-smirnoff-vodka-con-licor-16-onz.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/66ef5e10-4ae3-5634-8b18-6565b9adae09.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/a251c941-1bd5-54ac-a547-d98652fade5f",
+      "rank": 29,
+      "newestRank": 32,
+      "ingredients": [],
+      "variantGroups": [
+        {
+          "label": "ELIGE UN TOPING",
+          "options": [
+            "DULCES",
+            "JERINGA MÁS LICOR",
+            "PERLAS"
+          ]
+        }
+      ],
+      "variants": [
+        {
+          "id": "9df07f51-1284-4794-872b-687b320f489a",
+          "label": "DULCES",
+          "price": 16000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "DULCES"
+          }
+        },
+        {
+          "id": "2bce4ca9-0114-4c63-b7a8-e8fc5daa7b4d",
+          "label": "JERINGA MÁS LICOR",
+          "price": 16000,
+          "stock": 100,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "JERINGA MÁS LICOR"
+          }
+        },
+        {
+          "id": "e27e1a53-4da1-447e-a49a-6084f54fafb0",
+          "label": "PERLAS",
+          "price": 16000,
+          "stock": 1,
+          "available": true,
+          "attributes": {
+            "ELIGE UN TOPING": "PERLAS"
+          }
+        }
+      ]
+    },
+    {
+      "id": "9e737764-bed2-5f22-9443-a1db169c7346",
+      "slug": "infinive",
+      "name": "INFINIVE",
+      "category": "HAMBURGUESAS",
+      "price": 27000,
+      "description": "",
+      "available": true,
+      "stock": 1,
+      "image": "/catalog/images/infinive.webp",
+      "imageSizeOriginal": {
+        "width": 683,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/5e8609b9-8385-573a-b8ac-654027ad01be.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/9e737764-bed2-5f22-9443-a1db169c7346",
+      "rank": 30,
+      "newestRank": 21,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "ebb868da-8d5b-5e30-9ad1-1d41912c64df",
+      "slug": "jack-bacon",
+      "name": "JACK BACON",
+      "category": "HAMBURGUESAS",
+      "price": 28000,
+      "description": "Doble carne Smash - queso motzarella - tocineta en reducción de whisky - queso crema  pan brioche salsa de la casa",
+      "available": true,
+      "stock": 12,
+      "image": "/catalog/images/jack-bacon.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/5ff09e35-6aad-5d2d-b93d-52a6fd06c3af.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/ebb868da-8d5b-5e30-9ad1-1d41912c64df",
+      "rank": 31,
+      "newestRank": 0,
+      "ingredients": [
+        "Pan brioche",
+        "Doble carne smash",
+        "Queso mozzarella",
+        "Tocineta en reducción de whisky",
+        "Queso crema",
+        "Salsa de la casa"
+      ],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "b8cc0af7-8386-5f10-be72-87bedf5834a3",
+      "slug": "mistic-fries",
+      "name": "MISTIC FRÍES",
+      "category": "HAMBURGUESAS",
+      "price": 25000,
+      "description": "Papas a la francesa  acompañado de tocineta ahumada crujiente. Cebolla CRISPY   Cheddar acompañado de salchicha ranchera y salsa BBQ",
+      "available": true,
+      "stock": 24,
+      "image": "/catalog/images/mistic-fries.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/1a54f025-70c3-5719-8928-eb09103ba3de.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/b8cc0af7-8386-5f10-be72-87bedf5834a3",
+      "rank": 32,
+      "newestRank": 23,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "7673e9ae-d996-5c1f-b4fb-b696a6a224bc",
+      "slug": "purple-classic",
+      "name": "PURPLE CLASSIC",
+      "category": "HAMBURGUESAS",
+      "price": 22000,
+      "description": "",
+      "available": true,
+      "stock": 6,
+      "image": "/catalog/images/purple-classic.webp",
+      "imageSizeOriginal": {
+        "width": 942,
+        "height": 1024
+      },
+      "imageSource": "https://us-east-1-prod-treinta-assets-bucket.s3.amazonaws.com/d994df2e-9de1-5557-895e-a0217d1dafe1.jpeg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/7673e9ae-d996-5c1f-b4fb-b696a6a224bc",
+      "rank": 33,
+      "newestRank": 36,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "df7c59e7-c371-54b1-956e-7038aebdd77d",
+      "slug": "purple-crispy",
+      "name": "PURPLE CRISPY",
+      "category": "HAMBURGUESAS",
+      "price": 24000,
+      "description": "DOS CARNES SMASH,QUESO AMERICANO, TOCINETA , CEBOLLA CRISPY SALSA SMASH",
+      "available": true,
+      "stock": 2,
+      "image": "/catalog/images/purple-crispy.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/e7e0af1d-0cb9-5633-8a9f-756941a246be.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/df7c59e7-c371-54b1-956e-7038aebdd77d",
+      "rank": 34,
+      "newestRank": 25,
+      "ingredients": [
+        "Doble carne smash",
+        "Queso americano",
+        "Tocineta",
+        "Cebolla crispy",
+        "Salsa smash"
+      ],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "52a9f5fa-0887-5c20-8020-edbcfbb778f8",
+      "slug": "triple-mistic",
+      "name": "TRIPLE MISTIC",
+      "category": "COMBOS",
+      "price": 79000,
+      "description": "🍔🍔🍔 3 HAMBURGUESAS SMASH \n\n🔥 Doble carne 100% res\n🧀 Doble queso americano\n🥓 Tocineta crujiente\n3 porciones de papas \n\n\n🍞 Pan brioche suave y dorado\n🤤 Nuestra deliciosa Salsa Smash\n\n🥤 + Coca-Cola 1.5 L\n\n⚽ Perfecto para disfrutar los partidos del Mundial con amigos y familia. 🔥🍔🥤",
+      "available": true,
+      "stock": 10,
+      "image": "/catalog/images/triple-mistic.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/22dae7bf-8b75-5710-b31b-2cf0db847025.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/52a9f5fa-0887-5c20-8020-edbcfbb778f8",
+      "rank": 35,
+      "newestRank": 4,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    },
+    {
+      "id": "5305b9cc-59f7-55ff-a04c-daeba089fdc7",
+      "slug": "wendys-smash",
+      "name": "WENDYS SMASH",
+      "category": "HAMBURGUESAS",
+      "price": 24000,
+      "description": "DOBLE CARNE SMASH, DOBLE QUESO AMERICANO, CEBOLLA EN REDUCCIÓN DE VINO TINTO TOCINETA",
+      "available": true,
+      "stock": 12,
+      "image": "/catalog/images/wendys-smash.webp",
+      "imageSizeOriginal": {
+        "width": 768,
+        "height": 1024
+      },
+      "imageSource": "https://cdn.treinta.co/new-products/products/d5237746-de82-520b-be7a-f389e54c9e97/0ca054aa-10c3-5d6f-a3e7-a9ca1f9d31dd.jpg",
+      "sourceUrl": "https://tienda.treinta.co/purpleweb/producto/5305b9cc-59f7-55ff-a04c-daeba089fdc7",
+      "rank": 36,
+      "newestRank": 31,
+      "ingredients": [],
+      "variantGroups": [],
+      "variants": []
+    }
+  ]
+}

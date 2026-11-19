@@ -1,0 +1,454 @@
+[
+  {
+    "id": "9d544213-e868-52e7-b999-a5e9561562ac",
+    "slug": "arandanos-perlas",
+    "name": "Arándanos y perlas",
+    "displayName": "Arándanos y perlas",
+    "kind": "drink",
+    "image": "/showcase/products/arandanos-perlas.webp",
+    "imageSmall": "/showcase/products/arandanos-perlas-sm.webp",
+    "model": "/showcase/products/arandanos-perlas.glb",
+    "master": "/showcase/masters/arandanos-perlas.png",
+    "maxYaw": 16,
+    "maxPitch": 6,
+    "ingredients": [
+      {
+        "name": "Arándanos",
+        "shortName": "Arándanos",
+        "description": "La fruta que corona el vaso junto a las perlas rojas.",
+        "mesh": "arandanos",
+        "color": "#536680",
+        "image": "/showcase/ingredients/arandanos.webp",
+        "model": "/showcase/ingredients/arandanos.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Perlas",
+        "shortName": "Perlas",
+        "description": "Esferas brillantes sobre la capa superior del granizado.",
+        "mesh": "perlas",
+        "color": "#b62135",
+        "image": "/showcase/ingredients/perlas.webp",
+        "model": "/showcase/ingredients/perlas.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Granizado con licor a elección",
+        "shortName": "Base granizada",
+        "description": "Elige entre las cinco bases de granizado con licor de Purple.",
+        "mesh": "hielo",
+        "color": "#9dcbd8",
+        "image": "/showcase/ingredients/hielo.webp",
+        "model": "/showcase/ingredients/hielo.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      }
+    ],
+    "referenceSize": {
+      "width": 683,
+      "height": 1024
+    },
+    "sourceSize": [
+      941,
+      1672
+    ],
+    "masterSize": [
+      2020,
+      3840
+    ],
+    "imageSize": [
+      631,
+      1200
+    ],
+    "smallSize": [
+      268,
+      510
+    ]
+  },
+  {
+    "id": "df7c59e7-c371-54b1-956e-7038aebdd77d",
+    "slug": "purple-crispy",
+    "name": "Purple Crispy",
+    "displayName": "Purple Crispy",
+    "kind": "burger",
+    "image": "/showcase/products/purple-crispy.webp",
+    "imageSmall": "/showcase/products/purple-crispy-sm.webp",
+    "model": "/showcase/products/purple-crispy.glb",
+    "master": "/showcase/masters/purple-crispy.png",
+    "maxYaw": 16,
+    "maxPitch": 6,
+    "ingredients": [
+      {
+        "name": "Doble carne smash",
+        "shortName": "Carne smash",
+        "description": "Dos carnes a la plancha, con bordes dorados.",
+        "mesh": "carne-smash",
+        "color": "#79472b",
+        "image": "/showcase/ingredients/carne-smash.webp",
+        "model": "/showcase/ingredients/carne-smash.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Queso americano",
+        "shortName": "Queso americano",
+        "description": "Queso fundido sobre las carnes smash.",
+        "mesh": "queso-americano",
+        "color": "#f5b623",
+        "image": "/showcase/ingredients/queso-americano.webp",
+        "model": "/showcase/ingredients/queso-americano.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Tocineta",
+        "shortName": "Tocineta",
+        "description": "Tiras de tocineta que sobresalen del pan.",
+        "mesh": "tocineta",
+        "color": "#a33e28",
+        "image": "/showcase/ingredients/tocineta.webp",
+        "model": "/showcase/ingredients/tocineta.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Cebolla crispy",
+        "shortName": "Cebolla crispy",
+        "description": "Hebras doradas de cebolla crujiente.",
+        "mesh": "cebolla-crispy",
+        "color": "#cc8c37",
+        "image": "/showcase/ingredients/cebolla-crispy.webp",
+        "model": "/showcase/ingredients/cebolla-crispy.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Salsa smash",
+        "shortName": "Salsa smash",
+        "description": "La salsa que acompaña la cebolla y la tocineta.",
+        "mesh": "salsa-smash",
+        "color": "#723323",
+        "image": "/showcase/ingredients/salsa-smash.webp",
+        "model": "/showcase/ingredients/salsa-smash.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      }
+    ],
+    "referenceSize": {
+      "width": 768,
+      "height": 1024
+    },
+    "sourceSize": [
+      1448,
+      1086
+    ],
+    "masterSize": [
+      3840,
+      2961
+    ],
+    "imageSize": [
+      1200,
+      925
+    ],
+    "smallSize": [
+      510,
+      393
+    ]
+  },
+  {
+    "id": "0d248358-970f-5bbf-a904-15bfc820e9a8",
+    "slug": "fresa-vodka",
+    "name": "Fresa vodka",
+    "displayName": "Fresa vodka",
+    "kind": "drink",
+    "image": "/showcase/products/fresa-vodka.webp",
+    "imageSmall": "/showcase/products/fresa-vodka-sm.webp",
+    "model": "/showcase/products/fresa-vodka.glb",
+    "master": "/showcase/masters/fresa-vodka.png",
+    "maxYaw": 16,
+    "maxPitch": 6,
+    "ingredients": [
+      {
+        "name": "Fresa",
+        "shortName": "Fresa",
+        "description": "El sabor que da nombre a este granizado rojo.",
+        "mesh": "fresa",
+        "color": "#cd323b",
+        "image": "/showcase/ingredients/fresa.webp",
+        "model": "/showcase/ingredients/fresa.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Vodka",
+        "shortName": "Vodka",
+        "description": "El destilado que acompaña el sabor a fresa.",
+        "mesh": "destilado",
+        "color": "#bac2c7",
+        "image": "/showcase/ingredients/destilado.webp",
+        "model": "/showcase/ingredients/destilado.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      }
+    ],
+    "referenceSize": {
+      "width": 683,
+      "height": 1024
+    },
+    "sourceSize": [
+      1024,
+      1535
+    ],
+    "masterSize": [
+      1954,
+      3840
+    ],
+    "imageSize": [
+      611,
+      1200
+    ],
+    "smallSize": [
+      260,
+      510
+    ]
+  },
+  {
+    "id": "ebb868da-8d5b-5e30-9ad1-1d41912c64df",
+    "slug": "jack-bacon",
+    "name": "Jack Bacon",
+    "displayName": "Jack Bacon",
+    "kind": "burger",
+    "image": "/showcase/products/jack-bacon.webp",
+    "imageSmall": "/showcase/products/jack-bacon-sm.webp",
+    "model": "/showcase/products/jack-bacon.glb",
+    "master": "/showcase/masters/jack-bacon.png",
+    "maxYaw": 16,
+    "maxPitch": 6,
+    "ingredients": [
+      {
+        "name": "Pan brioche",
+        "shortName": "Pan brioche",
+        "description": "Pan dorado que envuelve las dos carnes.",
+        "mesh": "brioche",
+        "color": "#bb732b",
+        "image": "/showcase/ingredients/brioche.webp",
+        "model": "/showcase/ingredients/brioche.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Doble carne smash",
+        "shortName": "Carne smash",
+        "description": "Dos carnes selladas a la plancha.",
+        "mesh": "carne-smash",
+        "color": "#79472b",
+        "image": "/showcase/ingredients/carne-smash.webp",
+        "model": "/showcase/ingredients/carne-smash.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Queso mozzarella",
+        "shortName": "Queso mozzarella",
+        "description": "Mozzarella fundida entre las capas de carne.",
+        "mesh": "mozzarella",
+        "color": "#ede1b7",
+        "image": "/showcase/ingredients/mozzarella.webp",
+        "model": "/showcase/ingredients/mozzarella.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Tocineta en reducción de whisky",
+        "shortName": "Tocineta al whisky",
+        "description": "Trozos de tocineta bañados en la reducción.",
+        "mesh": "tocineta-whisky",
+        "color": "#9d502e",
+        "image": "/showcase/ingredients/tocineta-whisky.webp",
+        "model": "/showcase/ingredients/tocineta-whisky.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Queso crema",
+        "shortName": "Queso crema",
+        "description": "La capa cremosa debajo del pan superior.",
+        "mesh": "queso-crema",
+        "color": "#f2e8ce",
+        "image": "/showcase/ingredients/queso-crema.webp",
+        "model": "/showcase/ingredients/queso-crema.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Salsa de la casa",
+        "shortName": "Salsa de la casa",
+        "description": "La salsa de Purple que completa la Jack Bacon.",
+        "mesh": "salsa-casa",
+        "color": "#e6a064",
+        "image": "/showcase/ingredients/salsa-casa.webp",
+        "model": "/showcase/ingredients/salsa-casa.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      }
+    ],
+    "referenceSize": {
+      "width": 768,
+      "height": 1024
+    },
+    "sourceSize": [
+      1289,
+      1220
+    ],
+    "masterSize": [
+      3840,
+      3659
+    ],
+    "imageSize": [
+      1200,
+      1143
+    ],
+    "smallSize": [
+      510,
+      486
+    ]
+  },
+  {
+    "id": "e3f2260c-3956-5b57-a82d-f7085f38409b",
+    "slug": "margarita-tequila",
+    "name": "Margarita tequila",
+    "displayName": "Margarita tequila",
+    "kind": "drink",
+    "image": "/showcase/products/margarita-tequila.webp",
+    "imageSmall": "/showcase/products/margarita-tequila-sm.webp",
+    "model": "/showcase/products/margarita-tequila.glb",
+    "master": "/showcase/masters/margarita-tequila.png",
+    "maxYaw": 16,
+    "maxPitch": 6,
+    "ingredients": [
+      {
+        "name": "Granizado de margarita",
+        "shortName": "Margarita",
+        "description": "Base helada de color verde intenso.",
+        "mesh": "margarita",
+        "color": "#9bc72d",
+        "image": "/showcase/ingredients/margarita.webp",
+        "model": "/showcase/ingredients/margarita.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Tequila",
+        "shortName": "Tequila",
+        "description": "El destilado de la margarita de Purple.",
+        "mesh": "destilado",
+        "color": "#bac2c7",
+        "image": "/showcase/ingredients/destilado.webp",
+        "model": "/showcase/ingredients/destilado.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      }
+    ],
+    "referenceSize": {
+      "width": 683,
+      "height": 1024
+    },
+    "sourceSize": [
+      1024,
+      1535
+    ],
+    "masterSize": [
+      2034,
+      3840
+    ],
+    "imageSize": [
+      636,
+      1200
+    ],
+    "smallSize": [
+      270,
+      510
+    ]
+  },
+  {
+    "id": "62f0331b-c091-5d27-af10-7d0ecaf48480",
+    "slug": "atlantica",
+    "name": "Atlántica",
+    "displayName": "Atlántica",
+    "kind": "burger",
+    "image": "/showcase/products/atlantica.webp",
+    "imageSmall": "/showcase/products/atlantica-sm.webp",
+    "model": "/showcase/products/atlantica.glb",
+    "master": "/showcase/masters/atlantica.png",
+    "maxYaw": 16,
+    "maxPitch": 6,
+    "ingredients": [
+      {
+        "name": "Doble carne smash",
+        "shortName": "Carne smash",
+        "description": "Dos carnes con bordes tostados.",
+        "mesh": "carne-smash",
+        "color": "#79472b",
+        "image": "/showcase/ingredients/carne-smash.webp",
+        "model": "/showcase/ingredients/carne-smash.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Doble queso americano",
+        "shortName": "Queso americano",
+        "description": "Dos capas de queso americano fundido.",
+        "mesh": "queso-americano",
+        "color": "#f5b623",
+        "image": "/showcase/ingredients/queso-americano.webp",
+        "model": "/showcase/ingredients/queso-americano.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Salsa de tocineta",
+        "shortName": "Salsa de tocineta",
+        "description": "La salsa con trozos de tocineta de la Atlántica.",
+        "mesh": "salsa-tocineta",
+        "color": "#913e25",
+        "image": "/showcase/ingredients/salsa-tocineta.webp",
+        "model": "/showcase/ingredients/salsa-tocineta.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      },
+      {
+        "name": "Pepinillos",
+        "shortName": "Pepinillos",
+        "description": "Rodajas de pepinillo que acompañan las carnes y el queso.",
+        "mesh": "pepinillos",
+        "color": "#8a9f3b",
+        "image": "/showcase/ingredients/pepinillos.webp",
+        "model": "/showcase/ingredients/pepinillos.glb",
+        "maxYaw": 20,
+        "maxPitch": 9
+      }
+    ],
+    "referenceSize": {
+      "width": 768,
+      "height": 1024
+    },
+    "sourceSize": [
+      1278,
+      1230
+    ],
+    "masterSize": [
+      3840,
+      3785
+    ],
+    "imageSize": [
+      1200,
+      1183
+    ],
+    "smallSize": [
+      510,
+      503
+    ]
+  }
+]
