@@ -29,7 +29,7 @@ export function heroCopy(p) {
     '<h1 id="scene-title"'+(s.title[0].length >= 9?' class="word-long"':'')+'>'+h(s.title[0])+(s.title[1]?' <em>'+h(s.title[1])+'</em>':'')+'</h1>'+
     '<p class="scene-story">'+h(s.story)+'</p>'+
     '<p class="hero-price"><strong>'+h(money(p.price))+'</strong><span>COP</span></p>'+
-    '<div class="hero-actions js-only"><button class="button primary" data-add="'+h(p.id)+'"'+(!available(p)?' disabled':'')+'>'+icon('bag')+(available(p)?'Agregar al carrito':'Agotado')+'</button>'+
+    '<div class="hero-actions js-only"><button class="button primary" data-add="'+h(p.id)+'"'+(!available(p)?' disabled':'')+'>'+icon('cart')+(available(p)?'Agregar al carrito':'Agotado')+'</button>'+
     '<button class="ingredients-link" data-inspect="'+h(p.id)+'">'+icon('layers')+'<span>Ver ingredientes</span></button></div>';
 }
 export function stageArt(p, art, first=false) {
@@ -38,7 +38,7 @@ export function stageArt(p, art, first=false) {
   const valid = pieces.map((item,index) => ({item,index})).filter(({item})=>item.image);
   const floats=valid.slice(0,3).map(({item,index}, k) => '<button class="floating-part part-'+(k+1)+' js-only" data-inspect="'+h(p.id)+'" data-part="'+index+'" aria-label="'+h(item.name)+'. Ver ingredientes de '+h(titleFor(p))+'">'+imageTag(item.image,'',{eager:true})+'<span class="ingredient-caption" aria-hidden="true">'+h(item.shortName||item.name)+'</span></button>').join('');
   return '<div class="shadow-pad" aria-hidden="true"></div>'+
-    '<div class="stage-product '+(p.category==='HAMBURGUESAS'?'food-burger':'food-drink')+(a.image?'':' awaiting-art')+'">'+imageTag(a.image || p.image,titleFor(p),{cls:'product-portrait',small:a.imageSmall,smallWidth:a.smallSize?.[0],width:a.imageSize?.[0],sizes:'(max-width: 690px) 64vw, 34vw',eager:true,priority:first})+(a.preview?'<img class="scene-preview" alt="" aria-hidden="true" draggable="false" src="'+h(a.preview)+'">':'')+'</div>'+
+    '<a class="stage-product '+(p.category==='HAMBURGUESAS'?'food-burger':'food-drink')+(a.image?'':' awaiting-art')+'" href="'+h(p.sourceUrl)+'" data-detail="'+h(p.id)+'" draggable="false" aria-label="Ver detalle de '+h(titleFor(p))+'">'+imageTag(a.image || p.image,titleFor(p),{cls:'product-portrait',small:a.imageSmall,smallWidth:a.smallSize?.[0],width:a.imageSize?.[0],sizes:'(max-width: 690px) 64vw, 34vw',eager:true,priority:first})+(a.preview?'<img class="scene-preview" alt="" aria-hidden="true" draggable="false" src="'+h(a.preview)+'">':'')+'</a>'+
     floats;
 }
 function posterInfo(p) {
@@ -60,11 +60,14 @@ export function card(p,art,groupCategory) {
   const href=p.sourceUrl||'#carta';
   const photo=src?imageTag(src,titleFor(p)):'<span class="no-photo">'+icon(p.category?.includes('GRANIZADO')?'drink':'bag')+'<span>Sin fotografía</span></span>';
   const setting = a.image?'cutout':src?'photograph':'missing';
+  // These full-bleed photos have room around the food. Keep printed menus and
+  // promotional posters entirely inside the image area, including their type.
+  const fullBleed=['combo-crispy-x2','combo-infinive','combo-mistic','combo-papas-y-gaseosa'].includes(p.slug);
   const background=s?'/showcase/backgrounds/'+p.slug+'-wide.webp':!src?'/showcase/ingredients/hielo.webp':'';
   return '<article class="card" data-card-id="'+h(p.id)+'"'+(s?' style="'+toneFor(p.slug)+'"':'')+'>'+
-    '<a class="card-media '+setting+'" href="'+h(href)+'" data-detail="'+h(p.id)+'" aria-label="Ver '+h(titleFor(p))+'" style="--card:'+(s?.card||'#e4dbe8')+'">'+(background?'<img class="card-backdrop" src="'+h(background)+'" loading="lazy" alt="">':'')+(src&&!a.image?'<img class="media-fill" src="'+h(src)+'" loading="lazy" alt="" aria-hidden="true">':'')+photo+'</a>'+
+    '<a class="card-media '+setting+(fullBleed?' full-bleed':'')+'" href="'+h(href)+'" data-detail="'+h(p.id)+'" aria-label="Ver '+h(titleFor(p))+'" style="--card:'+(s?.card||'#e4dbe8')+'">'+(background?'<img class="card-backdrop" src="'+h(background)+'" loading="lazy" alt="">':'')+(src&&!a.image&&!fullBleed?'<img class="media-fill" src="'+h(src)+'" loading="lazy" alt="" aria-hidden="true">':'')+photo+'</a>'+
     '<div class="card-info">'+(caption?'<p class="card-category">'+h(caption)+'</p>':'')+'<'+heading+'><a href="'+h(href)+'" data-detail="'+h(p.id)+'">'+h(name)+'</a></'+heading+'>'+
-    '<div class="card-bottom"><span>'+h(money(p.price))+'</span><button class="poster-add js-only" data-add="'+h(p.id)+'" aria-label="Agregar '+h(titleFor(p))+' al carrito"'+(!available(p)?' disabled':'')+'>'+icon('plus')+'<span>Agregar</span></button></div></div></article>';
+    '<div class="card-bottom"><span>'+h(money(p.price))+'</span><button class="poster-add js-only" data-add="'+h(p.id)+'" aria-label="Agregar '+h(titleFor(p))+' al carrito"'+(!available(p)?' disabled':'')+'>'+icon('cart')+'<span>Agregar</span></button></div></div></article>';
 }
 export function groupedCards(products,art) {
   const groups=[
@@ -84,7 +87,7 @@ export function shell(data, art, reels, galleryArt={}) {
     '<a href="#destacados" class="brand-link" aria-label="Purple, inicio"><span class="brand-mark" role="img" aria-label="Purple"></span></a>'+
     '<nav class="nav-links" aria-label="Principal"><a class="nav-featured is-here" href="#destacados">Destacados</a><a class="nav-menu" href="#carta">La carta</a><a class="nav-reels" href="#reels">Reels</a></nav>'+
     '<div class="nav-end"><a class="social-nav" href="'+h(d.instagram)+'" target="_blank" rel="noopener noreferrer" aria-label="Instagram de Purple">'+icon('instagram')+'</a>'+
-    '<button type="button" class="nav-cart js-only" data-cart aria-label="Abrir carrito, 0 productos">'+icon('bag')+'<span class="cart-word">Carrito</span><b class="cart-count">0</b></button></div></div></header>'+
+    '<button type="button" class="nav-cart js-only" data-cart aria-label="Abrir carrito, 0 productos">'+icon('cart')+'<span class="cart-word">Carrito</span><b class="cart-count">0</b></button></div></div></header>'+
     '<main><section class="showcase" id="destacados" style="'+toneFor(first.slug)+'" aria-label="Productos destacados"><div class="showcase-panel"><div class="backdrop-stack" aria-hidden="true">'+backdrop(first.slug)+'</div><div class="grain"></div><div class="wrap">'+
     '<div class="hero-main"><div class="scene-copy" id="scene-copy">'+heroCopy(first)+'</div>'+
     '<div class="scene-art" id="scene-art" role="group" aria-label="Fotografía y piezas de '+h(titleFor(first))+'">'+stageArt(first,art,true)+'</div></div>'+

@@ -3,6 +3,7 @@ import {initFeature} from './feature.mjs';
 import {initCommerce} from './commerce.mjs';
 import {initReels} from './reels.mjs';
 import {galleryFamily,initGalleries} from './gallery.mjs';
+import {initGalleryNavigation} from './gallery-navigation.mjs';
 import {refreshCatalog} from '/catalog/sync.js';
 
 const {data:snapshot,art,optionArt,configurations,galleryArt,burgerLayers}=JSON.parse(document.querySelector('#storefront-data').textContent);
@@ -31,7 +32,7 @@ function drawMenu() {
   document.querySelector('#result-count').textContent=list.length+' '+(list.length===1?'producto':'productos');
 }
 drawMenu();
-const feature=initFeature(featureIds,lookup,art);
+const feature=initFeature(featureIds,lookup,art,initGalleryNavigation(document.querySelector('#gallery-list')));
 initReels();
 const commerce=initCommerce({lookup,store:catalog.store,art,optionArt,configurations,galleryArt,burgerLayers,
   extraId:catalog.products.find(p=>p.slug==='adicional-jeringa-licor')?.id,

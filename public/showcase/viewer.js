@@ -262,12 +262,22 @@ export function mountViewer(host, product, {onSelect, onMode,cyclePieces=true} =
   resize.observe(holder);
 
   async function mesh(model,signal) {
-    if (meshes.has(model)) return meshes.get(model);
+    if (meshes.has(model)) {
+      const hit=meshes.get(model);meshes.delete(model);meshes.set(model,hit);return hit;
+    }
     const response=await fetch(model,{signal});
     if(!response.ok) throw new Error('Modelo no disponible.');
     const data=readModel(await response.arrayBuffer());
-    const result={data,image:await loadTexture(data.image)};
-    if(!signal.aborted && !closed) meshes.set(model,result);
+    const result={data,image:null};
+    if(!signal.aborted && !closed) {
+      meshes.set(model,result);
+      if(meshes.size>4)meshes.delete(meshes.keys().next().value);
+    }
+    return result;
+  }
+  async function texturedMesh(model,signal) {
+    const result=await mesh(model,signal);
+    result.image ||= await loadTexture(result.data.image);
     return result;
   }
   async function load(piece) {
@@ -282,9 +292,9 @@ export function mountViewer(host, product, {onSelect, onMode,cyclePieces=true} =
       mode('loading');
       const signal=loading.signal;
       const [main,texture,parts]=await Promise.all([
-        mesh(piece.model,signal),
+        piece.texture?mesh(piece.model,signal):texturedMesh(piece.model,signal),
         piece.texture?poster.decode().then(()=>poster):null,
-        Promise.all((piece.layers||[]).map(async layer=>({...layer,mesh:await mesh(layer.piece.model,signal)})))
+        Promise.all((piece.layers||[]).map(async layer=>({...layer,mesh:await texturedMesh(layer.piece.model,signal)})))
       ]);
       if (closed || version !== token) return;
       renderer.use(main.data,texture||main.image,parts,piece.model);loaded=true;

@@ -9,7 +9,7 @@ export function reelGallery(reels,products) {
     const buttons=reel.products.map(link=>{
       const product=products.find(p=>p.slug===link.slug);
       if (!product) throw new Error('Producto de reel desconocido: '+link.slug);
-      return '<a class="reel-order" data-detail="'+h(product.id)+'" href="'+h(product.sourceUrl)+'">'+icon('bag')+'<span>Pedir '+h(link.label)+'</span></a>';
+      return '<a class="reel-order" data-detail="'+h(product.id)+'" href="'+h(product.sourceUrl)+'">'+icon('cart')+'<span>Pedir '+h(link.label)+'</span></a>';
     }).join('');
     return '<article id="'+h(id)+'" class="reel" aria-labelledby="'+h(id)+'-title" style="--reel-tone:'+tones[i%tones.length]+'">'+
       '<img class="reel-backdrop" src="'+h(reel.poster)+'" alt="" loading="lazy" decoding="async" fetchpriority="low">'+

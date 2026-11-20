@@ -17,7 +17,7 @@ export function animateCart(source,assembly,tint,choice) {
   capsule.style.setProperty('--flight-color',tint||'#e6c9f5');
   const src=assembly.imageSmall||assembly.image;
   if (src) {const photo=new Image();photo.src=src;photo.alt='';capsule.append(photo);}
-  else capsule.innerHTML=icon('bag');
+  else capsule.innerHTML=icon('cart');
   if(choice?.imageSmall) {const chip=new Image();chip.className='flight-option';chip.src=choice.imageSmall;chip.alt='';capsule.append(chip);}
   document.body.append(capsule);flight=capsule;
   const arc=Math.min(70,Math.abs(dx)*.17+22);

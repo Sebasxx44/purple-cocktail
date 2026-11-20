@@ -104,7 +104,7 @@ export function initCommerce({lookup,updateProduct,store,art,optionArt,configura
     const options=choicesMarkup(p,st.variant,optionArt)+extraMarkup(extra,st.extra,optionArt,canExtra);
     const text=!available(p)?'Agotado':!max && (v || !vs.length)?'Sin más unidades':'Agregar al carrito';
     return options+'<div class="buy-footer"><div class="purchase-total"><p class="detail-price" aria-live="polite">'+money(price*st.qty)+' <span class="price-unit">COP</span></p></div>'+
-      '<div class="detail-buy">'+quantity(st.qty,'detail',max || 1)+'<button class="button primary" data-buy'+(!available(p)||(!max && (v||!vs.length))?' disabled':'')+'>'+icon('bag')+text+'</button></div><p class="detail-status" role="status"></p></div>';
+      '<div class="detail-buy">'+quantity(st.qty,'detail',max || 1)+'<button class="button primary" data-buy'+(!available(p)||(!max && (v||!vs.length))?' disabled':'')+'>'+icon('cart')+text+'</button></div><p class="detail-status" role="status"></p></div>';
   }
   function drawPurchase() {
     if (!detailState) return;
@@ -194,11 +194,11 @@ export function initCommerce({lookup,updateProduct,store,art,optionArt,configura
         const sample=optionArt[choiceKey(r.v)]|| (r.addon && optionArt['jeringa-licor']);
         const max=capacity(r.product,r.v,r.addon,holds(lines,r.key));
         const notes=assembly.stack?recipeNotes(burgerRecipes[r.product.slug],r.changes,burgerLayers):[];
-        return '<article class="drawer-line"><div class="line-thumb '+(assembly.model||assembly.stack||r.product.cutout?'':'regular')+'">'+(assembly.stack?stackPicture(assembly):img?'<img src="'+h(img)+'" alt="">':icon('bag'))+(sample?'<img class="line-sample" src="'+h(sample.imageSmall)+'" alt="">':'')+'</div><div class="line-info"><h3>'+h(titleFor(r.product))+'</h3>'+
+        return '<article class="drawer-line"><div class="line-thumb '+(assembly.model||assembly.stack||r.product.cutout?'':'regular')+'">'+(assembly.stack?stackPicture(assembly):img?'<img src="'+h(img)+'" alt="">':icon('cart'))+(sample?'<img class="line-sample" src="'+h(sample.imageSmall)+'" alt="">':'')+'</div><div class="line-info"><h3>'+h(titleFor(r.product))+'</h3>'+
           (notes.length?'<p>'+h(notes.join(' · '))+'</p>':'')+(needsQuote(r.changes)?'<p class="burger-note">Extras por confirmar</p>':'')+
           (r.v||r.choice?'<p>'+h(choiceLabel(r.v?.label||r.choice))+'</p>':'')+(r.addon?'<p>Jeringa extra de licor · +'+money(r.addon.price)+' c/u</p>':'')+
           '<p>'+(r.pending?'Pendiente de verificar':money(r.price)+' c/u')+'</p>'+quantity(r.qty,r.key,max)+'</div><div class="line-end"><span>'+money(r.qty*r.price)+'</span><button data-remove="'+h(r.key)+'" aria-label="Quitar '+h(titleFor(r.product))+'">'+icon('trash')+'</button></div></article>';
-      }).join(''):'<div class="cart-empty">'+icon('bag')+'<h3>Tu carrito está vacío</h3><button class="button outline" data-shop>Explorar la carta</button></div>')+'</div>'+
+      }).join(''):'<div class="cart-empty">'+icon('cart')+'<h3>Tu carrito está vacío</h3><button class="button outline" data-shop>Explorar la carta</button></div>')+'</div>'+
       (current.length?'<div class="drawer-foot"><div class="drawer-total"><span>Subtotal</span><strong>'+money(linesTotal(current))+' <span class="price-unit">COP</span></strong></div>'+(current.some(r=>needsQuote(r.changes))?'<p class="quote-note">Falta sumar los extras que confirme Purple.</p>':'')+'<p class="cart-note">'+h(cartMessage||'Purple confirma la disponibilidad y el valor del domicilio por WhatsApp.')+'</p><button class="button primary" data-checkout'+(checking?' disabled':'')+'>'+icon('whatsapp')+(checking?'Verificando disponibilidad…':'Pedir por WhatsApp')+'</button></div>':cartMessage?'<p class="drawer-foot cart-note" role="status">'+h(cartMessage)+'</p>':'');
     if (key && delta) drawer.querySelector('[data-target="'+CSS.escape(key)+'"][data-qty="'+delta+'"]:not(:disabled)')?.focus({preventScroll:true});
     if (trash && cart.open) (drawer.querySelector('[data-remove]') || drawer.querySelector('[data-shop]'))?.focus({preventScroll:true});

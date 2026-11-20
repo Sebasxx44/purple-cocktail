@@ -151,7 +151,7 @@ export function mountIngredientMotion(panel,asset) {
     const panelBox=panel.getBoundingClientRect();
     const px = pointer ? clamp((pointer.x-panelBox.left)/Math.max(1,panelBox.width)*2-1,-1,1) : 0;
     const py = pointer ? clamp((pointer.y-panelBox.top)/Math.max(1,panelBox.height)*2-1,-1,1) : 0;
-    const amplitude=compact.matches ? .52 : 1;
+    const amplitude=compact.matches ? .52 : 1.6;
     let nearest = null, best = .23;
     for (const slot of slots) {
       const box=slot.button.getBoundingClientRect();

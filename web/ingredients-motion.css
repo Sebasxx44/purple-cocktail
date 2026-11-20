@@ -1,6 +1,6 @@
 /* The button carries the drift so its hit area and caption travel with the food. */
 [data-ingredient-motion] .floating-part[data-part] {
-  --travel-range: 1;
+  --travel-range: 1.55;
   --im-x: 0px;
   --im-y: 0px;
   --im-yaw: 0deg;

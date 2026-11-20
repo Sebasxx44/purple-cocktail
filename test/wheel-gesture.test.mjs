@@ -20,3 +20,10 @@ test('separate wheel notches and a deliberate reversal each move one product',()
   assert.deepEqual(steps([[0,48],[18,32],[34,16],[244,48]],1),[0,244]);
   assert.deepEqual(steps([[0,-610],[250,-85]]),[0,250]);
 });
+
+test('a late declining trackpad tail cannot advance a second full-screen gallery',()=>{
+  const wheel=wheelGesture({filterMomentum:true});
+  const signals=[[0,110],[240,72],[275,36],[410,17],[445,6],[467,2],[635,31],[820,120]];
+  const moves=signals.filter(([t,dy])=>wheel.read(dy,0,t)==='step').map(([t])=>t);
+  assert.deepEqual(moves,[0,635,820]);
+});

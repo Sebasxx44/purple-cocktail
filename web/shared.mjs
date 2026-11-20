@@ -19,7 +19,7 @@ const paths = {
   nextReel:'<path d="m5 5 11 7-11 7z"/><path d="M19 5v14"/>',
   swipe:'<path d="M3 12h18m-4-4 4 4-4 4M7 8l-4 4 4 4"/>',
   download:'<path d="M12 3v12m-4-4 4 4 4-4M4 15v5h16v-5"/>',
-  bag:'<path d="M5 7.5h14l1 13H4l1-13Z"/><path d="M8.5 9V6a3.5 3.5 0 0 1 7 0v3"/>',
+  cart:'<path d="M2 3.5h3l2.8 12.1a1.7 1.7 0 0 0 1.7 1.4H19"/><path d="M6 6.5h15.5l-2 7H7.6"/><circle cx="10" cy="20.2" r="1.35"/><circle cx="18.5" cy="20.2" r="1.35"/>',
   plus:'<path d="M12 5v14M5 12h14"/>', minus:'<path d="M5 12h14"/>',
   left:'<path d="m14.5 5-7 7 7 7"/>',right:'<path d="m9.5 5 7 7-7 7"/>', down:'<path d="m6 9 6 6 6-6"/>',
   box:'<path d="m12 2.6 8 4.6v9.4l-8 4.8-8-4.8V7.2l8-4.6Z"/><path d="m4.5 7.5 7.5 4.4 7.5-4.4M12 12v9M8.2 5.2l8 4.6"/>',

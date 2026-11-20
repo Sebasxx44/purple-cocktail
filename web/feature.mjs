@@ -5,7 +5,7 @@ import {wheelGesture} from './wheel-gesture.mjs';
 
 const clamp=(value,min,max)=>Math.min(max,Math.max(min,value));
 
-export function initFeature(featureIds, productById, art) {
+export function initFeature(featureIds, productById, art, menuNavigation) {
   const board=document.querySelector('#destacados'), screen=board.querySelector('.showcase-panel');
   const panel=document.querySelector('#scene-art'), copy=document.querySelector('#scene-copy');
   const header=document.querySelector('#topbar'), stack=screen.querySelector('.backdrop-stack');
@@ -158,7 +158,7 @@ export function initFeature(featureIds, productById, art) {
   const wheel=wheelGesture();
   let ownsWheel=false;
   function onWheel(event) {
-    if(event.ctrlKey || event.metaKey || document.querySelector('dialog[open]')) return;
+    if(event.defaultPrevented || event.ctrlKey || event.metaKey || document.querySelector('dialog[open]')) return;
     releaseHash();
     const factor=event.deltaMode===1?16:event.deltaMode===2?innerHeight:1;
     const dx=event.deltaX*factor, dy=event.deltaY*factor;
@@ -178,6 +178,7 @@ export function initFeature(featureIds, productById, art) {
     if (signal==='step') {
       ownsWheel=canStep;
       if (canStep) {event.preventDefault(); go(next);}
+      else if(current===last && dy>Math.abs(dx) && menuNavigation.enterFromHero(event)) event.preventDefault();
     } else if (ownsWheel || (signal==='pending' && canStep)) event.preventDefault();
   }
 
@@ -194,6 +195,11 @@ export function initFeature(featureIds, productById, art) {
     if (Math.abs(distance)<2) return;
     releaseHash();
     const next=current+Math.sign(distance);
+    if(next>last && dy>Math.abs(dx)) {
+      if(event.cancelable)event.preventDefault();
+      if(dy>=20 && menuNavigation.enterFromHero(event))touch.state='stepped';
+      return;
+    }
     if (next<0 || next>last) {touch.state='native';return;}
     if (event.cancelable) event.preventDefault();
     if (Math.abs(distance)>=20) {touch.state='stepped';go(next);}
@@ -217,11 +223,12 @@ export function initFeature(featureIds, productById, art) {
   window.addEventListener('touchcancel',finishTouch,{passive:true});
 
   document.addEventListener('keydown',event=>{
-    if (!pinned() || event.altKey || event.ctrlKey || event.metaKey || document.querySelector('dialog[open]') || event.target.closest('input,select,textarea,[contenteditable=true]')) return;
+    if (event.defaultPrevented || !pinned() || event.altKey || event.ctrlKey || event.metaKey || document.querySelector('dialog[open]') || event.target.closest('input,select,textarea,[contenteditable=true]')) return;
     if (['PageUp','PageDown','ArrowLeft','ArrowRight','ArrowUp','ArrowDown',' ','Home','End','Tab'].includes(event.key)) releaseHash();
     let delta=({ArrowLeft:-1,ArrowRight:1,PageUp:-1,PageDown:1,ArrowUp:-1,ArrowDown:1})[event.key];
     if (event.key===' ' && !event.target.closest('a,button')) delta=event.shiftKey?-1:1;
     if(delta && current+delta>=0 && current+delta<=last) {event.preventDefault();go(current+delta);}
+    else if(delta===1 && current===last && event.key!=='ArrowRight' && menuNavigation.enterFromHero(event))event.preventDefault();
   });
   panel.addEventListener('pointermove',event=>{
     if (!viewer || reduce.matches || event.pointerType!=='mouse' || !inView) return;
