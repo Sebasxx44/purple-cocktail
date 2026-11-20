@@ -82,7 +82,7 @@ const page = `<!doctype html>
 <meta property="og:image" content="https://purple-cocktail.vercel.app/catalog/images/arandanos-perlas.webp"><link rel="icon" href="/ui/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="font" type="font/woff2" href="/fonts/bebas-neue-latin.woff2" crossorigin><link rel="preload" as="image" fetchpriority="high" href="${escape(portrait)}"${hero.imageSmall?' imagesrcset="'+escape(hero.imageSmall)+' '+hero.smallSize[0]+'w, '+escape(portrait)+' '+hero.imageSize[0]+'w" imagesizes="(max-width: 690px) 64vw, 34vw"':''}>
 <link rel="stylesheet" href="/fonts/fonts.css?v=purple-type-2"><link rel="stylesheet" href="/web/style.css"><link rel="stylesheet" href="/web/ingredients-motion.css"><link rel="stylesheet" href="/web/reels.css"><link rel="stylesheet" href="/web/product-detail.css">
-<link rel="stylesheet" href="/web/gallery.css"><link rel="stylesheet" href="/web/burger.css">
+<link rel="stylesheet" href="/web/gallery.css">
 <script>document.documentElement.classList.add('js');if(!['#carta','#reels','#granizados','#hamburguesas'].includes(location.hash)&&!location.hash.startsWith('#reel-'))document.documentElement.classList.add('in-showcase')</script></head><body>
 ${shell(data,art,reels,galleryArt)}
 <script id="storefront-data" type="application/json">${payload}</script>

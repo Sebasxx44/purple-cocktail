@@ -1,8 +1,7 @@
 """Build responsive art direction and a medium manifest for the 24 gallery SKUs.
 
-Run export_gallery_food.py before this script when the product cutouts change.
-The backdrop photographs, prompts, catalog-size assignments and source cutout
-landmarks live in gallery-inputs. No API or remote image is used at runtime.
+Run export_gallery_food.py before this script when the product renders change.
+Studio images, prompts and catalog-size assignments live in gallery-inputs.
 """
 
 import argparse

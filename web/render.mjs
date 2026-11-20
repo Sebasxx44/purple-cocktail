@@ -5,8 +5,6 @@ import {galleryFamily,galleryMarkup} from './gallery.mjs';
 
 export const available = p => Boolean(p && p.available !== false && (p.stock == null || p.stock > 0));
 export const titleFor = p => scenes[p.slug]?.short || productName(p);
-const leadCategories=['GRANIZADOS CON LICOR','HAMBURGUESAS','COMBOS'];
-const preferredCategories=[...leadCategories,'GRANIZADO SIN LICOR','BEBIDAS','ADICIONALES'];
 export const toneFor = slug => {
   const s = scenes[slug] || scenes['arandanos-perlas'];
   return '--tone:'+s.tone+';--light:'+s.light+';--accent:'+s.accent+';--card:'+s.card+';--scene-ink:'+s.ink+';--buy-color:'+s.button+';--hero-scale:'+s.scale;
@@ -38,7 +36,7 @@ export function stageArt(p, art, first=false) {
   const a=findArt(art,p);
   const pieces=a.ingredients || [];
   const valid = pieces.map((item,index) => ({item,index})).filter(({item})=>item.image);
-  const floats=valid.slice(0,3).map(({item,index}, k) => '<button class="floating-part part-'+(k+1)+' js-only" data-inspect="'+h(p.id)+'" data-part="'+index+'" aria-label="Ver ingrediente '+h(item.name)+'">'+imageTag(item.image,'',{eager:true})+'<span class="ingredient-caption" aria-hidden="true">'+h(item.shortName||item.name)+'</span></button>').join('');
+  const floats=valid.slice(0,3).map(({item,index}, k) => '<button class="floating-part part-'+(k+1)+' js-only" data-inspect="'+h(p.id)+'" data-part="'+index+'" aria-label="'+h(item.name)+'. Ver ingredientes de '+h(titleFor(p))+'">'+imageTag(item.image,'',{eager:true})+'<span class="ingredient-caption" aria-hidden="true">'+h(item.shortName||item.name)+'</span></button>').join('');
   return '<div class="shadow-pad" aria-hidden="true"></div>'+
     '<div class="stage-product '+(p.category==='HAMBURGUESAS'?'food-burger':'food-drink')+(a.image?'':' awaiting-art')+'">'+imageTag(a.image || p.image,titleFor(p),{cls:'product-portrait',small:a.imageSmall,smallWidth:a.smallSize?.[0],width:a.imageSize?.[0],sizes:'(max-width: 690px) 64vw, 34vw',eager:true,priority:first})+(a.preview?'<img class="scene-preview" alt="" aria-hidden="true" draggable="false" src="'+h(a.preview)+'">':'')+'</div>'+
     floats;
@@ -68,31 +66,15 @@ export function card(p,art,groupCategory) {
     '<div class="card-info">'+(caption?'<p class="card-category">'+h(caption)+'</p>':'')+'<'+heading+'><a href="'+h(href)+'" data-detail="'+h(p.id)+'">'+h(name)+'</a></'+heading+'>'+
     '<div class="card-bottom"><span>'+h(money(p.price))+'</span><button class="poster-add js-only" data-add="'+h(p.id)+'" aria-label="Agregar '+h(titleFor(p))+' al carrito"'+(!available(p)?' disabled':'')+'>'+icon('plus')+'<span>Agregar</span></button></div></div></article>';
 }
-export function groupedCards(products,art,featured,expanded=false) {
-  const pins=new Map(featured.map((slug,i)=>[slug,i]));
-  const listFor=items=>[...items].sort((a,b)=>(pins.get(a.slug)??99)-(pins.get(b.slug)??99) || a.rank-b.rank);
-  const groups=leadCategories.map(key=>({key,title:categoryLabel(key),items:listFor(products.filter(p=>p.category===key))}));
-  groups.push({key:'',title:'Más de la carta',items:products.filter(p=>!leadCategories.includes(p.category))});
-  return groups.filter(group=>group.items.length).map(group=>{
-    let subset=group.items;
-    if (!expanded && group.key && group.items.length>4){
-      const firstByName=new Map();
-      for (const p of group.items){const {name}=posterInfo(p);if(!firstByName.has(name))firstByName.set(name,p);}
-      const unique=[...firstByName.values()];
-      subset=[...unique,...group.items.filter(p=>!unique.includes(p))].slice(0,4);
-    }
-    const more=group.key && group.items.length>subset.length;
-    const action=more?'<button class="group-link js-only" data-show-category="'+h(group.key)+'">Ver categoría <span>('+group.items.length+')</span></button>':'<span class="group-count">'+group.items.length+' '+(group.items.length===1?'producto':'productos')+'</span>';
-    return '<section class="catalog-family"><div class="family-heading"><h3>'+h(group.title)+'</h3>'+action+'</div><div class="family-grid'+(!group.key?' family-rest':'')+'">'+subset.map(p=>card(p,art,group.key)).join('')+'</div></section>';
-  }).join('');
-}
-export function filters(data) {
-  const categories=[...preferredCategories.filter(c=>data.categories.includes(c)),...data.categories.filter(c=>!preferredCategories.includes(c))];
-  return '<div class="category-strip" role="group" aria-label="Categorías"><button class="category active" data-category="" aria-pressed="true">Todo</button>'+
-    categories.map(c=>'<button class="category" data-category="'+h(c)+'" aria-pressed="false">'+h(categoryLabel(c))+'</button>').join('')+'</div>'+
-    '<div class="filter-row"><label class="search-field">'+icon('search')+'<span class="sr">Buscar productos</span><input id="search" type="search" placeholder="Buscar en la carta" autocomplete="off"></label>'+
-    '<div class="select-field">'+icon('tune')+'<label class="sr" for="price-filter">Filtrar por precio</label><select id="price-filter"><option value="">Todos los precios</option>'+data.priceBands.map(b=>'<option value="'+h(b.id)+'">'+h(b.label)+'</option>').join('')+'</select>'+icon('down','select-arrow')+'</div>'+
-    '<div class="select-field sort-field"><span aria-hidden="true">Orden</span><label class="sr" for="sort">Ordenar productos</label><select id="sort">'+data.sorts.map(s=>'<option value="'+h(s.id)+'">'+h(s.label)+'</option>').join('')+'</select>'+icon('down','select-arrow')+'</div></div>';
+export function groupedCards(products,art) {
+  const groups=[
+    {title:'Combos',key:'COMBOS',items:products.filter(p=>p.category==='COMBOS')},
+    {title:'Más de la carta',key:'',items:products.filter(p=>p.category!=='COMBOS')}
+  ];
+  return groups.filter(group=>group.items.length).map(group=>
+    '<section class="catalog-family"><div class="family-heading"><h3>'+group.title+'</h3><span class="group-count">'+group.items.length+' '+(group.items.length===1?'producto':'productos')+'</span></div>'+
+    '<div class="family-grid'+(!group.key?' family-rest':'')+'">'+group.items.map(p=>card(p,art,group.key)).join('')+'</div></section>'
+  ).join('');
 }
 export function shell(data, art, reels, galleryArt={}) {
   const d=data.store;
@@ -108,7 +90,7 @@ export function shell(data, art, reels, galleryArt={}) {
     '<div class="scene-art" id="scene-art" role="group" aria-label="Fotografía y piezas de '+h(titleFor(first))+'">'+stageArt(first,art,true)+'</div></div>'+
     '<p id="scene-live" role="status" class="sr"></p></div></div></section>'+
     '<section class="menu-section" id="carta" aria-labelledby="menu-title"><div class="wrap"><div class="menu-heading"><h2 id="menu-title">La <em>carta</em></h2><span id="result-count" role="status">'+data.products.length+' productos</span></div>'+
-    '<div id="filters" class="js-only">'+filters(data)+'</div></div><div id="gallery-list">'+galleryMarkup([...featured,...data.products.filter(p=>!featured.includes(p)).sort((a,b)=>a.rank-b.rank)],galleryArt)+'</div><div class="wrap menu-remainder"><div id="catalog-grid" class="catalog-grid grouped">'+groupedCards(data.products.filter(p=>!galleryFamily(p)),art,data.featured,true)+'</div><div id="pagination" class="pagination js-only"></div>'+
+    '</div><div id="gallery-list">'+galleryMarkup([...featured,...data.products.filter(p=>!featured.includes(p)).sort((a,b)=>a.rank-b.rank)],galleryArt)+'</div><div class="wrap menu-remainder"><div id="catalog-grid" class="catalog-grid grouped">'+groupedCards(data.products.filter(p=>!galleryFamily(p)),art)+'</div>'+
     '<noscript><p>Para seleccionar sabores y hacer tu pedido, <a href="'+h(d.sourceUrl)+'">abre la carta de Purple en Treinta</a>.</p></noscript></div></section>'+reelGallery(reels,data.products)+'</main>'+
     '<footer class="foot"><div class="wrap foot-inner"><div><a href="#destacados" class="footer-brand" aria-label="Purple, volver al inicio"><span class="brand-mark"></span></a><p>Granizados y hamburguesas · Colombia</p></div><nav aria-label="Purple en línea"><a href="'+h(d.whatsappUrl)+'" target="_blank" rel="noopener noreferrer">'+icon('whatsapp')+'WhatsApp</a><a href="'+h(d.instagram)+'" target="_blank" rel="noopener noreferrer">'+icon('instagram')+'Instagram</a><a href="'+h(d.sourceUrl)+'" target="_blank" rel="noopener noreferrer">Carta en Treinta</a></nav></div></footer>'+
     '<dialog id="product-dialog" class="product-dialog" aria-labelledby="detail-name"><button class="detail-close round-button" data-close="product" aria-label="Cerrar detalle" autofocus>'+icon('close')+'</button><div id="detail-content"></div></dialog>'+

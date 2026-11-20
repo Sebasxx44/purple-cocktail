@@ -57,7 +57,7 @@ function createProgram(gl) {
   }
 }
 
-export function readModel(bytes) {
+function readModel(bytes) {
   const header = new DataView(bytes);
   if (header.getUint32(0, true) !== glbHeader || header.getUint32(4, true) !== 2) {
     throw new Error('Modelo GLB desconocido.');
@@ -85,7 +85,7 @@ export function readModel(bytes) {
   };
 }
 
-export async function loadTexture(blob) {
+async function loadTexture(blob) {
   const url = URL.createObjectURL(blob);
   try {
     const image = new Image();
@@ -97,7 +97,7 @@ export async function loadTexture(blob) {
   }
 }
 
-export function createRenderer(canvas) {
+function createRenderer(canvas) {
   const gl = canvas.getContext('webgl', {alpha:true, antialias:true, premultipliedAlpha:false, powerPreference:'low-power'});
   if (!gl) return null;
   const program = createProgram(gl);
@@ -188,23 +188,8 @@ export function createRenderer(canvas) {
     return true;
   }
 
-  const ingredients=new Map();
-  function addIngredient(key,data,picture) {
-    if(!ingredients.has(key)) ingredients.set(key,allocate(data,picture));
-  }
-  function drawStack(width,height,angle,pitch,frame) {
-    if(!frame.items.length || frame.items.some(item=>!ingredients.has(item.key))) return false;
-    if(!project(width,height,angle,pitch,frame,1.82)) return false;
-    const cx=frame.left+frame.width/2,cy=frame.top+frame.height/2;
-    frame.items.forEach((rect,i)=>{
-      const object=ingredients.get(rect.key);
-      paint(object,rect.x+rect.width/2-cx,cy-rect.y-rect.height/2,i*.009,rect.width/object.width);
-    });
-    return true;
-  }
-  return {use,draw,release,addIngredient,drawStack,destroy() {
-    release();ingredients.forEach(dispose);ingredients.clear();
-    gl.deleteProgram(program);gl.getExtension('WEBGL_lose_context')?.loseContext();
+  return {use,draw,release,destroy() {
+    release();gl.deleteProgram(program);gl.getExtension('WEBGL_lose_context')?.loseContext();
   }};
 }
 

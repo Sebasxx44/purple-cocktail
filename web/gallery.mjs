@@ -18,7 +18,13 @@ function atmosphere(a) {
   const objects=(a.objects||[]).slice(0,3).map((o,i)=>'<span class="gallery-orbit" style="--x:'+Number(o.x)+'%;--y:'+Number(o.y)+'%;--w:'+Number(o.width)+'%;--mx:'+Number(o.xMobile??o.x)+'%;--my:'+Number(o.yMobile??o.y)+'%;--mw:'+Number(o.widthMobile??o.width)+'%;--rotate:'+Number(o.rotate||0)+'deg;--delay:-'+i*2.1+'s"><img src="'+h(o.image)+'" loading="lazy" decoding="async" alt=""></span>').join('');
   return bg+objects;
 }
-const ctaText=(family,p)=>family==='granizados'?'Elegir granizado':/fries|american-purple/.test(p.slug)?'Armar mi porción':'Armar mi hamburguesa';
+function ctaText(p) {
+  if(p.available===false || p.stock===0)return 'Agotado';
+  const group=p.variantGroups?.[0]?.label||'';
+  if(/sabor/i.test(group))return 'Elegir sabor';
+  if(/top+ing/i.test(group))return 'Elegir topping';
+  return 'Agregar al carrito';
+}
 function tile(p,a) {
   return '<div class="gallery-slide" data-sku="'+h(p.id)+'"><div class="gallery-solid"><div class="gallery-media">'+
     '<img class="gallery-portrait" loading="lazy" draggable="false" decoding="async" src="'+h(a.imageSmall||a.image)+'" alt=""><span class="gallery-model" aria-hidden="true" inert></span></div></div>'+
@@ -30,9 +36,9 @@ function gallerySection(family,ps,art) {
     '<div class="gallery-atmosphere" aria-hidden="true">'+atmosphere(a)+'</div>'+
     '<div class="gallery-top"><h3 id="'+family.id+'-heading">'+h(family.name)+'</h3><span class="gallery-index" aria-hidden="true"><b>'+ordinal(1)+'</b> / '+ordinal(ps.length)+'</span></div>'+
     '<div class="gallery-rail" role="region" aria-roledescription="carrusel" aria-label="'+h(family.name)+'. Desplázate horizontalmente para cambiar de producto." tabindex="0">'+ps.map(p=>tile(p,artFor(p,art))).join('')+'</div>'+
-    '<div class="gallery-footer"><div class="gallery-info"><p class="gallery-kind">'+h(a.eyebrow)+'</p><h4 class="gallery-name">'+h(a.name)+'</h4></div>'+
-    '<div class="gallery-order"><p class="gallery-price"><b>'+h(money(p.price))+'</b> <span>COP</span></p><a class="gallery-choose" data-detail="'+h(p.id)+'" href="'+h(p.sourceUrl)+'">'+icon('bag')+'<span>'+h(ctaText(family.id,p))+'</span></a></div>'+
-    '<div class="gallery-guide" aria-hidden="true"><span class="gallery-meter"><i></i></span><span class="scroll-icon">↔</span><span>Desliza para explorar</span></div></div>'+
+    '<div class="gallery-footer"><div class="gallery-info"><div class="gallery-kicker"><p class="gallery-kind">'+h(a.eyebrow)+'</p><a class="gallery-ingredients" data-inspect="'+h(p.id)+'" href="'+h(p.sourceUrl)+'">Ver ingredientes</a></div><h4 class="gallery-name">'+h(a.name)+'</h4></div>'+
+    '<div class="gallery-order"><p class="gallery-price"><b>'+h(money(p.price))+'</b> <span>COP</span></p><a class="gallery-choose" data-add="'+h(p.id)+'" href="'+h(p.sourceUrl)+'">'+icon('bag')+'<span>'+h(ctaText(p))+'</span></a></div>'+
+    '<div class="gallery-guide" aria-hidden="true"><span class="gallery-meter"><i></i></span>'+icon('swipe','scroll-icon')+'<span>Desliza para explorar</span></div></div>'+
     '<p class="sr gallery-live" aria-live="polite" aria-atomic="true"></p></section>';
 }
 export function galleryMarkup(products,art={}) {
@@ -54,7 +60,7 @@ function mountGallery(section,products,art,remember) {
   const signal=new AbortController(),listen={signal:signal.signal},passive={...listen,passive:true};
   const reduced=matchMedia('(prefers-reduced-motion: reduce)');
   const bar=document.querySelector('#topbar'), backdrop=section.querySelector('.gallery-atmosphere');
-  const bits=Object.fromEntries(['name','kind','price','index','choose','meter','guide'].map(k=>[k,section.querySelector('.gallery-'+k)]));
+  const bits=Object.fromEntries(['name','kind','price','index','choose','ingredients','meter','guide'].map(k=>[k,section.querySelector('.gallery-'+k)]));
   let index=-1,slot=-1,near=false,visible=false,model=null,modelTicket=0,modelTimer=0,modelSlot=null,yaw=0,pitch=0,dead=false;
   let scrollFrame=0,snapTimer=0,step=0,drag=null,initial=true,backVersion=0,resizeWidth=0,updatedProduct;
   const actual=i=>(i-lead+count)%count, center=i=>slides[i].offsetLeft-(rail.clientWidth-slides[i].offsetWidth)/2;
@@ -110,8 +116,10 @@ function mountGallery(section,products,art,remember) {
     bits.name.textContent=a.name;bits.kind.textContent=a.eyebrow;
     bits.price.querySelector('b').textContent=money(p.price);
     bits.index.querySelector('b').textContent=ordinal(i+1);
-    bits.choose.dataset.detail=p.id;bits.choose.href=p.sourceUrl;
-    bits.choose.querySelector('span').textContent=ctaText(section.id,p);
+    bits.ingredients.dataset.inspect=p.id;bits.ingredients.href=p.sourceUrl;
+    bits.choose.dataset.add=p.id;bits.choose.href=p.sourceUrl;
+    bits.choose.setAttribute('aria-disabled',String(p.available===false || p.stock===0));
+    bits.choose.querySelector('span').textContent=ctaText(p);
     bits.meter.style.setProperty('--progress',(i+1)/count*100+'%');
     bits.guide.hidden=count<2;
     if(changed) {

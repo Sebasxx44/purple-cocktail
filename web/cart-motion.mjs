@@ -1,5 +1,4 @@
 import {icon} from './shared.mjs';
-import {stackPicture} from './burger.mjs';
 
 let flight=null;
 export function animateCart(source,assembly,tint,choice) {
@@ -17,8 +16,7 @@ export function animateCart(source,assembly,tint,choice) {
   capsule.style.cssText='left:'+(x-size/2)+'px;top:'+(y-size/2)+'px;width:'+size+'px;height:'+size+'px;';
   capsule.style.setProperty('--flight-color',tint||'#e6c9f5');
   const src=assembly.imageSmall||assembly.image;
-  if (assembly.stack) capsule.innerHTML=stackPicture(assembly);
-  else if (src) {const photo=new Image();photo.src=src;photo.alt='';capsule.append(photo);}
+  if (src) {const photo=new Image();photo.src=src;photo.alt='';capsule.append(photo);}
   else capsule.innerHTML=icon('bag');
   if(choice?.imageSmall) {const chip=new Image();chip.className='flight-option';chip.src=choice.imageSmall;chip.alt='';capsule.append(chip);}
   document.body.append(capsule);flight=capsule;

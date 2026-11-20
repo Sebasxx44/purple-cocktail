@@ -1,4 +1,4 @@
-import {escape as h, icon} from './shared.mjs';
+import {escape as h} from './shared.mjs';
 import {stackLayout} from './stack-layout.mjs';
 
 const bread='bun', breadParts=['bun-bottom','bun-top'];
@@ -68,21 +68,4 @@ export function stackPicture(assembly,spread=0,large=false) {
   const f=stackLayout(assembly.stack,spread,assembly.type);
   return '<svg class="stack-picture" viewBox="'+[f.left,f.top,f.width,f.height].join(' ')+'" aria-hidden="true" focusable="false">'+
     f.items.map(({piece,x,y,width,height})=>'<image href="'+h(large?piece.image:piece.imageSmall||piece.image)+'" x="'+x+'" y="'+y+'" width="'+width+'" height="'+height+'" preserveAspectRatio="none"/>').join('')+'</svg>';
-}
-export function burgerOptions(recipe,assets,changes) {
-  const groups=ingredientGroups(recipe);
-  function rows(list) {
-    return list.map(({key,included,maximum})=>{
-      const piece=assets[artKey(key)],name=pieceName(key,assets),n=included+(changes[key]||0);
-      const status=n>included?'Extra a confirmar':n===0?'Sin añadir':n===included?'En la receta':'Personalizado';
-      const button=(step,label,disabled)=>'<button type="button" id="layer-'+key+(step<0?'-less':'-more')+'" data-layer="'+key+'" data-step="'+step+'" aria-label="'+h(label+' '+name)+'"'+(disabled?' disabled':'')+'>'+icon(step<0?'minus':'plus')+'</button>';
-      return '<div class="ingredient-row'+(!n?' omitted':'')+'">'+(piece?'<img alt="" src="'+h(piece.imageSmall)+'">':'')+
-        '<span class="layer-label"><b>'+h(name)+'</b><small>'+status+'</small></span><span class="layer-count">'+button(-1,'Quitar',n===0)+'<output aria-label="Cantidad de '+h(name)+'">'+n+'</output>'+button(1,'Agregar',n>=maximum)+'</span></div>';
-    }).join('');
-  }
-  const extras=groups.filter(g=>!g.included);
-  return '<section class="burger-options"><h3>Arma tu '+(recipe.type==='fries'?'porción':'hamburguesa')+'</h3>'+
-    rows(groups.filter(g=>g.included))+
-    (extras.length?'<details class="burger-extras"><summary>Otros ingredientes '+icon('down')+'</summary>'+rows(extras)+'</details>':'')+
-    '<p class="burger-terms">Puedes quitar y reponer lo incluido. Purple confirma por WhatsApp el precio y la disponibilidad de las porciones extra.</p></section>';
 }
